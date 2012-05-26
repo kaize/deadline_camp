@@ -1,0 +1,8 @@
+ru:
+  sure: 'Вы уверены?'
+  layouts:
+    admin:
+      application:
+        members_list: 'Список участников'
+    application:
+      new_member: 'Добавить анкету'

@@ -1,0 +1,7 @@
+ru:
+  flash:
+    controllers:
+      web:
+        members:
+          create:
+            success: 'Анкета отправлена на модерацию'

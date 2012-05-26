@@ -1,0 +1,28 @@
+ru:
+  activerecord:
+    state_machines:
+      member:
+        state:
+          events:
+            accept: 'Одобрить'
+          states:
+            new: 'Новый'
+            accepted: 'Одобрен'
+    errors:
+      models:
+        member:
+          attributes:
+            email:
+              email: 'Введите корректный email'
+    models:
+      member: 'Участник'
+    attributes:
+      member:
+        id: 'id'
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        patronymic: 'Отчество'
+        state: 'Текущее состояние'
+        state_event: 'Действие'
+        created_at: 'Дата создания'
+        updated_at: 'Дата обновления'

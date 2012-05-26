@@ -1,4 +1,19 @@
 DeadlineCamp::Application.routes.draw do
+
+  scope :module => :web do
+    root :to => 'welcome#index'
+
+    namespace :admin do
+      root :to => 'welcome#index'
+
+      resources :members, :only => [:index, :edit, :update, :destroy]
+      resource :session, :only => [:new, :create, :destroy]
+    end
+
+
+    resources :members, :only => [:index, :new, :create]
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +63,6 @@ DeadlineCamp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
