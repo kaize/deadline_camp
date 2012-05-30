@@ -22,7 +22,6 @@ test:
   database: deadline_camp_test
   pool: 5
   username: postgres
-  host: 127.0.0.1
   password:
 
 production:
