@@ -31,7 +31,7 @@
   %hr
   %h3 Сертефикаты, Дипломы, Достижения
   = f.simple_fields_for :achievements do |p|
-    = render 'achievements_fields', :f => p
+    = render 'achievement_fields', :f => p
   .links.control-group
     .controls
       = link_to_add_association t('add_achievement'), f, :achievements, :class => 'btn btn-small btn-info'

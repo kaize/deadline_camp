@@ -9,7 +9,7 @@ class Web::Admin::MembersController < Web::Admin::ApplicationController
   end
 
   def update
-    @member = Member.find(params[:id])
+    @member = MemberType.find(params[:id])
 
     if @member.update_attributes(params[:employee])
       flash[:success] = flash_translate(:success)
