@@ -2,5 +2,10 @@
 
 FactoryGirl.define do
   factory :member_skill_other, :class => 'Member::Skill::Other' do
+    member
+    association :dict, factory: :dict_other
+    level { generate :string }
+    duration { generate :string }
+    description { generate :string }
   end
 end

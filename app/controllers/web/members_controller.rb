@@ -8,7 +8,7 @@ class Web::MembersController < Web::ApplicationController
   end
 
   def create
-    @member = Member.new(params[:member])
+    @member = MemberType.new(params[:member])
 
     if @member.save
       flash[:success] = flash_translate(:success)

@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :dict_ide, :class => 'Dict::Ide' do
-    name "MyString"
+    name
   end
 end

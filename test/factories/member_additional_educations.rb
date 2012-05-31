@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :member_additional_education, :class => 'Member::AdditionalEducation' do
-    description "MyText"
+    member
+    description
   end
 end

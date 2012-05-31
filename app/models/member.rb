@@ -1,5 +1,8 @@
 class Member < ActiveRecord::Base
-  attr_accessible :state, :email, :first_name, :icq, :jabber, :last_name, :patronymic, :phone, :skype
+  attr_accessible :state, :email, :first_name, :icq, :jabber, :last_name, :patronymic, :phone, :skype,
+    :state, :email, :first_name, :last_name, :patronymic, :phone, :skype, :jabber, :icq, :institute,
+    :start_year, :finish_year, :department, :profession, :degree, :gpa, :web, :camp_time, :camp_life,
+    :camp_fee, :camp_notebook, :camp_training
 
   has_many :jobs
   has_many :additional_educations

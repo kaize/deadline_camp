@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :member_achievement, :class => 'Member::Achievement' do
-    member_id 1
-    description "MyText"
+    member
+    description
   end
 end

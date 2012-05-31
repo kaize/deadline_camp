@@ -15,5 +15,9 @@ class ActiveSupport::TestCase
   include AuthHelper
   include FactoryGirl::Syntax::Methods
 
+  def form_attributes_for(factory)
+    { Time.current.to_i => attributes_for(factory) }
+  end
+
   FactoryGirl.reload
 end

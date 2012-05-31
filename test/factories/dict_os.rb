@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :dict_o, :class => 'Dict::Os' do
-    name "MyString"
+  factory :dict_os, :class => 'Dict::Os' do
+    name
   end
 end
