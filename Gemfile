@@ -44,6 +44,7 @@ gem 'unicorn'
 gem 'client_side_validations'
 gem 'validates'
 gem 'meta_search'
+gem 'cocoon'
 
 group :development do
   # Deploy with Capistrano

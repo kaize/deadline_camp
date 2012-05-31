@@ -5,6 +5,35 @@
   = f.input :last_name
   = f.input :patronymic
   = f.input :email
+  = f.input :phone
+  = f.input :skype
+  = f.input :jabber
+  = f.input :icq
+  = f.input :web
+  %hr
+  %h3 Образование
+  = f.input :institute
+  = f.input :start_year
+  = f.input :finish_year
+  = f.input :department
+  = f.input :profession
+  = f.input :degree
+  = f.input :gpa
+  %hr
+  %h3 Опыт работы
+  = f.simple_fields_for :jobs do |p|
+    = render 'job_fields', :f => p
+  .links.control-group
+    .controls
+      = link_to_add_association t('add_member_job'), f, :jobs, :class => 'btn btn-small btn-info'
+
+  %hr
+  %h3 Участие в Deadline Camp
+  = f.input :camp_time
+  = f.input :camp_life
+  = f.input :camp_fee
+  = f.input :camp_notebook
+  = f.input :camp_training
 
   .form-actions
     = f.button :submit, :class => 'btn btn-primary'

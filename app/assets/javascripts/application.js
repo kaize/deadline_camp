@@ -15,3 +15,4 @@
 //= require twitter/bootstrap
 //= require rails.validations
 //= require bootstrap
+//= require cocoon

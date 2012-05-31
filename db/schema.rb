@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120526084846) do
+ActiveRecord::Schema.define(:version => 20120531081819) do
+
+  create_table "member_jobs", :force => true do |t|
+    t.integer  "member_id"
+    t.string   "company"
+    t.date     "started_at"
+    t.date     "finished_at"
+    t.string   "job"
+    t.string   "responsibility"
+    t.text     "achievements"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "members", :force => true do |t|
     t.string   "state"
@@ -30,8 +42,14 @@ ActiveRecord::Schema.define(:version => 20120526084846) do
     t.string   "profession"
     t.string   "degree"
     t.string   "gpa"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "web"
+    t.boolean  "camp_time"
+    t.boolean  "camp_life"
+    t.boolean  "camp_fee"
+    t.boolean  "camp_notebook"
+    t.boolean  "camp_training"
   end
 
   create_table "users", :force => true do |t|
