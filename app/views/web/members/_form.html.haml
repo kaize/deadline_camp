@@ -19,13 +19,71 @@
   = f.input :profession
   = f.input :degree
   = f.input :gpa
+
+  %hr
+  %h3 Дополнительное образование
+  = f.simple_fields_for :additional_educations do |p|
+    = render 'additional_education_fields', :f => p
+  .links.control-group
+    .controls
+      = link_to_add_association t('add_additional_education'), f, :additional_educations, :class => 'btn btn-small btn-info'
+
+  %hr
+  %h3 Сертефикаты, Дипломы, Достижения
+  = f.simple_fields_for :achievements do |p|
+    = render 'achievements_fields', :f => p
+  .links.control-group
+    .controls
+      = link_to_add_association t('add_achievement'), f, :achievements, :class => 'btn btn-small btn-info'
+
+  %hr
+  %h3 Иностранные языки
+  = f.simple_fields_for :langs do |p|
+    = render 'lang_fields', :f => p
+  .links.control-group
+    .controls
+      = link_to_add_association t('add_lang'), f, :langs, :class => 'btn btn-small btn-info'
+
+  %hr
+  %h3 Навыки и умения
+  %h4 Языки программирования
+  = f.simple_fields_for :skill_program_langs do |p|
+    = render 'skill_program_lang_fields', :f => p
+  .links.control-group
+    .controls
+      = link_to_add_association t('add_skill_lang'), f, :skill_program_langs, :class => 'btn btn-small btn-info'
+  %h4 Базы Данных
+  = f.simple_fields_for :skill_databases do |p|
+    = render 'skill_database_fields', :f => p
+  .links.control-group
+    .controls
+      = link_to_add_association t('add_skill_database'), f, :skill_databases, :class => 'btn btn-small btn-info'
+  %h4 Операционные системы
+  = f.simple_fields_for :skill_operation_systems do |p|
+    = render 'skill_operation_system_fields', :f => p
+  .links.control-group
+    .controls
+      = link_to_add_association t('add_skill_os'), f, :skill_operation_systems, :class => 'btn btn-small btn-info'
+  %h4 IDE
+  = f.simple_fields_for :skill_ides do |p|
+    = render 'skill_ide_fields', :f => p
+  .links.control-group
+    .controls
+      = link_to_add_association t('add_skill_ide'), f, :skill_ides, :class => 'btn btn-small btn-info'
+  %h4 Other
+  = f.simple_fields_for :skill_others do |p|
+    = render 'skill_other_fields', :f => p
+  .links.control-group
+    .controls
+      = link_to_add_association t('add_skill_other'), f, :skill_others, :class => 'btn btn-small btn-info'
+
   %hr
   %h3 Опыт работы
   = f.simple_fields_for :jobs do |p|
     = render 'job_fields', :f => p
   .links.control-group
     .controls
-      = link_to_add_association t('add_member_job'), f, :jobs, :class => 'btn btn-small btn-info'
+      = link_to_add_association t('add_job'), f, :jobs, :class => 'btn btn-small btn-info'
 
   %hr
   %h3 Участие в Deadline Camp

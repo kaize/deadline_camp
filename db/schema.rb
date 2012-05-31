@@ -11,7 +11,57 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120531081819) do
+ActiveRecord::Schema.define(:version => 20120531141341) do
+
+  create_table "dict_databases", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "dict_ides", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "dict_languages", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "dict_os", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "dict_others", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "dict_program_langs", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "member_achievements", :force => true do |t|
+    t.integer  "member_id"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "member_additional_educations", :force => true do |t|
+    t.integer  "member_id"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "member_jobs", :force => true do |t|
     t.integer  "member_id"
@@ -23,6 +73,26 @@ ActiveRecord::Schema.define(:version => 20120531081819) do
     t.text     "achievements"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "member_langs", :force => true do |t|
+    t.integer  "member_id"
+    t.integer  "language_id"
+    t.string   "level"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "member_skills", :force => true do |t|
+    t.integer  "member_id"
+    t.string   "type"
+    t.integer  "dict_id"
+    t.string   "dict_type"
+    t.string   "level"
+    t.string   "duration"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "members", :force => true do |t|
