@@ -11,7 +11,7 @@
   = f.input :icq
   = f.input :web
   %hr
-  %h3 Образование
+  %h3= t('.education')
   = f.input :institute
   = f.input :start_year
   = f.input :finish_year
@@ -21,72 +21,72 @@
   = f.input :gpa
 
   %hr
-  %h3 Дополнительное образование
+  %h3= t '.additional_educations'
   = f.simple_fields_for :additional_educations do |p|
     = render 'additional_education_fields', :f => p
   .links.control-group
     .controls
-      = link_to_add_association t('add_additional_education'), f, :additional_educations, :class => 'btn btn-small btn-info'
+      = link_to_add_association t('.add'), f, :additional_educations, :class => 'btn btn-small btn-info'
 
   %hr
-  %h3 Сертефикаты, Дипломы, Достижения
+  %h3= t '.achievements'
   = f.simple_fields_for :achievements do |p|
     = render 'achievement_fields', :f => p
   .links.control-group
     .controls
-      = link_to_add_association t('add_achievement'), f, :achievements, :class => 'btn btn-small btn-info'
+      = link_to_add_association t('.add'), f, :achievements, :class => 'btn btn-small btn-info'
 
   %hr
-  %h3 Иностранные языки
+  %h3= t '.langs'
   = f.simple_fields_for :langs do |p|
     = render 'lang_fields', :f => p
   .links.control-group
     .controls
-      = link_to_add_association t('add_lang'), f, :langs, :class => 'btn btn-small btn-info'
+      = link_to_add_association t('.add'), f, :langs, :class => 'btn btn-small btn-info'
 
   %hr
-  %h3 Навыки и умения
-  %h4 Языки программирования
+  %h3= t '.skill'
+  %h4= t '.skills.program_lang'
   = f.simple_fields_for :skill_program_langs do |p|
     = render 'skill_program_lang_fields', :f => p
   .links.control-group
     .controls
-      = link_to_add_association t('add_skill_lang'), f, :skill_program_langs, :class => 'btn btn-small btn-info'
-  %h4 Базы Данных
+      = link_to_add_association t('.add'), f, :skill_program_langs, :class => 'btn btn-small btn-info'
+  %h4= t '.skills.database'
   = f.simple_fields_for :skill_databases do |p|
     = render 'skill_database_fields', :f => p
   .links.control-group
     .controls
-      = link_to_add_association t('add_skill_database'), f, :skill_databases, :class => 'btn btn-small btn-info'
-  %h4 Операционные системы
+      = link_to_add_association t('.add'), f, :skill_databases, :class => 'btn btn-small btn-info'
+  %h4= t '.skills.os'
   = f.simple_fields_for :skill_operation_systems do |p|
     = render 'skill_operation_system_fields', :f => p
   .links.control-group
     .controls
-      = link_to_add_association t('add_skill_os'), f, :skill_operation_systems, :class => 'btn btn-small btn-info'
-  %h4 IDE
+      = link_to_add_association t('.add'), f, :skill_operation_systems, :class => 'btn btn-small btn-info'
+  %h4= t '.skills.ide'
   = f.simple_fields_for :skill_ides do |p|
     = render 'skill_ide_fields', :f => p
   .links.control-group
     .controls
-      = link_to_add_association t('add_skill_ide'), f, :skill_ides, :class => 'btn btn-small btn-info'
-  %h4 Other
+      = link_to_add_association t('.add'), f, :skill_ides, :class => 'btn btn-small btn-info'
+  %h4= t '.skills.other'
   = f.simple_fields_for :skill_others do |p|
     = render 'skill_other_fields', :f => p
   .links.control-group
     .controls
-      = link_to_add_association t('add_skill_other'), f, :skill_others, :class => 'btn btn-small btn-info'
+      = link_to_add_association t('.add'), f, :skill_others, :class => 'btn btn-small btn-info'
 
   %hr
-  %h3 Опыт работы
+  %h3= t '.job'
   = f.simple_fields_for :jobs do |p|
     = render 'job_fields', :f => p
   .links.control-group
     .controls
-      = link_to_add_association t('add_job'), f, :jobs, :class => 'btn btn-small btn-info'
+      = link_to_add_association t('.add'), f, :jobs, :class => 'btn btn-small btn-info'
 
   %hr
-  %h3 Участие в Deadline Camp
+  %h3= t '.camp'
   = f.input :camp_time
   = f.input :camp_life
   = f.input :camp_fee
