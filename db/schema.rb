@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120531141341) do
+ActiveRecord::Schema.define(:version => 20120601142955) do
 
   create_table "dict_databases", :force => true do |t|
     t.string   "name"
@@ -83,6 +83,20 @@ ActiveRecord::Schema.define(:version => 20120531141341) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "member_others", :force => true do |t|
+    t.integer  "member_id"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "member_preferences", :force => true do |t|
+    t.integer  "member_id"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "member_skills", :force => true do |t|
     t.integer  "member_id"
     t.string   "type"
@@ -120,6 +134,8 @@ ActiveRecord::Schema.define(:version => 20120531141341) do
     t.boolean  "camp_fee"
     t.boolean  "camp_notebook"
     t.boolean  "camp_training"
+    t.string   "hobby"
+    t.string   "sport"
   end
 
   create_table "users", :force => true do |t|

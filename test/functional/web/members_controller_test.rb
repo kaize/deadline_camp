@@ -27,6 +27,8 @@ class Web::MembersControllerTest < ActionController::TestCase
     attrs[:skill_databases_attributes] = form_attributes_for(:member_skill_database)
     attrs[:skill_operation_systems_attributes] = form_attributes_for(:member_skill_os)
     attrs[:skill_others_attributes] = form_attributes_for(:member_skill_other)
+    attrs[:others_attributes] = form_attributes_for(:member_other)
+    attrs[:preferences_attributes] = form_attributes_for(:member_preference)
 
     post :create, :member => attrs
     assert_response :redirect

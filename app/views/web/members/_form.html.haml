@@ -86,6 +86,27 @@
       = link_to_add_association t('.add'), f, :jobs, :class => 'btn btn-small btn-info'
 
   %hr
+  %h3= t '.hobby'
+  = f.input :hobby
+  = f.input :sport
+
+  %hr
+  %h3= t '.other'
+  = f.simple_fields_for :others do |p|
+    = render 'other_fields', :f => p
+  .links.control-group
+    .controls
+      = link_to_add_association t('.add'), f, :others, :class => 'btn btn-small btn-info'
+
+  %hr
+  %h3= t '.preference'
+  = f.simple_fields_for :preferences do |p|
+    = render 'preference_fields', :f => p
+  .links.control-group
+    .controls
+      = link_to_add_association t('.add'), f, :preferences, :class => 'btn btn-small btn-info'
+
+  %hr
   %h3= t '.camp'
   = f.input :camp_time
   = f.input :camp_life
