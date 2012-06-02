@@ -37,10 +37,12 @@ Dict::Database.create([
 ])
 Dict::Os.create([
   {:name => "Windows"},
-  {:name => "Unix/Linix/FreeBSD/etc"},
+  {:name => "Unix/Linux/FreeBSD/etc"},
   {:name => "iOS/MacOS"}
 ])
 Dict::Ide.create([
+  {:name => "PhpStorm"},
+  {:name => "RubyMine"},
   {:name => "Visual Studio"},
   {:name => "Eclipse"},
   {:name => "C++ Builder"},
@@ -49,6 +51,6 @@ Dict::Ide.create([
   {:name => "X Code"}
 ])
 Dict::Other.create([
-  {:name => "Системы отслеживания ошибок "},
+  {:name => "Системы отслеживания ошибок"},
   {:name => "Системы управления версиями"}
 ])

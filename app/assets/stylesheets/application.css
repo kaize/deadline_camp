@@ -10,5 +10,6 @@
  *
  *= require bootstrap_and_overrides
  *= require bootswatch
+ *= require jquery.ui.all
  *= require_self
 */
