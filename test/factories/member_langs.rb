@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :member_lang, :class => 'Member::Lang' do
     member
-    association :language, factory: :dict_language
+    association :language, factory: :language
     level { generate :string }
   end
 end

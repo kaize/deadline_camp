@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Dict::LanguageTest < ActiveSupport::TestCase
+class DatabaseTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

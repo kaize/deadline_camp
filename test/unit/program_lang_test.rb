@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Dict::OsTest < ActiveSupport::TestCase
+class ProgramLangTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :member_skill_database, :class => 'Member::Skill::Database' do
     member
-    association :dict, factory: :dict_database
+    association :dict, factory: :database
     level { generate :string }
     duration { generate :string }
     description { generate :string }

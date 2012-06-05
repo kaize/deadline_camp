@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :dict_language, :class => 'Dict::Language' do
+  factory :ide, :class => 'Ide' do
     name
   end
 end

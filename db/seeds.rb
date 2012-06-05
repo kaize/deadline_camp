@@ -12,12 +12,12 @@ u.email = "admin@deadline-camp.ru"
 u.password = "123456"
 u.save
 
-Dict::Language.create([
+Language.create([
   {:name => "Английский"},
   {:name => "Французский"},
   {:name => "Немецкий"}
 ])
-Dict::ProgramLang.create([
+ProgramLang.create([
   {:name => "Ruby"},
   {:name => "C"},
   {:name => "C++"},
@@ -29,18 +29,18 @@ Dict::ProgramLang.create([
   {:name => "SQL"},
   {:name => "Objectiv-C"}
 ])
-Dict::Database.create([
+Database.create([
   {:name => "PostgreSQL"},
   {:name => "MySQL"},
   {:name => "MS SQL"},
   {:name => "Interbase"}
 ])
-Dict::Os.create([
+Os.create([
   {:name => "Windows"},
   {:name => "Unix/Linux/FreeBSD/etc"},
   {:name => "iOS/MacOS"}
 ])
-Dict::Ide.create([
+Ide.create([
   {:name => "PhpStorm"},
   {:name => "RubyMine"},
   {:name => "Visual Studio"},
@@ -50,7 +50,7 @@ Dict::Ide.create([
   {:name => "Qt Creator"},
   {:name => "X Code"}
 ])
-Dict::Other.create([
+Other.create([
   {:name => "Системы отслеживания ошибок"},
   {:name => "Системы управления версиями"}
 ])
