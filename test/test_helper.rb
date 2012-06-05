@@ -3,6 +3,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'simplecov'
 SimpleCov.start('rails') if ENV["COVERAGE"]
+Dir[File.expand_path('../support/**/*.rb', __FILE__)].each {|f| require f}
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
@@ -15,9 +16,7 @@ class ActiveSupport::TestCase
   include AuthHelper
   include FactoryGirl::Syntax::Methods
 
-  def form_attributes_for(factory)
-    { Time.current.to_i => attributes_for(factory) }
-  end
 
   FactoryGirl.reload
+  include FactoryHelper
 end
