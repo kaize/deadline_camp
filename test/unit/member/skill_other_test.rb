@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Member::Skill::IdeTest < ActiveSupport::TestCase
+class Member::SkillOtherTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

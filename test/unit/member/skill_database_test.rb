@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Member::Skill::ProgramLangTest < ActiveSupport::TestCase
+class Member::SkillDatabaseTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

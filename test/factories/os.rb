@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :os, :class => 'Os' do
+  factory :os do
     name
   end
 end

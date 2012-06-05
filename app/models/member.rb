@@ -8,11 +8,11 @@ class Member < ActiveRecord::Base
   has_many :additional_educations
   has_many :achievements
   has_many :langs
-  has_many :skill_databases, :class_name => "Skill::Database"
-  has_many :skill_ides, :class_name => "Skill::Ide"
-  has_many :skill_operation_systems, :class_name => "Skill::Os"
-  has_many :skill_others, :class_name => "Skill::Other"
-  has_many :skill_program_langs, :class_name => "Skill::ProgramLang"
+  has_many :skill_databases, :class_name => "SkillDatabase"
+  has_many :skill_ides, :class_name => "SkillIde"
+  has_many :skill_operation_systems, :class_name => "SkillOs"
+  has_many :skill_others, :class_name => "SkillOther"
+  has_many :skill_program_langs, :class_name => "SkillProgramLang"
   has_many :others
   has_many :preferences
 
