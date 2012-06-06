@@ -5,3 +5,10 @@ ru:
         members:
           create:
             success: 'Анкета отправлена на модерацию'
+        admin:
+          sessions:
+            create:
+              authenticate_error: 'Неправильный email или пароль.'
+          members:
+            update:
+              success: 'Анкета отредактированна.'

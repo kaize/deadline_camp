@@ -4,3 +4,6 @@ ru:
       member:
         create: 'Создать'
         update: 'Сохранить'
+      user:
+        create: 'Создать'
+        update: 'Сохранить'
