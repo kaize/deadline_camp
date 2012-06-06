@@ -1,4 +1,5 @@
 ru:
+  base_name: 'Смена Deadline'
   sure: 'Вы уверены?'
   layouts:
     admin:

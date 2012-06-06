@@ -5,7 +5,7 @@ class Web::ApplicationController < ApplicationController
   helper_method :title
 
   before_filter do
-    title 'DeadlineCamp'
+    title I18n.t('base_name')
   end
 
   private
