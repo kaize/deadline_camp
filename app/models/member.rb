@@ -28,6 +28,7 @@ class Member < ActiveRecord::Base
   accepts_nested_attributes_for :others, :reject_if => :all_blank, :allow_destroy => true
   accepts_nested_attributes_for :preferences, :reject_if => :all_blank, :allow_destroy => true
 
+  validates :phone, :presence => true, :phone => true
   validates :email, :presence => true, :uniqueness => true, :email => true
   validates :first_name, :presence => true
   validates :last_name, :presence => true

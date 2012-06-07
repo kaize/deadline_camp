@@ -6,7 +6,7 @@
   = f.input :last_name
   = f.input :patronymic
   = f.input :email
-  = f.input :phone
+  = f.input :phone, :input_html => {:rel => 'popover', :title => t('.phone.title'), :"data-content" => t('.phone.content')}
   = f.input :skype
   = f.input :jabber
   = f.input :icq
