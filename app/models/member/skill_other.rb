@@ -1,4 +1,5 @@
-class Member::SkillOther < Member::Skill
-  # attr_accessible :title, :body
-  belongs_to :dict, :polymorphic => true, :class_name => "Other"
+class Member::SkillOther < ActiveRecord::Base
+  attr_accessible :name, :duration, :level, :member_id, :type, :description
+
+  belongs_to :member
 end
