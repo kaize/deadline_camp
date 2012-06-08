@@ -9,7 +9,7 @@ gem 'pg'
 
 gem 'jquery-rails'
 gem 'haml-rails'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '2.0.8'
 gem 'configus'
 gem 'state_machine'
 gem 'russian'
