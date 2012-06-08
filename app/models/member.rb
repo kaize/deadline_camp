@@ -1,7 +1,8 @@
 class Member < ActiveRecord::Base
+  STUDY_MONTH = %w(1 2 3 4 5 6 7 8 9 10 11 12)
   attr_accessible :state, :email, :first_name, :icq, :jabber, :last_name, :patronymic, :phone, :skype,
     :state, :email, :first_name, :last_name, :patronymic, :phone, :skype, :jabber, :icq, :institute,
-    :start_year, :finish_year, :department, :profession, :degree, :gpa, :web, :camp_time, :camp_life,
+    :start_year, :start_month, :finish_year, :finish_month, :department, :profession, :degree, :gpa, :web, :camp_time, :camp_life,
     :camp_fee, :camp_notebook, :camp_training, :hobby, :sport
 
   has_many :jobs

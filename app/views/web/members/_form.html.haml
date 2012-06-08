@@ -14,8 +14,16 @@
   %hr
   %h3= t('.education')
   = f.input :institute
-  = f.input :start_year
-  = f.input :finish_year
+  .control-group.string.optional
+    %label.string.optional.control-label{:for => "member_institute"}= t('.study_start')
+    .controls
+      = f.input_field :start_month, :collection => Member::STUDY_MONTH
+      = f.input_field :start_year
+  .control-group.string.optional
+    %label.string.optional.control-label{:for => "member_institute"}= t('.study_finish')
+    .controls
+      = f.input_field :finish_month, :collection => Member::STUDY_MONTH
+      = f.input_field :finish_year
   = f.input :department
   = f.input :profession
   = f.input :degree

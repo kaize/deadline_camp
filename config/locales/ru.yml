@@ -37,6 +37,8 @@ ru:
         phone:
          title: 'Введите действующий телефон'
          content: 'Формат телефона +7-902-123-45-67'
+        study_start: 'Начало обучения'
+        study_finish: 'Окончание обучения'
     admin:
       sessions:
         new:

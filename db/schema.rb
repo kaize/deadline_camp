@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120607122426) do
+ActiveRecord::Schema.define(:version => 20120608080449) do
 
   create_table "databases", :force => true do |t|
     t.string   "name"
@@ -129,6 +129,8 @@ ActiveRecord::Schema.define(:version => 20120607122426) do
     t.boolean  "camp_training"
     t.string   "hobby"
     t.string   "sport"
+    t.string   "start_month"
+    t.string   "finish_month"
   end
 
   create_table "os", :force => true do |t|
