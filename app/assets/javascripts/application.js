@@ -12,4 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require twitter/bootstrap
+//= require rails.validations
+//= require bootstrap
+//= require cocoon
+//= require jquery.ui.all
+//= require_self
+
+$(function() {
+  $('input.date_picker').live('focus', function(){
+    $(this).datepicker();
+  });
+});

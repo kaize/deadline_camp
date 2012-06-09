@@ -1,0 +1,118 @@
+= simple_form_for @member, :url => admin_member_path(@member), :html => {:class => "form-horizontal"} do |f|
+  = f.error_notification
+
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :patronymic
+  = f.input :email
+  = f.input :phone
+  = f.input :skype
+  = f.input :jabber
+  = f.input :icq
+  = f.input :web
+  %hr
+  %h3= t('.education')
+  = f.input :institute
+  = f.input :start_year
+  = f.input :finish_year
+  = f.input :department
+  = f.input :profession
+  = f.input :degree
+  = f.input :gpa
+
+  %hr
+  %h3= t '.additional_educations'
+  = f.simple_fields_for :additional_educations do |p|
+    = render 'additional_education_fields', :f => p
+  -#.links.control-group
+    .controls
+      = link_to_add_association t('.add'), f, :additional_educations, :class => 'btn btn-small btn-info'
+
+  %hr
+  %h3= t '.achievements'
+  = f.simple_fields_for :achievements do |p|
+    = render 'achievement_fields', :f => p
+  -#.links.control-group
+    .controls
+      = link_to_add_association t('.add'), f, :achievements, :class => 'btn btn-small btn-info'
+
+  %hr
+  %h3= t '.langs'
+  = f.simple_fields_for :langs do |p|
+    = render 'lang_fields', :f => p
+  -#.links.control-group
+    .controls
+      = link_to_add_association t('.add'), f, :langs, :class => 'btn btn-small btn-info'
+
+  %hr
+  %h3= t '.skill'
+  %h4= t '.skills.program_lang'
+  = f.simple_fields_for :skill_program_langs do |p|
+    = render 'skill_program_lang_fields', :f => p
+  -#.links.control-group
+    .controls
+      = link_to_add_association t('.add'), f, :skill_program_langs, :class => 'btn btn-small btn-info'
+  %h4= t '.skills.database'
+  = f.simple_fields_for :skill_databases do |p|
+    = render 'skill_database_fields', :f => p
+  -#.links.control-group
+    .controls
+      = link_to_add_association t('.add'), f, :skill_databases, :class => 'btn btn-small btn-info'
+  %h4= t '.skills.os'
+  = f.simple_fields_for :skill_operation_systems do |p|
+    = render 'skill_operation_system_fields', :f => p
+  -#.links.control-group
+    .controls
+      = link_to_add_association t('.add'), f, :skill_operation_systems, :class => 'btn btn-small btn-info'
+  %h4= t '.skills.ide'
+  = f.simple_fields_for :skill_ides do |p|
+    = render 'skill_ide_fields', :f => p
+  -#.links.control-group
+    .controls
+      = link_to_add_association t('.add'), f, :skill_ides, :class => 'btn btn-small btn-info'
+  %h4= t '.skills.other'
+  = f.simple_fields_for :skill_others do |p|
+    = render 'skill_other_fields', :f => p
+  -#.links.control-group
+    .controls
+      = link_to_add_association t('.add'), f, :skill_others, :class => 'btn btn-small btn-info'
+
+  %hr
+  %h3= t '.job'
+  = f.simple_fields_for :jobs do |p|
+    = render 'job_fields', :f => p
+  -#.links.control-group
+    .controls
+      = link_to_add_association t('.add'), f, :jobs, :class => 'btn btn-small btn-info'
+
+  %hr
+  %h3= t '.hobby'
+  = f.input :hobby
+  = f.input :sport
+
+  %hr
+  %h3= t '.other'
+  = f.simple_fields_for :others do |p|
+    = render 'other_fields', :f => p
+  -#.links.control-group
+    .controls
+      = link_to_add_association t('.add'), f, :others, :class => 'btn btn-small btn-info'
+
+  %hr
+  %h3= t '.preference'
+  = f.simple_fields_for :preferences do |p|
+    = render 'preference_fields', :f => p
+  -#.links.control-group
+    .controls
+      = link_to_add_association t('.add'), f, :preferences, :class => 'btn btn-small btn-info'
+
+  %hr
+  %h3= t '.camp'
+  = f.input :camp_time
+  = f.input :camp_life
+  -#= f.input :camp_fee
+  = f.input :camp_notebook
+  = f.input :camp_training
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'

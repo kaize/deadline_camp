@@ -1,0 +1,28 @@
+%table.table.table-striped
+  %thead
+    %tr
+      %th= sort_link @search, :id
+      %th= sort_link @search, :email
+      %th= sort_link @search, :state
+      %th= sort_link @search, :first_name
+      %th= sort_link @search, :last_name
+      %th= sort_link @search, :patronymic
+      %th= sort_link @search, :created_at
+      %th
+  %tbody
+    - @members.each do |m|
+      %tr
+        %td= m.id
+        %td= m.email
+        %td= m.state
+        %td= m.first_name
+        %td= m.last_name
+        %td= m.patronymic
+        %td= l m.created_at, :format => :short
+        %td
+          %span
+            %a{:href => edit_admin_member_path(m), :title => t(:edit)}
+              %i.icon-edit
+          %span
+            %a{:href => admin_member_path(m), :data => {:method => :delete, :confirm => t(:sure)}, :title => t(:delete)}
+              %i.icon-remove

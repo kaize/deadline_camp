@@ -1,0 +1,9 @@
+ru:
+  helpers:
+    submit:
+      member:
+        create: 'Создать'
+        update: 'Сохранить'
+      user:
+        create: 'Создать'
+        update: 'Сохранить'

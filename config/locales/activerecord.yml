@@ -1,0 +1,64 @@
+ru:
+  activerecord:
+    state_machines:
+      member:
+        state:
+          events:
+            accept: 'Одобрить'
+          states:
+            new: 'Новый'
+            accepted: 'Одобрен'
+    errors:
+      models:
+        member:
+          attributes:
+            email:
+              email: 'Введите корректный email'
+            phone:
+              phone: 'Введите корректный номер телефона'
+    models:
+      member: 'Участник'
+    attributes:
+      member:
+        id: 'id'
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        patronymic: 'Отчество'
+        state: 'Текущее состояние'
+        state_event: 'Действие'
+        created_at: 'Дата создания'
+        updated_at: 'Дата обновления'
+        phone: 'Телефон'
+        institute: 'ВУЗ'
+        start_year: 'Начало обучения'
+        finish_year: 'Окончание обучения'
+        department: 'Факультет'
+        profession: 'Специальность'
+        degree: 'Степень'
+        gpa: 'Средний балл диплома'
+        hobby: 'Хобби'
+        sport: 'Спорт'
+      'member/skill':
+        level: 'Уровень (максимальный - 10)'
+        duration: 'Сколько лет/месяцев используете'
+        description: 'Комментарии'
+      'member/skill_other':
+        level: 'Уровень (максимальный - 10)'
+        duration: 'Сколько лет/месяцев используете'
+        description: 'Где и как использовали: проекты, достижения, технологии'
+      'member/lang':
+        language: 'Язык'
+        level: 'Уровень'
+      'member/job':
+        company: 'Название компании'
+        started_at: 'Дата начало работы'
+        finished_at: 'Дата окончания работы'
+        job: 'Должность'
+        responsibility: 'Обязанности'
+        achievements: 'Достижения'
+      'member/additional_education':
+        description: 'Название курсов, год прохождения'
+      'member/achievement':
+        description: 'Название, год получения'
+      'member/other':
+        description: 'Название, год получения'

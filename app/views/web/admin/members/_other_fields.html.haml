@@ -1,0 +1,5 @@
+.control-group.nested-fields
+  -#.close
+    = link_to_remove_association 'x', f, :class => 'btn btn-danger disabled'
+  .controls
+    = f.input :description
