@@ -24,4 +24,11 @@ class Web::Admin::MembersControllerTest < ActionController::TestCase
     assert_response :redirect
   end
 
+  test "should delivery mail with approved member" do
+    @params[:member] = {state_event: 'approve'}
+    put :update, @params
+    assert_response :redirect
+    assert !ActionMailer::Base.deliveries.empty?
+  end
+
 end

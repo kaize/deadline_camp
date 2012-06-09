@@ -35,6 +35,7 @@ class Web::MembersControllerTest < ActionController::TestCase
 
     member = Member.find_by_email attrs[:email]
     assert_not_nil member
+    assert !ActionMailer::Base.deliveries.empty?
   end
 
 end

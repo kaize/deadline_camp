@@ -7,6 +7,11 @@ ru:
       - читаю техническую литературу
       - свободно владею
   sure: 'Вы уверены?'
+  member_mailer:
+    welcome:
+      subject: "Добро подаловать на Смену Dealine"
+    approved:
+      subject: "Смена Deadline: ваша заявка подтверждена"
   layouts:
     admin:
       application:

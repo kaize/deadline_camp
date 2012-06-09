@@ -6,7 +6,7 @@ FactoryGirl.define do
     first_name { generate :name }
     last_name { generate :name }
     patronymic { generate :name }
-    phone { generate :string }
+    phone
     skype { generate :string }
     jabber { generate :string }
     icq { generate :integer }

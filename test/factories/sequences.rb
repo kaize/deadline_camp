@@ -15,6 +15,10 @@ FactoryGirl.define do
     "string-#{n}"
   end
 
+  sequence :phone do |n|
+    "+7 (000) 000 00 #{n}"
+  end
+
   sequence :email do |n|
     "email_#{n}@mail.com"
   end
