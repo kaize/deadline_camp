@@ -32,6 +32,19 @@
   = f.input :gpa
 
   %hr
+  %h3= t '.hobby'
+  = f.input :hobby
+  = f.input :sport
+
+  %hr
+  %h3= t '.camp'
+  = f.input :camp_time, :label => false, :inline_label => t('.camp_time')
+  = f.input :camp_life, :label => false, :inline_label => t('.camp_life')
+  -#= f.input :camp_fee, :label => false, :inline_label => t('.camp_fee')
+  = f.input :camp_notebook, :label => false, :inline_label => t('.camp_notebook')
+  = f.input :camp_training, :label => false, :inline_label => t('.camp_training')
+
+  %hr
   %h3= t '.additional_educations'
   = f.simple_fields_for :additional_educations do |p|
     = render 'additional_education_fields', :f => p
@@ -97,11 +110,6 @@
       = link_to_add_association t('.add'), f, :jobs, :class => 'btn btn-small btn-info'
 
   %hr
-  %h3= t '.hobby'
-  = f.input :hobby
-  = f.input :sport
-
-  %hr
   %h3= t '.other'
   = f.simple_fields_for :others do |p|
     = render 'other_fields', :f => p
@@ -116,14 +124,6 @@
   .links.control-group
     .ml30
       = link_to_add_association t('.add'), f, :preferences, :class => 'btn btn-small btn-info'
-
-  %hr
-  %h3= t '.camp'
-  = f.input :camp_time, :label => false, :inline_label => t('.camp_time')
-  = f.input :camp_life, :label => false, :inline_label => t('.camp_life')
-  -#= f.input :camp_fee, :label => false, :inline_label => t('.camp_fee')
-  = f.input :camp_notebook, :label => false, :inline_label => t('.camp_notebook')
-  = f.input :camp_training, :label => false, :inline_label => t('.camp_training')
 
   .form-actions
     = f.button :submit, :class => 'btn btn-primary'

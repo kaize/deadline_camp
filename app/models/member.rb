@@ -37,9 +37,14 @@ class Member < ActiveRecord::Base
   state_machine :state, :initial => :new do
     state :new
     state :accepted
+    after_transition :new => :accepted, :do => :send_approved_mail
 
     event :accept do
       transition :new => :accepted
     end
+  end
+
+  def send_approved_mail
+    MemberMailer.approved(self).deliver
   end
 end
