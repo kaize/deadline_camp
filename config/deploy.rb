@@ -21,7 +21,7 @@ namespace :deploy do
   end
 end
 
-before 'deploy:finalize_update', 'deploy:symlink_db'
+after 'deploy:update_code', 'deploy:symlink_db'
 after "deploy:restart", "unicorn:restart"
 after "deploy:update", "deploy:cleanup"
 
