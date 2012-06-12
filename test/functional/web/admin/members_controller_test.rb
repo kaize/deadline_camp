@@ -6,6 +6,18 @@ class Web::Admin::MembersControllerTest < ActionController::TestCase
     sign_in @user
 
     @member = create :member
+
+    create 'member/additional_education', :member => @member
+    create 'member/achievement', :member => @member
+    create 'member/lang', :member => @member
+    create 'member/skill_program_lang', :member => @member
+    create 'member/skill_ide', :member => @member
+    create 'member/job', :member => @member
+    create 'member/skill_database', :member => @member
+    create 'member/skill_os', :member => @member
+    create 'member/skill_other', :member => @member
+    create 'member/other', :member => @member
+    create 'member/preference', :member => @member
     @params = {:id => @member.id}
   end
 
