@@ -3,7 +3,7 @@ require 'test_helper'
 class Web::Admin::MembersControllerTest < ActionController::TestCase
   setup do
     @user = create :user
-    sign_in @user
+    user_sign_in @user
 
     @member = create :member
 

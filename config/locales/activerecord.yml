@@ -38,6 +38,8 @@ ru:
         gpa: 'Средний балл диплома'
         hobby: 'Хобби'
         sport: 'Спорт'
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
       'member/skill':
         level: 'Уровень (максимальный - 10)'
         duration: 'Сколько лет/месяцев используете'

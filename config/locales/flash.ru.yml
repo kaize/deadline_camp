@@ -2,6 +2,9 @@ ru:
   flash:
     controllers:
       web:
+        sessions:
+          create:
+            authenticate_error: 'Неправильный email или пароль.'
         members:
           create:
             success: 'Анкета отправлена на модерацию'

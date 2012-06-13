@@ -4,8 +4,27 @@
   %h3= t('.contact_info')
   = f.input :first_name
   = f.input :last_name
-  = f.input :patronymic
+  = f.input :phone, :input_html => {:rel => 'popover', :title => t('.phone.title'), :"data-content" => t('.phone.content')}
   = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
+
+  %hr
+  %h3= t '.camp'
+  = f.input :camp_time, :label => false, :inline_label => t('.camp_time')
+  = f.input :camp_life, :label => false, :inline_label => t('.camp_life')
+  -#= f.input :camp_fee, :label => false, :inline_label => t('.camp_fee')
+  = f.input :camp_notebook, :label => false, :inline_label => t('.camp_notebook')
+  = f.input :camp_training, :label => false, :inline_label => t('.camp_training')
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'
+    = link_to t('.already_have_account'), new_session_path
+-#
+  %h3= t('.contact_info')
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :patronymic
   = f.input :phone, :input_html => {:rel => 'popover', :title => t('.phone.title'), :"data-content" => t('.phone.content')}
   = f.input :skype
   = f.input :jabber
@@ -124,6 +143,3 @@
   .links.control-group
     .ml30
       = link_to_add_association t('.add'), f, :preferences, :class => 'btn btn-small btn-info'
-
-  .form-actions
-    = f.button :submit, :class => 'btn btn-primary'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120612161051) do
+ActiveRecord::Schema.define(:version => 20120613142419) do
 
   create_table "databases", :force => true do |t|
     t.string   "name"
@@ -119,8 +119,8 @@ ActiveRecord::Schema.define(:version => 20120612161051) do
     t.string   "profession"
     t.string   "degree"
     t.string   "gpa"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "web"
     t.boolean  "camp_time"
     t.boolean  "camp_life"
@@ -131,6 +131,7 @@ ActiveRecord::Schema.define(:version => 20120612161051) do
     t.text     "sport"
     t.string   "start_month"
     t.string   "finish_month"
+    t.string   "password_digest"
   end
 
   create_table "os", :force => true do |t|

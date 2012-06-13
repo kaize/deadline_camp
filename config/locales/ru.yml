@@ -21,8 +21,12 @@ ru:
     application:
       new_member: 'Я пойду'
   web:
+    sessions:
+      new:
+        login: 'Войти'
     members:
       form:
+        already_have_account: "Я уже зарегистрирован"
         contact_info: 'Контактная информация'
         education: 'Образование'
         additional_educations: 'Дополнительное образование (курсы и т.д.)'

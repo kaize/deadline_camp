@@ -3,8 +3,9 @@ class Member < ActiveRecord::Base
   attr_accessible :state, :email, :first_name, :icq, :jabber, :last_name, :patronymic, :phone, :skype,
     :state, :email, :first_name, :last_name, :patronymic, :phone, :skype, :jabber, :icq, :institute,
     :start_year, :start_month, :finish_year, :finish_month, :department, :profession, :degree, :gpa, :web,
-    :camp_time, :camp_life, :camp_fee, :camp_notebook, :camp_training, :hobby, :sport, :state_event
+    :camp_time, :camp_life, :camp_fee, :camp_notebook, :camp_training, :hobby, :sport, :state_event, :password
 
+  has_secure_password
   has_many :jobs
   has_many :additional_educations
   has_many :achievements
@@ -29,6 +30,7 @@ class Member < ActiveRecord::Base
   accepts_nested_attributes_for :others, :reject_if => :all_blank, :allow_destroy => true
   accepts_nested_attributes_for :preferences, :reject_if => :all_blank, :allow_destroy => true
 
+  validates :password, :presence => { :on => :create }
   validates :phone, :presence => true, :phone => true
   validates :email, :presence => true, :uniqueness => true, :email => true
   validates :first_name, :presence => true
