@@ -37,10 +37,12 @@ class Web::Admin::MembersControllerTest < ActionController::TestCase
   end
 
   test "should delivery mail with approved member" do
-    @params[:member] = {state_event: 'approve'}
+    @params[:member] = {state_event: 'accept'}
     put :update, @params
     assert_response :redirect
     assert !ActionMailer::Base.deliveries.empty?
+    email = ActionMailer::Base.deliveries.last
+    assert_equal I18n.t('member_mailer.approved.subject'), email.subject
   end
 
 end

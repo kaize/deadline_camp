@@ -2,8 +2,8 @@ class Member < ActiveRecord::Base
   STUDY_MONTH = I18n.t('date.month_names').compact
   attr_accessible :state, :email, :first_name, :icq, :jabber, :last_name, :patronymic, :phone, :skype,
     :state, :email, :first_name, :last_name, :patronymic, :phone, :skype, :jabber, :icq, :institute,
-    :start_year, :start_month, :finish_year, :finish_month, :department, :profession, :degree, :gpa, :web, :camp_time, :camp_life,
-    :camp_fee, :camp_notebook, :camp_training, :hobby, :sport
+    :start_year, :start_month, :finish_year, :finish_month, :department, :profession, :degree, :gpa, :web,
+    :camp_time, :camp_life, :camp_fee, :camp_notebook, :camp_training, :hobby, :sport, :state_event
 
   has_many :jobs
   has_many :additional_educations

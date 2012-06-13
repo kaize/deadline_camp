@@ -1,4 +1,4 @@
-= simple_form_for @member, :as => :member, :validate => true, :url => members_path, :html => {:class => "form-horizontal"} do |f|
+= simple_form_for @member, :as => :member, :validate => true, :url => admin_member_path(@member), :html => {:class => "form-horizontal"} do |f|
   = f.error_notification
 
   = f.input :state_event, :as => :state_event
