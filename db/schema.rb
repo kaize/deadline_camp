@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120608080449) do
+ActiveRecord::Schema.define(:version => 20120612161051) do
 
   create_table "databases", :force => true do |t|
     t.string   "name"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(:version => 20120608080449) do
     t.date     "started_at"
     t.date     "finished_at"
     t.string   "job"
-    t.string   "responsibility"
+    t.text     "responsibility"
     t.text     "achievements"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(:version => 20120608080449) do
 
   create_table "member_others", :force => true do |t|
     t.integer  "member_id"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(:version => 20120608080449) do
     t.string   "type"
     t.string   "level"
     t.string   "duration"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(:version => 20120608080449) do
     t.string   "dict_type"
     t.string   "level"
     t.string   "duration"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -127,8 +127,8 @@ ActiveRecord::Schema.define(:version => 20120608080449) do
     t.boolean  "camp_fee"
     t.boolean  "camp_notebook"
     t.boolean  "camp_training"
-    t.string   "hobby"
-    t.string   "sport"
+    t.text     "hobby"
+    t.text     "sport"
     t.string   "start_month"
     t.string   "finish_month"
   end

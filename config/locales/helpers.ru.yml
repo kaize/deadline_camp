@@ -2,7 +2,7 @@ ru:
   helpers:
     submit:
       member:
-        create: 'Создать'
+        create: 'Отправить заявку'
         update: 'Сохранить'
       user:
         create: 'Создать'
