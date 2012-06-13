@@ -10,7 +10,7 @@ class Web::Admin::SessionsController < Web::Admin::BaseApplicationController
       redirect_to admin_root_path
     else
       @user = User.new(params[:user])
-      flash[:error] = flash_translate(:authenticate_error)
+      flash.now[:error] = flash_translate(:authenticate_error)
       render :action => :new
     end
   end

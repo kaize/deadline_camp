@@ -12,7 +12,7 @@ class Web::Admin::MembersController < Web::Admin::ApplicationController
     @member = MemberType.find(params[:id])
 
     if @member.update_attributes(params[:member])
-      flash[:success] = flash_translate(:success)
+      flash.now[:success] = flash_translate(:success)
       redirect_to :action => :edit
     else
       render :action => :edit
