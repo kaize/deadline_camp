@@ -1,6 +1,7 @@
 = simple_form_for @member, :as => :member, :validate => true, :url => members_path, :html => {:class => "form-horizontal"} do |f|
   = f.error_notification
 
+  = f.input :state_event, :as => :state_event
   %h3= t('.contact_info')
   = f.input :first_name
   = f.input :last_name
