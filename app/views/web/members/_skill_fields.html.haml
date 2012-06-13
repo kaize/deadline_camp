@@ -4,4 +4,4 @@
   = f.association :dict, :label => false
   = f.input :level, :collection => Member::Skill::LEVELS
   = f.input :duration
-  = f.input :description
+  = f.input :description, :as => :text_desc
