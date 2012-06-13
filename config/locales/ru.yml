@@ -11,7 +11,7 @@ ru:
     phone: 'Телефон для справок: 97-18-47'
   member_mailer:
     welcome:
-      subject: "Добро подаловать на Смену Dealine"
+      subject: "Добро пожаловать на Смену Dealine"
     approved:
       subject: "Смена Deadline: ваша заявка подтверждена"
   layouts:
