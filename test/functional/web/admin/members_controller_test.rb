@@ -7,17 +7,19 @@ class Web::Admin::MembersControllerTest < ActionController::TestCase
 
     @member = create :member
 
-    create 'member/additional_education', :member => @member
-    create 'member/achievement', :member => @member
-    create 'member/lang', :member => @member
-    create 'member/skill_program_lang', :member => @member
-    create 'member/skill_ide', :member => @member
-    create 'member/job', :member => @member
-    create 'member/skill_database', :member => @member
-    create 'member/skill_os', :member => @member
-    create 'member/skill_other', :member => @member
-    create 'member/other', :member => @member
-    create 'member/preference', :member => @member
+    with_options :member => @member do |member|
+      member.create 'member/additional_education'
+      member.create 'member/achievement'
+      member.create 'member/lang'
+      member.create 'member/skill_program_lang'
+      member.create 'member/skill_ide'
+      member.create 'member/job'
+      member.create 'member/skill_database'
+      member.create 'member/skill_os'
+      member.create 'member/skill_other'
+      member.create 'member/other'
+      member.create 'member/preference'
+    end
     @params = {:id => @member.id}
   end
 
