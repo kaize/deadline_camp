@@ -13,6 +13,7 @@ class Web::MembersController < Web::ApplicationController
     if @member.save
       MemberMailer.welcome(@member).deliver
 
+      member_sign_in(@member)
       flash[:success] = flash_translate(:success)
       redirect_to :root
     else
