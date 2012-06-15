@@ -41,11 +41,11 @@ ru:
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
       'member/skill':
-        level: 'Уровень (максимальный - 10)'
+        level: 'Уровень'
         duration: 'Сколько лет/месяцев используете'
         description: 'Комментарии'
       'member/skill_other':
-        level: 'Уровень (максимальный - 10)'
+        level: 'Уровень'
         duration: 'Сколько лет/месяцев используете'
         description: 'Где и как использовали: проекты, достижения, технологии'
       'member/lang':
