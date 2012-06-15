@@ -17,6 +17,7 @@
 //= require bootstrap
 //= require cocoon
 //= require jquery.ui.all
+//= require ckeditor/init
 //= require_self
 
 $(function() {

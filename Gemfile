@@ -13,6 +13,8 @@ gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'configus'
 gem 'state_machine'
+gem "carrierwave"
+gem "mini_magick"
 gem 'russian'
 gem 'kaminari'
 gem 'cocoon'

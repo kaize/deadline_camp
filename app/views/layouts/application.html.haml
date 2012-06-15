@@ -25,8 +25,11 @@
           %a.brand(href="/")= t 'base_name'
           .container.nav-collapse
             %ul.nav
-              - unless member_signed_in?
-                %li= link_to t('.new_member'), new_member_path
+              %li= link_to_page contacts_page
+              %li= link_to_page program_page
+              %li= link_to_page provider_page
+              %li= link_to_page partners_page
+              %li= link_to_page place_page
             %ul.nav.pull-right
               - if member_signed_in?
                 %li
@@ -35,6 +38,8 @@
                     = "(#{current_member.email})"
                 %li= link_to t('.logout'), session_path, :method => :delete
               - else
+                %li= link_to t('.new_member'), new_member_path
+                %li.divider-vertical
                 %li= link_to t('.auth'), new_session_path
 
     .container

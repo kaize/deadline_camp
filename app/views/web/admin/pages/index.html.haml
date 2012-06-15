@@ -1,0 +1,23 @@
+%table.table.table-striped
+  %thead
+    %tr
+      %th ID
+      %th name
+      %th uri
+      %th created_at
+      %th
+  %tbody
+    - @pages.each do |p|
+      %tr
+        %td= p.id
+        %td= p.name
+        %td= p.uri
+        %td= l p.created_at, :format => :short
+        %td
+          %span
+            %a{:href => edit_admin_page_path(p.id), :title => t(:edit)}
+              %i.icon-edit
+          %span
+            %a{:href => admin_page_path(p.id), :data => {:method => :delete, :confirm => t(:sure)}, :title => t(:delete)}
+              %i.icon-remove
+  = link_to t('new'), new_admin_page_path, :class => 'btn'

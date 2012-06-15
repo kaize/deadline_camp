@@ -1,5 +1,7 @@
 DeadlineCamp::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   scope :module => :web do
     root :to => 'welcome#index'
 
@@ -7,6 +9,7 @@ DeadlineCamp::Application.routes.draw do
       root :to => 'welcome#index'
 
       resources :members, :only => [:index, :edit, :update, :destroy]
+      resources :pages
       resource :session, :only => [:new, :create, :destroy]
     end
 
@@ -14,6 +17,7 @@ DeadlineCamp::Application.routes.draw do
     resources :members, :only => [:index, :new, :create]
     resource :session, :only => [:new, :create, :destroy]
     resource :account, :only => [:show, :edit, :update]
+    resources :pages, :only => [:show]
   end
 
   # The priority is based upon order of creation:
