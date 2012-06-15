@@ -8,8 +8,9 @@ gem 'rails', '3.2.5'
 gem 'pg'
 
 gem 'jquery-rails'
+gem "ckeditor", "~> 3.7.1"
 gem 'haml-rails'
-gem 'twitter-bootstrap-rails', '2.0.8'
+gem 'twitter-bootstrap-rails'
 gem 'configus'
 gem 'state_machine'
 gem 'russian'
