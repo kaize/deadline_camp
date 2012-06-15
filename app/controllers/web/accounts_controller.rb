@@ -16,7 +16,7 @@ class Web::AccountsController < Web::ApplicationController
       flash[:success] = flash_translate(:success)
       redirect_to :action => :show
     else
-      render :action => :new
+      render :action => :edit
     end
   end
 
