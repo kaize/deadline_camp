@@ -40,7 +40,7 @@ module AuthHelper
   end
 
   def authenticate_member!
-    redirect_to new_member_session_path unless member_signed_in?
+    redirect_to new_session_path unless member_signed_in?
   end
 
   def current_member

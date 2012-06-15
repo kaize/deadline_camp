@@ -25,23 +25,37 @@
           %a.brand(href="/")= t 'base_name'
           .container.nav-collapse
             %ul.nav
-              %li= link_to t('.new_member'), new_member_path
+              - unless member_signed_in?
+                %li= link_to t('.new_member'), new_member_path
+            %ul.nav.pull-right
+              - if member_signed_in?
+                %li
+                  %a{ :href => edit_account_path }
+                    = t('.my_account')
+                    = "(#{current_member.email})"
+                %li= link_to t('.logout'), session_path, :method => :delete
+              - else
+                %li= link_to t('.auth'), new_session_path
 
     .container
 
       .content
-        .row
+        = flash_block
+        = yield
+        -#.row
           .span9
             = flash_block
             = yield
           .span3
-            -#.well.sidebar-nav
-              -#%h3 Sidebar
-              -#%ul.nav.nav-list
-                -#%li.nav-header Sidebar
-                -#%li= link_to "Link 1", "/path1"
-                -#%li= link_to "Link 2", "/path2"
-                -#%li= link_to "Link 3", "/path3"
+            - if content_for?(:sidebar)
+              .well.sidebar-nav
+                = yield :sidebar
+                -#%h3 Sidebar
+                -#%ul.nav.nav-list
+                  %li.nav-header Sidebar
+                  %li= link_to "Link 1", "/path1"
+                  %li= link_to "Link 2", "/path2"
+                  %li= link_to "Link 3", "/path3"
 
       %footer
         %p(class='pull-right')= t('contacts.phone')
