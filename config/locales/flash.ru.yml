@@ -7,7 +7,7 @@ ru:
             authenticate_error: 'Неправильный email или пароль.'
         members:
           create:
-            success: 'Анкета отправлена на модерацию'
+            success: '<b>Регистрация прошла успешно.</b> На Ваш email отправлено письмо с дальнейшей инструкцией'
         admin:
           sessions:
             create:

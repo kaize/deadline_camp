@@ -27,7 +27,7 @@ ru:
       application:
         members_list: 'Список участников'
     application:
-      new_member: 'Я пойду'
+      new_member: 'Зарегистрироваться'
       auth: 'Вход'
       my_account: 'Мой профиль'
       logout: 'Выход'

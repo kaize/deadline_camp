@@ -14,7 +14,7 @@ class Web::MembersController < Web::ApplicationController
       MemberMailer.welcome(@member).deliver
 
       member_sign_in(@member)
-      flash[:success] = flash_translate(:success)
+      flash[:success] = flash_translate(:success).html_safe
       redirect_to :root
     else
       render :action => :new
