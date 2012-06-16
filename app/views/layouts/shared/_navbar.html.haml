@@ -8,10 +8,7 @@
       %a.brand(href="/")= t 'base_name'
       .container.nav-collapse
         %ul.nav
-          %li= link_to_page contacts_page
           %li= link_to_page program_page
-          %li= link_to_page provider_page
-          %li= link_to_page partners_page
           %li= link_to_page place_page
         %ul.nav.pull-right
           - if member_signed_in?
