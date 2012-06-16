@@ -5,19 +5,21 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.brand(href="/")= t 'base_name'
-      .container.nav-collapse
-        %ul.nav
-          %li= link_to_page program_page
-          %li= link_to_page place_page
-        %ul.nav.pull-right
-          - if member_signed_in?
-            %li
-              %a{ :href => edit_account_path }
-                = t('.my_account')
-                = "(#{current_member.email})"
-            %li= link_to t('.logout'), session_path, :method => :delete
-          - else
-            %li= link_to t('.new_member'), new_member_path
-            %li.divider-vertical
-            %li= link_to t('.login'), new_session_path
+          %a.brand{ :href => root_path }
+            = image_tag 'logo.png', :id => "topbar_logo"
+            -#= t 'base_name'
+      -#.container.nav-collapse
+      %ul.nav
+        %li= link_to_page program_page
+        %li= link_to_page place_page
+      %ul.nav.pull-right
+        - if member_signed_in?
+          %li
+            %a{ :href => edit_account_path }
+              = t('.my_account')
+              = "(#{current_member.email})"
+          %li= link_to t('.logout'), session_path, :method => :delete
+        - else
+          %li= link_to t('.new_member'), new_member_path
+          %li.divider-vertical
+          %li= link_to t('.login'), new_session_path

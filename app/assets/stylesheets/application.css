@@ -28,7 +28,7 @@ footer {
   background-color: #333;
   border-top: 4px solid black;
 }
-.container {
+.container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
   width: 940px;
 }
 footer #footer_top {
@@ -40,4 +40,10 @@ footer #footer_top {
 footer #footer_bottom {
   border-top: 1px solid #444;
   padding-top: 20px;
+}
+#topbar_logo {
+  margin: -8px 0 -3px;
+}
+.navbar, .navbar-fixed-top .navbar-inner {
+  height: 50px;
 }
