@@ -47,6 +47,9 @@ footer #footer_bottom {
 .navbar, .navbar-fixed-top .navbar-inner {
   height: 50px;
 }
+.navbar .nav li a {
+  line-height: 29px;
+}
 
 div #landing {
   margin-bottom: 10px;
