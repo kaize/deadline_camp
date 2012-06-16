@@ -17,7 +17,6 @@
           %li
             %a{ :href => edit_account_path }
               = t('.my_account')
-              = "(#{current_member.email})"
           %li= link_to t('.logout'), session_path, :method => :delete
         - else
           %li= link_to t('.new_member'), new_member_path
