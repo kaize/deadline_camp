@@ -1,6 +1,5 @@
 class Web::AccountsController < Web::ApplicationController
 
-  helper_method :member
   before_filter :authenticate_member!
 
   def show
@@ -14,16 +13,10 @@ class Web::AccountsController < Web::ApplicationController
 
     if @member.update_attributes(params[:member])
       flash[:success] = flash_translate(:success)
-      redirect_to :action => :show
+      redirect_to edit_account_path
     else
       render :action => :edit
     end
   end
-
-  private
-
-    def member
-      current_member
-    end
 
 end

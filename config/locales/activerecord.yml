@@ -10,6 +10,10 @@ ru:
             accepted: 'Одобрен'
     errors:
       models:
+        page:
+          attributes:
+            uri:
+              slug: 'имеет неверное значение'
         member:
           attributes:
             email:
@@ -19,6 +23,13 @@ ru:
     models:
       member: 'Участник'
     attributes:
+      page:
+        id: id
+        name: 'Название'
+        body: 'Содержимое'
+        uri: 'URI'
+        created_at: 'Дата создания'
+        updated_at: 'Дата обновления'
       member:
         id: 'id'
         first_name: 'Имя'

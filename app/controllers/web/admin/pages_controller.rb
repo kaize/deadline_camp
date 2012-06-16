@@ -1,6 +1,7 @@
 class Web::Admin::PagesController < Web::Admin::ApplicationController
   def index
-    @pages = Page.page(params[:page])
+    @search = Page.metasearch(params[:search])
+    @pages = @search.page(params[:page])
   end
 
   def new
@@ -15,7 +16,7 @@ class Web::Admin::PagesController < Web::Admin::ApplicationController
     @page = Page.new params[:page]
 
     if @page.save
-      flash[:success] = flash_translate(:created)
+      flash[:success] = flash_translate(:success)
       #redirect_to :action => :edit
       redirect_to edit_admin_page_path(@page.id)
     else
@@ -27,7 +28,7 @@ class Web::Admin::PagesController < Web::Admin::ApplicationController
     @page = Page.find params[:id]
 
     if @page.update_attributes(params[:page])
-      flash[:success] = flash_translate(:updated)
+      flash[:success] = flash_translate(:success)
       redirect_to edit_admin_page_path(@page.id)
     else
       render :action => :edit

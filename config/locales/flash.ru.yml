@@ -8,10 +8,18 @@ ru:
         members:
           create:
             success: '<b>Регистрация прошла успешно.</b> На Ваш email отправлено письмо с дальнейшей инструкцией'
+        accounts:
+          update:
+            success: 'Анкета отредактированна.'
         admin:
           sessions:
             create:
               authenticate_error: 'Неправильный email или пароль.'
+          pages:
+            create:
+              success: 'Страница создана.'
+            update:
+              success: 'Страница отредактированна.'
           members:
             update:
               success: 'Анкета отредактированна.'

@@ -15,6 +15,7 @@ ru:
       - разработал более 2-х приложений
       - разрабатываю более года
   sure: 'Вы уверены?'
+  new: 'Новый'
   registration: Регистрация
   contacts:
     phone: 'Телефон для справок: 97-18-47'
@@ -25,16 +26,18 @@ ru:
       subject: "Смена Deadline: ваша заявка подтверждена"
   layouts:
     shared:
+      navbar:
+        new_member: 'Зарегистрироваться'
+        my_account: 'Мой профиль'
+        login: 'Вход'
+        logout: 'Выход'
       footer:
         np: Некоммерческое Партнерство "Содействия развития ИТ"
-    admin:
-      application:
-        members_list: 'Список участников'
-    application:
-      new_member: 'Зарегистрироваться'
-      auth: 'Вход'
-      my_account: 'Мой профиль'
-      logout: 'Выход'
+    web:
+      admin:
+        application:
+          members_list: 'Список участников'
+          pages_list: 'Список страниц'
   members:
     general_info: 'Общая информация'
     contact_info: 'Контактная информация'
@@ -68,10 +71,14 @@ ru:
     sessions:
       new:
         login: 'Войти'
+        authenticate: 'Вход'
     members:
       new:
         already_have_account: "Я уже зарегистрирован"
     admin:
+      pages:
+        index:
+          new: Добавить
       sessions:
         new:
           login: 'Войти'

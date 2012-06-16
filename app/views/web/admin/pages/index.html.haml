@@ -1,10 +1,10 @@
 %table.table.table-striped
   %thead
     %tr
-      %th ID
-      %th name
-      %th uri
-      %th created_at
+      %th= sort_link @search, :id
+      %th= sort_link @search, :name
+      %th= sort_link @search, :uri
+      %th= sort_link @search, :created_at
       %th
   %tbody
     - @pages.each do |p|
@@ -20,4 +20,4 @@
           %span
             %a{:href => admin_page_path(p.id), :data => {:method => :delete, :confirm => t(:sure)}, :title => t(:delete)}
               %i.icon-remove
-  = link_to t('new'), new_admin_page_path, :class => 'btn'
+  = link_to t('.new'), new_admin_page_path, :class => 'btn'
