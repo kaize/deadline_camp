@@ -9,7 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require bootstrap_and_overrides
- *= require bootstrap.min
  *= require jquery.ui.all
  *= require_self
 */
@@ -34,8 +33,16 @@ footer h2 {
   margin-bottom: 10px;
 }
 .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
-  width: 940px;
+  width: 80%;
 }
+.container .nav-collapse {
+  width:950px;
+}
+
+.navbar .brand {
+  padding: 8px 20px 0 0;
+}
+
 footer #footer_top {
   border-bottom: 1px solid #222;
   padding-bottom: 20px;
@@ -46,12 +53,11 @@ footer #footer_bottom {
   border-top: 1px solid #444;
   padding-top: 20px;
 }
+
 #topbar_logo {
   margin: -8px 0 -3px;
 }
-.navbar, .navbar-fixed-top .navbar-inner {
-  height: 50px;
-}
+
 div #landing {
   margin-bottom: 10px;
 }
