@@ -2,7 +2,7 @@ ru:
   base_name: 'Смена Deadline'
   language:
     levels:
-      - не владею
+      - не владею # нахрена?
       - базовые знания
       - читаю техническую литературу
       - свободно владею
@@ -15,6 +15,7 @@ ru:
       - разработал более 2-х приложений
       - разрабатываю более года
   sure: 'Вы уверены?'
+  registration: Регистрация
   contacts:
     phone: 'Телефон для справок: 97-18-47'
   member_mailer:
@@ -31,8 +32,8 @@ ru:
       auth: 'Вход'
       my_account: 'Мой профиль'
       logout: 'Выход'
+      np: Некоммерческое Партнерство "Содействия развития ИТ"
   members:
-    already_have_account: "Я уже зарегистрирован"
     general_info: 'Общая информация'
     contact_info: 'Контактная информация'
     education: 'Образование'
@@ -69,6 +70,9 @@ ru:
     sessions:
       new:
         login: 'Войти'
+    members:
+      new:
+        already_have_account: "Я уже зарегистрирован"
     admin:
       sessions:
         new:

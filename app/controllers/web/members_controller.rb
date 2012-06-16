@@ -5,6 +5,8 @@ class Web::MembersController < Web::ApplicationController
 
   def new
     @member = Member.new
+
+    title t('registration')
   end
 
   def create
