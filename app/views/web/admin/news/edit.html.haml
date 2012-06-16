@@ -1,0 +1,3 @@
+= simple_form_for @news, :validate => true, :url => admin_news_path(@news.id), :html => {:class => "form-horizontal"} do |f|
+  = f.error_notification
+  = render 'form', :f => f

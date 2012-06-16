@@ -1,0 +1,7 @@
+= f.input :name
+= f.input :uri
+= f.input :published_at, :as => :date_picker
+= f.input :body, :as => :ckeditor, :input_html => {:width => 800, :height => 400, :toolbar => 'Easy'}
+
+.form-actions
+  = f.button :submit

@@ -10,6 +10,7 @@ DeadlineCamp::Application.routes.draw do
 
       resources :members, :only => [:index, :edit, :update, :destroy]
       resources :pages
+      resources :news
       resource :session, :only => [:new, :create, :destroy]
     end
 
@@ -18,6 +19,7 @@ DeadlineCamp::Application.routes.draw do
     resource :session, :only => [:new, :create, :destroy]
     resource :account, :only => [:show, :edit, :update]
     resources :pages, :only => [:show]
+    resources :news, :only => [:show]
   end
 
   # The priority is based upon order of creation:
