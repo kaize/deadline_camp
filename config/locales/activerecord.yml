@@ -76,7 +76,7 @@ ru:
         level: 'Уровень'
       'member/job':
         company: 'Название компании'
-        started_at: 'Дата начало работы'
+        started_at: 'Дата начала работы'
         finished_at: 'Дата окончания работы'
         job: 'Должность'
         responsibility: 'Обязанности'

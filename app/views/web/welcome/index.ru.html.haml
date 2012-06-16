@@ -3,7 +3,7 @@
     %h2 9 - 16 июля в Русском береге
     %h3 Выездной обучающий семинар для молодёжи, которая хочет работать в сфере ИТ, в частности, заниматься разработкой программных продуктов. Участники в течение нескольких дней будут работать над продуктом.
     - if member_signed_in?
-      %a.btn.btn-success.btn-large{:href => program_page }
+      %a.btn.btn-success.btn-large{:href => page_path(program_page) }
         %i.icon-chevron-right
         Программа
     - else
