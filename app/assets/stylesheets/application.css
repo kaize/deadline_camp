@@ -64,3 +64,10 @@ div #landing h3 {
 .navbar .nav li a {
   line-height: 29px;
 }
+footer a:hover, footer .nav li a:hover {
+  color: white;
+  background-color: #333;
+}
+.content {
+  min-height: 400px;
+}
