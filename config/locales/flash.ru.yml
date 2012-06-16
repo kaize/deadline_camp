@@ -10,7 +10,7 @@ ru:
             success: '<b>Регистрация прошла успешно.</b> На Ваш email отправлено письмо с дальнейшей инструкцией'
         accounts:
           update:
-            success: 'Анкета отредактированна.'
+            success: 'Анкета отредактирована.'
         admin:
           sessions:
             create:
@@ -19,12 +19,12 @@ ru:
             create:
               success: 'Страница создана.'
             update:
-              success: 'Страница отредактированна.'
+              success: 'Страница отредактирована.'
           pages:
             create:
               success: 'Страница создана.'
             update:
-              success: 'Страница отредактированна.'
+              success: 'Страница отредактирована.'
           members:
             update:
-              success: 'Анкета отредактированна.'
+              success: 'Анкета отредактирована.'
