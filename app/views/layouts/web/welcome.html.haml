@@ -1,0 +1,26 @@
+!!! 5
+%html(lang="en")
+  %head
+    = render 'layouts/shared/head'
+    :javascript
+      var switchTo5x=true;
+    = javascript_include_tag 'http://w.sharethis.com/button/buttons.js', 'http://s.sharethis.com/loader.js'
+
+  %body
+    = render 'layouts/shared/navbar'
+
+    .container
+      .content
+        = flash_block
+
+        .row
+          .span.st_facebook_hcount{:displayText => 'Facebook'}
+          .span.st_vkontakte_hcount{:displayText => 'Vkontakte'}
+          .span.st_twitter_hcount{:displayText => 'Twitter'}
+          .span.st_google_hcount{:displayText => 'Google'}
+          .span.st_livejournal_hcount{:displayText => 'LiveJournal'}
+          .span.st_email_hcount{:displayText => 'Email'}
+
+        = yield
+    = render 'layouts/shared/footer'
+
