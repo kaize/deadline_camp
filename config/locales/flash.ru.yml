@@ -15,6 +15,11 @@ ru:
           sessions:
             create:
               authenticate_error: 'Неправильный email или пароль.'
+          news:
+            create:
+              success: 'Страница создана.'
+            update:
+              success: 'Страница отредактированна.'
           pages:
             create:
               success: 'Страница создана.'

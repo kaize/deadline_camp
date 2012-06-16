@@ -10,3 +10,6 @@ ru:
       user:
         create: 'Создать'
         update: 'Сохранить'
+      news:
+        create: 'Создать'
+        update: 'Сохранить'

@@ -17,6 +17,7 @@ ru:
   sure: 'Вы уверены?'
   new: 'Новый'
   registration: Регистрация
+  news: Новости
   contacts:
     phone: 'Телефон для справок: 97-18-47'
   member_mailer:
@@ -38,6 +39,7 @@ ru:
         application:
           members_list: 'Список участников'
           pages_list: 'Список страниц'
+          news_list: 'Список новостей'
   members:
     general_info: 'Общая информация'
     contact_info: 'Контактная информация'
