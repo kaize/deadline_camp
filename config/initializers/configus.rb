@@ -5,6 +5,9 @@ Configus.build Rails.env do
       default_from "notreplay@deadline-camp.ru"
       default_url "deadline-camp.ru"
     end
+    mail do
+      main 'info@deadline-camp.ru'
+    end
     pages do
       contacts do
         id 1

@@ -23,7 +23,6 @@ h2, h3, h4 {
   margin-bottom: 10px;
 }
 footer {
-  min-height: 300px;
   color: #666;
   background-color: #333;
   border-top: 4px solid black;
@@ -47,11 +46,11 @@ footer #footer_top {
   border-bottom: 1px solid #222;
   padding-bottom: 20px;
   padding-top: 20px;
-  height: 200px;
 }
 footer #footer_bottom {
   border-top: 1px solid #444;
   padding-top: 20px;
+  padding-bottom:10px;
 }
 
 #topbar_logo {

@@ -3,31 +3,34 @@
 
   - with_options :scope => "members" do |i18n|
 
-    %fieldset
-      %legend= i18n.t('contact_info')
-      = f.input :first_name
-      = f.input :last_name
-      = f.input :phone,
-        :input_html => {:rel => 'popover', :title => i18n.t('phone.title'), :"data-content" => i18n.t('phone.content')}
-      = f.input :email
-      = f.input :password
-      = f.input :password_confirmation
+    .row
+      .span5
+        %fieldset
+          %legend= i18n.t('contact_info')
+          = f.input :first_name
+          = f.input :last_name
+          = f.input :phone,
+            :input_html => {:rel => 'popover', :title => i18n.t('phone.title'), :"data-content" => i18n.t('phone.content')}
+          = f.input :email
+          = f.input :password
+          = f.input :password_confirmation
 
-    %fieldset 
-      %legend= i18n.t('education')
-      = f.input :institute
-      = f.input :study_start do
-        = f.input_field :start_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
-          :style => 'width: 155px'
-        = f.input_field :start_year, :placeholder => t('datetime.prompts.year'), :class => 'span1'
-      = f.input :study_finish do
-        = f.input_field :finish_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
-          :style => 'width: 155px'
-        = f.input_field :finish_year, :placeholder => t('datetime.prompts.year'), :class => 'span1'
-      = f.input :department
-      = f.input :profession
-      = f.input :degree
-      = f.input :gpa
+      .span5
+        %fieldset
+          %legend= i18n.t('education')
+          = f.input :institute
+          = f.input :study_start do
+            = f.input_field :start_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
+              :style => 'width: 155px'
+            = f.input_field :start_year, :placeholder => t('datetime.prompts.year'), :class => 'span1'
+          = f.input :study_finish do
+            = f.input_field :finish_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
+              :style => 'width: 155px'
+            = f.input_field :finish_year, :placeholder => t('datetime.prompts.year'), :class => 'span1'
+          = f.input :department
+          = f.input :profession
+          = f.input :degree
+          = f.input :gpa
 
     %fieldset
       %legend= i18n.t 'camp'
