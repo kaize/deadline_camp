@@ -2,10 +2,10 @@
   .container
     .row#footer_top
       .span3
-        %h2 О нас
+        %h2 Ссылки
         %ul.nav
-          %li= link_to configus.mail.main
-          -#%li= link_to_page contacts_page
+          %li= link_to_page contacts_page
+          %li= link_to t('news'), news_index_path
 
       .span4
         %h2 Принимают участие
@@ -23,7 +23,10 @@
 
     .row#footer_bottom
       .span12
-        %p &copy; НП
+        %p
+          &copy; НП
+          %br 
+          = link_to configus.mail.main
 /
   Javascripts
   \==================================================
