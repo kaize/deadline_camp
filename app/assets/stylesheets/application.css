@@ -47,3 +47,13 @@ footer #footer_bottom {
 .navbar, .navbar-fixed-top .navbar-inner {
   height: 50px;
 }
+
+div #landing {
+  margin-bottom: 10px;
+}
+
+div #landing h3 {
+  color: #555;
+  font-weight: normal;
+  margin: 10px 0 30px 0;
+}
