@@ -24,6 +24,9 @@ ru:
     approved:
       subject: "Смена Deadline: ваша заявка подтверждена"
   layouts:
+    shared:
+      footer:
+        np: Некоммерческое Партнерство "Содействия развития ИТ"
     admin:
       application:
         members_list: 'Список участников'
@@ -32,7 +35,6 @@ ru:
       auth: 'Вход'
       my_account: 'Мой профиль'
       logout: 'Выход'
-      np: Некоммерческое Партнерство "Содействия развития ИТ"
   members:
     general_info: 'Общая информация'
     contact_info: 'Контактная информация'
