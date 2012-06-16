@@ -7,18 +7,18 @@
           %li= link_to_page contacts_page
         %p= t('contacts.phone')
 
-        %h4 Поделиться
+      .span4
+        %h2 Принимают участие
+        %ul.nav
+          %li= link_to_page provider_page
+          %li= link_to_page partners_page
+
+      %h4 Поделиться
         %span.st_facebook_large
         %span.st_vkontakte_large
         %span.st_twitter_large
         %span.st_plusone_large
         %span.st_email_large
-
-      .span4
-        %h2 Принимали участие
-        %ul.nav
-          %li= link_to_page provider_page
-          %li= link_to_page partners_page
 
     .row#footer_bottom
       .span12
