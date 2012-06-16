@@ -51,7 +51,7 @@ GEM
       activesupport (>= 3.2.0)
     ci_reporter (1.7.0)
       builder (>= 2.1.2)
-    ckeditor (3.7.0.rc3)
+    ckeditor (3.7.0)
       mime-types (~> 1.17.2)
       orm_adapter (~> 0.0.6)
     client_side_validations (3.1.4)
@@ -220,7 +220,7 @@ DEPENDENCIES
   capistrano_colors
   carrierwave
   ci_reporter
-  ckeditor (= 3.7.0.rc3)
+  ckeditor (= 3.7.0)
   client_side_validations
   cocoon
   coffee-rails (~> 3.2.1)
