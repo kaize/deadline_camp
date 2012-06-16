@@ -1,21 +1,22 @@
 .row#landing
-  .span5
+  .span6
     %h2 9 - 16 июля в Русском береге
     %h3 Выездной обучающий семинар для молодёжи, которая хочет работать в сфере ИТ, в частности, заниматься разработкой программных продуктов. Участники в течение нескольких дней будут работать над продуктом.
-    %a.btn.btn-success.btn-large{:href => new_member_path}
-      %i.icon-chevron-right
-      Регистрация
-    %a.btn.btn-primary.btn-large{:href => new_session_path}
-      %i.icon-chevron-right
-      Вход
-  .span4
+    - unless member_signed_in?
+      %a.btn.btn-success.btn-large{:href => new_member_path}
+        %i.icon-chevron-right
+        Регистрация
+      %a.btn.btn-primary.btn-large{:href => new_session_path}
+        %i.icon-chevron-right
+        Вход
+  .span6
     .thumbnail
       = image_tag 'deadline_clock.jpg'
 
 = image_tag 'grey_out.png'
 
 .row
-  .span5
+  .span6
     %h4 Как это будет происходить
     %ul
       %li
@@ -38,7 +39,7 @@
         %p Для участников мероприятие будет бесплатным.
         %p Проживание, питание, доставка участников до места назначения и обратно будут организованы МИЦ за счёт Министерства образования.
         %p Каждый участник должен иметь при себе личный ноутбук и желание плодотворно поработать.
-  .span4
+  .span6
     %h4 Зачем это нужно?
     %ul
       %li Создание площадки для самореализации будущих специалистам
