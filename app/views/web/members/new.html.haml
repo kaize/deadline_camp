@@ -16,14 +16,14 @@
     %fieldset 
       %legend= i18n.t('education')
       = f.input :institute
-      = f.input :start_month do
-        = f.input_field :start_month, :collection => Member::STUDY_MONTH, :include_blank => i18n.t('month'),
+      = f.input :study_start do
+        = f.input_field :start_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
           :style => 'width: 155px'
-        = f.input_field :start_year, :placeholder => i18n.t('year'), :class => 'span1'
-      = f.input :finish_month do
-        = f.input_field :finish_month, :collection => Member::STUDY_MONTH, :include_blank => i18n.t('month'),
+        = f.input_field :start_year, :placeholder => t('datetime.prompts.year'), :class => 'span1'
+      = f.input :study_finish do
+        = f.input_field :finish_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
           :style => 'width: 155px'
-        = f.input_field :finish_year, :placeholder => i18n.t('year'), :class => 'span1'
+        = f.input_field :finish_year, :placeholder => t('datetime.prompts.year'), :class => 'span1'
       = f.input :department
       = f.input :profession
       = f.input :degree
