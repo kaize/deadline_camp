@@ -5,7 +5,10 @@
     - if member_signed_in?
       %a.btn.btn-success.btn-large{:href => page_path(program_page) }
         %i.icon-chevron-right
-        Программа
+        = program_page
+      %a.btn.btn-success.btn-large{:href => page_path(place_page) }
+        %i.icon-chevron-right
+        = place_page
     - else
       %a.btn.btn-success.btn-large{:href => new_member_path}
         %i.icon-chevron-right
