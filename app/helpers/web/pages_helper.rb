@@ -19,7 +19,7 @@ module Web::PagesHelper
     Page.find(configus.pages.place.id)
   end
 
-  def link_to_page(page)
-    link_to page.name, page_path(page)
+  def link_to_page(page, options = {})
+    link_to page.name, page_path(page), options
   end
 end

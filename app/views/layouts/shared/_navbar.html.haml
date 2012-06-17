@@ -10,15 +10,13 @@
             -#= t 'base_name'
       .nav-collapse
         %ul.nav
-          %li= link_to_page program_page
-          %li= link_to_page place_page
+          = item_page :li, program_page
+          = item_page :li, place_page
         %ul.nav.pull-right
           - if member_signed_in?
-            %li
-              %a{ :href => edit_account_path }
-                = t('.my_account')
-            %li= link_to t('.logout'), session_path, :method => :delete
+            = item :li, t('.my_account'), edit_account_path
+            = item :li, t('.logout'), session_path, :method => :delete
           - else
-            %li= link_to t('.new_member'), new_member_path
+            = item :li, t('.new_member'), new_member_path
             %li.divider-vertical
-            %li= link_to t('.login'), new_session_path
+            = item :li, t('.login'), new_session_path
