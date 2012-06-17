@@ -100,7 +100,7 @@ ru:
     account:
       remind_passwords:
         new:
-          password_remind: 'Напомнить пароть'
+          password_remind: 'Напомнить пароль'
           remind: 'Отправить'
       passwords:
         edit:
