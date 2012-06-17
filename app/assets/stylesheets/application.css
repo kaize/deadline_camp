@@ -68,6 +68,7 @@ footer a:hover, footer .nav li a:hover {
 }
 #topbar_logo {
   margin: -17px 0 -3px;
+  border: 1px solid #DDD;
 }
 .center img {
   display: block;
