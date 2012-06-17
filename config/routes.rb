@@ -1,5 +1,7 @@
 DeadlineCamp::Application.routes.draw do
 
+  match "/404", :to => "web/errors#not_found"
+
   mount Ckeditor::Engine => '/ckeditor'
 
   scope :module => :web do

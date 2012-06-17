@@ -105,3 +105,6 @@ ru:
         edit:
           reset_password: 'Смена пароля'
           reset: 'Сменить пароль'
+    errors:
+      not_found:
+        not_found: "Страница не найдена"
