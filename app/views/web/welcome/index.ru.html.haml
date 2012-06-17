@@ -1,14 +1,14 @@
 .row.landing_top
-  .span5
+  .span6
     %h2 9 - 16 июля в Русском береге
     %h3 Выездной обучающий семинар для молодёжи, которая хочет работать в сфере ИТ, в частности, заниматься разработкой программных продуктов. Участники в течение нескольких дней будут работать над продуктом.
     - if member_signed_in?
       %a.btn.btn-success.btn-large{:href => page_path(program_page) }
         %i.icon-chevron-right
         = program_page
-      %a.btn.btn-success.btn-large{:href => page_path(place_page) }
+      %a.btn.btn-primary.btn-large{:href => edit_account_path }
         %i.icon-chevron-right
-        = place_page
+        Профиль
     - else
       %a.btn.btn-success.btn-large{:href => new_member_path}
         %i.icon-chevron-right
@@ -16,14 +16,14 @@
       %a.btn.btn-primary.btn-large{:href => new_session_path}
         %i.icon-chevron-right
         Вход
-  .span5
+  .span6
     = image_tag 'man.png', :width => '430px'
 
 .center.splitter
   = image_tag 'grey_out.png'
 
 .row.landing_lower
-  .span3
+  .span4
     %h4 Кто наша аудитория?
     -#.thumbnail.p
       = image_tag 'people_block.png'
@@ -33,7 +33,7 @@
     %p Определим тестовое задание. Разместим его на сайте. Проведём отбор по его выполнению.
     %p Пригласим на семинар специалистов.
     %p Все дни на семинаре участники с утра до вечера будут заниматься разработкой проектов.
-  .span3
+  .span4
     %h4 Какие проекты будут разрабатываться участниками?
     -#.thumbnail.p
       = image_tag 'langs_block.png'
@@ -43,12 +43,12 @@
   = image_tag 'grey_out.png'
 
 .row.landing_lower
-  .span5
+  .span6
     %h4 За чей счёт?
     %p Для участников мероприятие будет бесплатным.
     %p Проживание, питание, доставка участников до места назначения и обратно будут организованы МИЦ за счёт Министерства образования.
     %p Каждый участник должен иметь при себе личный ноутбук и желание плодотворно поработать.
-  .span5
+  .span6
     %h4 Зачем это нужно?
     %ul
       %li Создание площадки для самореализации будущих специалистам

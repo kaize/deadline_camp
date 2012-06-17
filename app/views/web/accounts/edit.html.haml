@@ -18,7 +18,7 @@
       .tab-content
         .tab-pane.active#general
           .row
-            .span4
+            .span
               %fieldset
                 %legend= i18n.t('contact_info')
                 = f.input :first_name
@@ -30,7 +30,7 @@
                 = f.input :jabber
                 = f.input :icq
                 = f.input :web
-            .span5
+            .span
               %fieldset
                 %legend= i18n.t('education')
                 = f.input :institute

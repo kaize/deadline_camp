@@ -2,9 +2,8 @@
   = f.error_notification
 
   - with_options :scope => "members" do |i18n|
-
     .row
-      .span4
+      .span
         %fieldset
           %legend= i18n.t('contact_info')
           = f.input :first_name
@@ -15,7 +14,7 @@
           = f.input :password
           = f.input :password_confirmation
 
-      .span5
+      .span
         %fieldset
           %legend= i18n.t('education')
           = f.input :institute
