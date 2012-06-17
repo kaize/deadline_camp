@@ -38,6 +38,14 @@
       = f.input :camp_notebook, :label => false, :inline_label => i18n.t('camp_notebook')
       = f.input :camp_training, :label => false, :inline_label => i18n.t('camp_training')
 
+    %fieldset
+      %legend
+      = f.input :terms_of_service,
+        :as => :boolean,
+        :label => false,
+        :inline_label => t('.terms_of_service'),
+        :input_html => {:checked => true}
+
     .form-actions
       = f.button :submit, :class => 'btn btn-primary'
       = link_to t('.already_have_account'), new_session_path

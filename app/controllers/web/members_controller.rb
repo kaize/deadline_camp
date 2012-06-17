@@ -4,13 +4,13 @@ class Web::MembersController < Web::ApplicationController
   end
 
   def new
-    @member = Member.new
+    @member = MemberRegistrationType.new
 
     title t('registration')
   end
 
   def create
-    @member = MemberType.new(params[:member])
+    @member = MemberRegistrationType.new(params[:member])
 
     if @member.save
       MemberMailer.welcome(@member).deliver
