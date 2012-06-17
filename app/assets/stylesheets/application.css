@@ -31,18 +31,6 @@ footer h2 {
   color: #aaa;
   margin-bottom: 10px;
 }
-.container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
-  width: 80%;
-}
-/*
-.container .nav-collapse {
-  width:950px;
-}
-*/
-.navbar .brand {
-  padding: 8px 20px 0 0;
-}
-
 footer #footer_top {
   border-bottom: 1px solid #222;
   padding-bottom: 20px;
@@ -52,20 +40,6 @@ footer #footer_bottom {
   border-top: 1px solid #444;
   padding-top: 20px;
   padding-bottom:10px;
-}
-
-#topbar_logo {
-  margin: -8px 0 -3px;
-}
-
-div #landing {
-  margin-bottom: 10px;
-}
-
-div #landing h3 {
-  color: #555;
-  font-weight: normal;
-  margin: 10px 0 30px 0;
 }
 .navbar .nav li a {
   line-height: 29px;
@@ -77,3 +51,42 @@ footer a:hover, footer .nav li a:hover {
 .content {
   min-height: 400px;
 }
+.landing_top {
+  margin-bottom: 10px;
+}
+
+.landing_top h3 {
+  color: #555;
+  font-weight: normal;
+  margin: 10px 0 30px 0;
+}
+.navbar .brand {
+  padding: 8px 0 0 20px;
+}
+#topbar_logo {
+  margin: -8px 0 -3px;
+}
+.center img {
+  display: block;
+  margin: 0 auto 0 auto;
+}
+.splitter {
+  border-top: 1px solid #DDD;
+}
+.p {
+  margin: 0 0 9px;
+}
+.landing_lower {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.landing_bottom {
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+/*
+.container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+  width: 90%;
+}
+
+*/
