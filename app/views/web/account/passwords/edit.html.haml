@@ -1,10 +1,10 @@
 .row
   .span4.offset3.well
-    %h2= t('.password_remind')
-    = simple_form_for @member, :url => account_password_path do |f|
+    %h2= t('.reset_password')
+    = simple_form_for @member, :url => account_password_path, :method => :put do |f|
       - f.with_options :input_html => {:class => :span4} do |f|
         = f.input :password
         = f.input :password_confirmation
 
       .form-actions
-        = f.button :submit, :class => 'btn-primary pull-right'
+        = f.button :submit, :value => t('.reset'), :class => 'btn-primary pull-right'

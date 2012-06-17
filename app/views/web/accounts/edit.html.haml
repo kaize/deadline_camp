@@ -13,6 +13,8 @@
             %a{:href => '#skill', "data-toggle" => "tab"}= i18n.t 'skill'
           %li
             %a{:href => '#hobby', "data-toggle" => "tab"}= i18n.t('hobby')
+          %li.pull-right
+            %a{:href => edit_account_password_path}= i18n.t('reset_password')
         .tab-content.span9
           .tab-pane.active#general
             .row
