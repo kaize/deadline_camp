@@ -60,11 +60,14 @@ footer a:hover, footer .nav li a:hover {
   font-weight: normal;
   margin: 10px 0 30px 0;
 }
+.navbar, .navbar-fixed-top .navbar-inner {
+  height: 50px;
+}
 .navbar .brand {
-  padding: 8px 0 0 20px;
+  padding: 17px 0 0 20px;
 }
 #topbar_logo {
-  margin: -8px 0 -3px;
+  margin: -17px 0 -3px;
 }
 .center img {
   display: block;
