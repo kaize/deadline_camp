@@ -62,5 +62,8 @@ module DeadlineCamp
       g.stylesheets false
       g.javascripts false
     end
+
+    # catch 404 errors
+    config.exceptions_app = self.routes
   end
 end
