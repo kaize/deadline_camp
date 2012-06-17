@@ -2,7 +2,7 @@
   = f.error_notification
 
   - with_options :scope => "members" do |i18n|
-    -#= f.input :state_event, :as => :state_event
+    = f.input :state_event, :as => :state_event
     %h3= i18n.t('contact_info')
     = f.input :first_name
     = f.input :last_name
