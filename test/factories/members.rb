@@ -16,6 +16,7 @@ FactoryGirl.define do
     finish_year { generate :integer }
     department { generate :string }
     profession { generate :string }
+    group { generate :string }
     degree { generate :string }
     gpa { generate :site }
     camp_time true

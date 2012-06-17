@@ -57,6 +57,7 @@ ru:
         finish_year: 'Окончание обучения'
         department: 'Факультет'
         profession: 'Специальность'
+        group: 'Группа'
         degree: 'Степень'
         gpa: 'Средний балл диплома'
         hobby: 'Хобби'

@@ -4,7 +4,7 @@ class Member < ActiveRecord::Base
     :state, :email, :first_name, :last_name, :patronymic, :phone, :skype, :jabber, :icq, :institute,
     :start_year, :start_month, :finish_year, :finish_month, :department, :profession, :degree, :gpa, :web,
     :camp_time, :camp_life, :camp_fee, :camp_notebook, :camp_training, :hobby, :sport, :state_event, :password,
-    :auth_token
+    :auth_token, :group
 
   has_secure_password
   has_many :jobs
