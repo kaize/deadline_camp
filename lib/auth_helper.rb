@@ -31,6 +31,13 @@ module AuthHelper
     session[:member_id] = member.id
   end
 
+  def member_sign_in_by_token
+    if params[:auth_token]
+      member = Member.find_by_auth_token!(params[:auth_token])
+      member_sign_in(member)
+    end
+  end
+
   def member_sign_out
     session[:member_id] = nil
   end

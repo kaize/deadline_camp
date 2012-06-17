@@ -1,5 +1,5 @@
 .row
-  = simple_form_for current_member, :as => :member, :validate => true, :url => account_path, :html => {:class => "form-horizontal well"} do |f|
+  = simple_form_for current_member, :validate => true, :url => account_path, :html => {:class => "form-horizontal well"} do |f|
     = f.error_notification
 
     - with_options :scope => "members" do |i18n|

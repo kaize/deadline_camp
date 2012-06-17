@@ -11,6 +11,11 @@ ru:
         accounts:
           update:
             success: 'Анкета отредактирована.'
+        account:
+          remind_passwords:
+            create:
+              success: 'На указанный email отправлено письмо с инструкцией.'
+              error: 'Аккаунт с указанным email не найден.'
         admin:
           sessions:
             create:

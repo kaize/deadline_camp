@@ -17,7 +17,12 @@ DeadlineCamp::Application.routes.draw do
 
     resources :members, :only => [:index, :new, :create]
     resource :session, :only => [:new, :create, :destroy]
-    resource :account, :only => [:show, :edit, :update]
+    resource :account, :only => [:show, :edit, :update] do
+      scope :module => :account do
+        resource :remind_password, :only => [:new, :create]
+        resource :password, :only => [:edit, :update]
+      end
+    end
     resources :pages, :only => [:show]
     resources :news, :only => [:index, :show]
   end
