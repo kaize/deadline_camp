@@ -34,10 +34,11 @@ footer h2 {
 .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
   width: 80%;
 }
+/*
 .container .nav-collapse {
   width:950px;
 }
-
+*/
 .navbar .brand {
   padding: 8px 20px 0 0;
 }
