@@ -89,6 +89,7 @@ ru:
     members:
       new:
         already_have_account: "Я уже зарегистрирован"
+        terms_of_service: 'я согласен на обработку персональных данных'
     admin:
       pages:
         index:
