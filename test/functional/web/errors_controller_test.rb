@@ -6,4 +6,9 @@ class Web::ErrorsControllerTest < ActionController::TestCase
     assert_response 404
   end
 
+  test "should get internal_server_error" do
+    get :internal_server_error
+    assert_response 500
+  end
+
 end
