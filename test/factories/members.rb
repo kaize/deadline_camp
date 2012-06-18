@@ -25,5 +25,6 @@ FactoryGirl.define do
     camp_notebook true
     camp_training true
     auth_token { generate :name }
+    how_hear_about_as { generate :string }
   end
 end

@@ -44,6 +44,10 @@
     = f.input :camp_training, :label => false, :inline_label => i18n.t('camp_training')
 
     %hr
+    %h3= i18n.t 'how_hear_about_as'
+    = f.input :how_hear_about_as, :label => false
+
+    %hr
     %h3= i18n.t 'additional_educations'
     = f.simple_fields_for :additional_educations do |p|
       = render 'additional_education_fields', :f => p
