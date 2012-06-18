@@ -7,6 +7,7 @@
       %th= sort_link @search, :first_name
       %th= sort_link @search, :last_name
       %th= sort_link @search, :patronymic
+      %th= t '.preference'
       %th= sort_link @search, :created_at
       %th
   %tbody
@@ -18,6 +19,15 @@
         %td= m.first_name
         %td= m.last_name
         %td= m.patronymic
+        %td
+          .dropdown.company-relations
+            %a{:class => 'dropdown-toggle', :'data-toggle' => 'dropdown', :href => '#'}
+              %i.icon-list
+              %span.caret
+            %ul.dropdown-menu
+              - m.preferences.each do |mp|
+                %li= mp
+
         %td= l m.created_at, :format => :short
         %td
           %span

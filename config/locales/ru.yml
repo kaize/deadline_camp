@@ -101,6 +101,9 @@ ru:
       sessions:
         new:
           login: 'Войти'
+      members:
+        index:
+          preference: "Предпочтения"
     account:
       remind_passwords:
         new:
