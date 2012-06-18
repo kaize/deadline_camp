@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120612161051) do
+ActiveRecord::Schema.define(:version => 20120617180926) do
+
+  create_table "ckeditor_assets", :force => true do |t|
+    t.string   "data_file_name",                  :null => false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    :limit => 30
+    t.string   "type",              :limit => 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
   create_table "databases", :force => true do |t|
     t.string   "name"
@@ -74,7 +90,7 @@ ActiveRecord::Schema.define(:version => 20120612161051) do
 
   create_table "member_preferences", :force => true do |t|
     t.integer  "member_id"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -119,8 +135,8 @@ ActiveRecord::Schema.define(:version => 20120612161051) do
     t.string   "profession"
     t.string   "degree"
     t.string   "gpa"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "web"
     t.boolean  "camp_time"
     t.boolean  "camp_life"
@@ -131,6 +147,19 @@ ActiveRecord::Schema.define(:version => 20120612161051) do
     t.text     "sport"
     t.string   "start_month"
     t.string   "finish_month"
+    t.string   "password_digest"
+    t.string   "auth_token"
+    t.string   "group"
+    t.string   "how_hear_about_as"
+  end
+
+  create_table "news", :force => true do |t|
+    t.string   "name"
+    t.string   "uri"
+    t.text     "body"
+    t.datetime "published_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "os", :force => true do |t|
@@ -141,6 +170,14 @@ ActiveRecord::Schema.define(:version => 20120612161051) do
 
   create_table "others", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "name"
+    t.string   "uri"
+    t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

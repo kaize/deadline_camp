@@ -1,0 +1,11 @@
+.row
+  .span4.offset3.well
+    %h2= t('.authenticate')
+    = simple_form_for @member, :url => session_path do |f|
+      - f.with_options :input_html => {:class => :span4} do |f|
+        = f.input :email
+        = f.input :password
+
+      .form-actions
+        = f.button :submit, :value => t('.login'), :class => 'btn-primary pull-right'
+        = link_to t('.password_forgot'), new_account_remind_password_path

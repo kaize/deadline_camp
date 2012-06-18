@@ -21,3 +21,5 @@ coverage/**
 
 # Ignore IDE files
 .idea
+.DS_Store
+public/uploads

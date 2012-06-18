@@ -1,5 +1,10 @@
 DeadlineCamp::Application.routes.draw do
 
+  match "/404", :to => "web/errors#not_found"
+  match "/500", :to => "web/errors#internal_server_error"
+
+  mount Ckeditor::Engine => '/ckeditor'
+
   scope :module => :web do
     root :to => 'welcome#index'
 
@@ -7,11 +12,22 @@ DeadlineCamp::Application.routes.draw do
       root :to => 'welcome#index'
 
       resources :members, :only => [:index, :edit, :update, :destroy]
+      resources :pages
+      resources :news
       resource :session, :only => [:new, :create, :destroy]
     end
 
 
     resources :members, :only => [:index, :new, :create]
+    resource :session, :only => [:new, :create, :destroy]
+    resource :account, :only => [:show, :edit, :update] do
+      scope :module => :account do
+        resource :remind_password, :only => [:new, :create]
+        resource :password, :only => [:edit, :update]
+      end
+    end
+    resources :pages, :only => [:show]
+    resources :news, :only => [:index, :show]
   end
 
   # The priority is based upon order of creation:

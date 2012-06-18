@@ -1,5 +1,5 @@
 class Member::Skill < ActiveRecord::Base
-  LEVELS = %w(1 2 3 4 5 6 7 8 9 10)
+  LEVELS = I18n.t('skill.levels')
 
   attr_accessible :dict_id, :dict_type, :duration, :level, :member_id, :type, :description
 

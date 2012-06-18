@@ -1,0 +1,22 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+          %a.brand{ :href => root_path }
+            = image_tag 'deadline_logo.png', :id => "topbar_logo"
+            -#= t 'base_name'
+      .nav-collapse
+        %ul.nav
+          = item_page :li, program_page
+          = item_page :li, place_page
+        %ul.nav.pull-right
+          - if member_signed_in?
+            = item :li, t('.my_account'), edit_account_path
+            = item :li, t('.logout'), session_path, :method => :delete
+          - else
+            = item :li, t('.new_member'), new_member_path
+            %li.divider-vertical
+            = item :li, t('.login'), new_session_path

@@ -4,6 +4,12 @@ ru:
       member:
         create: 'Отправить заявку'
         update: 'Сохранить'
+      page:
+        create: 'Создать'
+        update: 'Сохранить'
       user:
+        create: 'Создать'
+        update: 'Сохранить'
+      news:
         create: 'Создать'
         update: 'Сохранить'

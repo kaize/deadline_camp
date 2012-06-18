@@ -54,3 +54,11 @@ Other.create([
   {:name => "Системы отслеживания ошибок"},
   {:name => "Системы управления версиями"}
 ])
+configus.pages.each_pair do |k,v|
+  p = Page.find_or_initialize_by_id v.id
+  p.id = v.id
+  p.uri = v.uri
+  p.name = v.name
+  p.save
+end
+ActiveRecord::Base.connection.execute("SELECT setval('pages_id_seq', max(id)) FROM pages;")

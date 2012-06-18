@@ -1,130 +1,143 @@
-= simple_form_for @member, :as => :member, :validate => true, :url => members_path, :html => {:class => "form-horizontal"} do |f|
+= simple_form_for @member, :validate => true, :url => admin_member_path(@member), :html => {:class => "form-horizontal well"} do |f|
   = f.error_notification
 
-  -#= f.input :state_event, :as => :state_event
-  %h3= t('.contact_info')
-  = f.input :first_name
-  = f.input :last_name
-  = f.input :patronymic
-  = f.input :email
-  = f.input :phone, :input_html => {:rel => 'popover', :title => t('.phone.title'), :"data-content" => t('.phone.content')}
-  = f.input :skype
-  = f.input :jabber
-  = f.input :icq
-  = f.input :web
-  %hr
-  %h3= t('.education')
-  = f.input :institute
-  .control-group.string.optional
-    %label.string.optional.control-label{:for => "member_institute"}= t('.study_start')
-    .controls
-      = f.input_field :start_month, :collection => Member::STUDY_MONTH, :include_blank => t('.month'),
-        :style => 'width: 155px'
-      = f.input_field :start_year, :placeholder => t('.year'), :class => 'span1'
-  .control-group.string.optional
-    %label.string.optional.control-label{:for => "member_institute"}= t('.study_finish')
-    .controls
-      = f.input_field :finish_month, :collection => Member::STUDY_MONTH, :include_blank => t('.month'),
-        :style => 'width: 155px'
-      = f.input_field :finish_year, :placeholder => t('.year'), :class => 'span1'
-  = f.input :department
-  = f.input :profession
-  = f.input :degree
-  = f.input :gpa
+  - with_options :scope => "members" do |i18n|
+    = f.input :state_event, :as => :state_event
 
-  %hr
-  %h3= t '.hobby'
-  = f.input :hobby, :as => :text_desc
-  = f.input :sport, :as => :text_desc
+    .tabbable
+      %ul.nav.nav-tabs
+        %li.active
+          %a{:href => '#general', "data-toggle" => "tab"}= i18n.t('general_info')
+        %li
+          %a{:href => '#additional_educations', "data-toggle" => "tab"}= i18n.t 'additional_educations_tab'
+        %li
+          %a{:href => '#skill', "data-toggle" => "tab"}= i18n.t 'skill'
+        %li
+          %a{:href => '#hobby', "data-toggle" => "tab"}= i18n.t('hobby')
+      .tab-content
+        .tab-pane.active#general
+          .row
+            .span
+              %fieldset
+                %legend= i18n.t('contact_info')
+                = f.input :first_name
+                = f.input :last_name
+                = f.input :patronymic
+                = f.input :phone,
+                  :input_html => {:rel => 'popover', :title => i18n.t('phone.title'), :"data-content" => i18n.t('phone.content')}
+                = f.input :email
+                = f.input :skype
+                = f.input :jabber
+                = f.input :icq
+                = f.input :web
+            .span
+              %fieldset
+                %legend= i18n.t('education')
+                = f.input :institute
+                = f.input :study_start do
+                  = f.input_field :start_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
+                    :style => 'width: 155px'
+                  = f.input_field :start_year, :placeholder => t('datetime.prompts.year'), :class => 'span1'
+                = f.input :study_finish do
+                  = f.input_field :finish_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
+                    :style => 'width: 155px'
+                  = f.input_field :finish_year, :placeholder => t('datetime.prompts.year'), :class => 'span1'
+                = f.input :department
+                = f.input :profession
+                = f.input :group
+                = f.input :degree
+                = f.input :gpa
 
-  %hr
-  %h3= t '.camp'
-  = f.input :camp_time, :label => false, :inline_label => t('.camp_time')
-  = f.input :camp_life, :label => false, :inline_label => t('.camp_life')
-  -#= f.input :camp_fee, :label => false, :inline_label => t('.camp_fee')
-  = f.input :camp_notebook, :label => false, :inline_label => t('.camp_notebook')
-  = f.input :camp_training, :label => false, :inline_label => t('.camp_training')
+          %fieldset
+            %legend= i18n.t 'how_hear_about_as'
+            = f.input :how_hear_about_as, :label => false
 
-  %hr
-  %h3= t '.additional_educations'
-  = f.simple_fields_for :additional_educations do |p|
-    = render 'additional_education_fields', :f => p
-  -#.links.control-group
-    .ml30
-      = link_to_add_association t('.add'), f, :additional_educations, :class => 'btn btn-small btn-info'
+        .tab-pane#additional_educations
+          %fieldset
+            %legend= i18n.t 'additional_educations'
+            = f.simple_fields_for :additional_educations do |p|
+              = render 'additional_education_fields', :f => p
+            -#.links.control-group
+              = link_to_add_association i18n.t('add'), f, :additional_educations
 
-  %hr
-  %h3= t '.achievements'
-  = f.simple_fields_for :achievements do |p|
-    = render 'achievement_fields', :f => p
-  -#.links.control-group
-    .ml30
-      = link_to_add_association t('.add'), f, :achievements, :class => 'btn btn-small btn-info'
+          %fieldset
+            %legend= i18n.t 'achievements'
+            = f.simple_fields_for :achievements do |p|
+              = render 'achievement_fields', :f => p
+            -#.links.control-group
+              = link_to_add_association i18n.t('add'), f, :achievements
 
-  %hr
-  %h3= t '.langs'
-  = f.simple_fields_for :langs do |p|
-    = render 'lang_fields', :f => p
-  -#.links.control-group
-    .ml30
-      = link_to_add_association t('.add'), f, :langs, :class => 'btn btn-small btn-info'
+          %fieldset
+            %legend= i18n.t 'langs'
+            = f.simple_fields_for :langs do |p|
+              = render 'lang_fields', :f => p
+            -#.links.control-group
+              = link_to_add_association i18n.t('add'), f, :langs
 
-  %hr
-  %h3= t '.skill'
-  %h4= t '.skills.program_lang'
-  = f.simple_fields_for :skill_program_langs do |p|
-    = render 'skill_program_lang_fields', :f => p
-  -#.links.control-group
-    .ml30
-      = link_to_add_association t('.add'), f, :skill_program_langs, :class => 'btn btn-small btn-info'
-  %h4= t '.skills.database'
-  = f.simple_fields_for :skill_databases do |p|
-    = render 'skill_database_fields', :f => p
-  -#.links.control-group
-    .ml30
-      = link_to_add_association t('.add'), f, :skill_databases, :class => 'btn btn-small btn-info'
-  %h4= t '.skills.os'
-  = f.simple_fields_for :skill_operation_systems do |p|
-    = render 'skill_operation_system_fields', :f => p
-  -#.links.control-group
-    .ml30
-      = link_to_add_association t('.add'), f, :skill_operation_systems, :class => 'btn btn-small btn-info'
-  %h4= t '.skills.ide'
-  = f.simple_fields_for :skill_ides do |p|
-    = render 'skill_ide_fields', :f => p
-  -#.links.control-group
-    .ml30
-      = link_to_add_association t('.add'), f, :skill_ides, :class => 'btn btn-small btn-info'
-  %h4= t '.skills.other'
-  = f.simple_fields_for :skill_others do |p|
-    = render 'skill_other_fields', :f => p
-  -#.links.control-group
-    .ml30
-      = link_to_add_association t('.add'), f, :skill_others, :class => 'btn btn-small btn-info'
+        .tab-pane#skill
+          %h2= i18n.t 'skill'
 
-  %hr
-  %h3= t '.job'
-  = f.simple_fields_for :jobs do |p|
-    = render 'job_fields', :f => p
-  -#.links.control-group
-    .ml30
-      = link_to_add_association t('.add'), f, :jobs, :class => 'btn btn-small btn-info'
+          %fieldset
+            %legend= i18n.t 'skills.program_lang'
+            = f.simple_fields_for :skill_program_langs do |p|
+              = render 'skill_program_lang_fields', :f => p
+            -#.links.control-group
+              = link_to_add_association i18n.t('add'), f, :skill_program_langs
 
-  %hr
-  %h3= t '.other'
-  = f.simple_fields_for :others do |p|
-    = render 'other_fields', :f => p
-  -#.links.control-group
-    .ml30
-      = link_to_add_association t('.add'), f, :others, :class => 'btn btn-small btn-info'
+          %fieldset
+            %legend= i18n.t 'skills.database'
+            = f.simple_fields_for :skill_databases do |p|
+              = render 'skill_database_fields', :f => p
+            -#.links.control-group
+              = link_to_add_association i18n.t('add'), f, :skill_databases
 
-  %hr
-  %h3= t '.preference'
-  = f.simple_fields_for :preferences do |p|
-    = render 'preference_fields', :f => p
-  -#.links.control-group
-    .ml30
-      = link_to_add_association t('.add'), f, :preferences, :class => 'btn btn-small btn-info'
+          %fieldset
+            %legend= i18n.t 'skills.os'
+            = f.simple_fields_for :skill_operation_systems do |p|
+              = render 'skill_operation_system_fields', :f => p
+            -#.links.control-group
+              = link_to_add_association i18n.t('add'), f, :skill_operation_systems
 
-  .form-actions
-    = f.button :submit, :class => 'btn btn-primary'
+          %fieldset
+            %legend= i18n.t 'skills.ide'
+            = f.simple_fields_for :skill_ides do |p|
+              = render 'skill_ide_fields', :f => p
+            -#.links.control-group
+              = link_to_add_association i18n.t('add'), f, :skill_ides
+
+          %fieldset
+            %legend= i18n.t 'skills.other'
+            = f.simple_fields_for :skill_others do |p|
+              = render 'skill_other_fields', :f => p
+            -#.links.control-group
+              = link_to_add_association i18n.t('add'), f, :skill_others
+
+          %fieldset
+            %legend= i18n.t 'preference'
+            = f.simple_fields_for :preferences do |p|
+              = render 'preference_fields', :f => p
+            -#.links.control-group
+              = link_to_add_association i18n.t('add'), f, :preferences
+
+          %fieldset
+            %legend= i18n.t 'job'
+            = f.simple_fields_for :jobs do |p|
+              = render 'job_fields', :f => p
+            -#.links.control-group
+              = link_to_add_association i18n.t('add'), f, :jobs
+
+          %fieldset
+            %legend= i18n.t 'other'
+            = f.simple_fields_for :others do |p|
+              = render 'other_fields', :f => p
+            -#.links.control-group
+              = link_to_add_association i18n.t('add'), f, :others
+
+
+        .tab-pane#hobby
+
+          = f.input :hobby, :as => :text_desc
+          = f.input :sport, :as => :text_desc
+
+        .form-actions
+          = f.button :submit, :class => 'btn btn-primary'
