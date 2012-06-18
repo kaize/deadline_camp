@@ -40,6 +40,11 @@
       = f.input :camp_training, :label => false, :inline_label => i18n.t('camp_training')
 
     %fieldset
+      %legend= i18n.t 'how_hear_about_as'
+      = f.input :how_hear_about_as, :label => false, :collection => Member::HOW_HEAR_ABOUT_AS_LIST
+      = f.input :other_how_hear_about_as
+
+    %fieldset
       %legend
       = f.input :terms_of_service,
         :as => :boolean,

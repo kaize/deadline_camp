@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120617170759) do
+ActiveRecord::Schema.define(:version => 20120617180926) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -135,8 +135,8 @@ ActiveRecord::Schema.define(:version => 20120617170759) do
     t.string   "profession"
     t.string   "degree"
     t.string   "gpa"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "web"
     t.boolean  "camp_time"
     t.boolean  "camp_life"
@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(:version => 20120617170759) do
     t.string   "password_digest"
     t.string   "auth_token"
     t.string   "group"
+    t.string   "how_hear_about_as"
   end
 
   create_table "news", :force => true do |t|
