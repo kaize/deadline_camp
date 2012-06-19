@@ -19,4 +19,24 @@ class Web::SessionsControllerTest < ActionController::TestCase
     assert member_signed_in?
   end
 
+  test "should not auth without password get create" do
+    attrs = {:email => @member.email}
+
+    get :create, :member => attrs
+    #assert_response :redirect
+
+    assert !member_signed_in?
+  end
+
+  test "should catch exeption bcrypt" do
+    @member.password_digest = nil
+    @member.save(:validate => false)
+    attrs = {:email => @member.email}
+
+    get :create, :member => attrs
+    #assert_response :redirect
+
+    assert !member_signed_in?
+  end
+
 end
