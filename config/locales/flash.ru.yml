@@ -4,8 +4,8 @@ ru:
       web:
         sessions:
           create:
-            email_error: 'Неправильный пароль.'
-            password_error: 'Аккаунт с указанным email не найден.'
+            password_error: 'Неправильный пароль.'
+            email_error: 'Аккаунт с указанным email не найден.'
             auth_error: 'При проверке пароля произошла ошибка. Попробуйте восстановить пароль.'
         members:
           create:
