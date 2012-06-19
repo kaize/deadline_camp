@@ -13,7 +13,7 @@
 #
 # $ backup perform -t my_backup [-c <path_to_configuration_file>]
 
-Backup::Model.new(:deadline_staging, "Deadline-Camp Backup") do
+Backup::Model.new(:deadline_camp_staging, "Deadline-Camp Backup") do
   database PostgreSQL do |db|
     db.name     = "deadline_camp_staging"
     #db.username = "deadline_camp_production"
@@ -32,7 +32,7 @@ Backup::Model.new(:deadline_staging, "Deadline-Camp Backup") do
   #end
 end
 
-Backup::Model.new(:deadline_production, "Deadline-Camp Backup") do
+Backup::Model.new(:deadline_camp_production, "Deadline-Camp Backup") do
   database PostgreSQL do |db|
     db.name     = "deadline_camp_production"
     db.username = "deadline_camp_production"
