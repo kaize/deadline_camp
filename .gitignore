@@ -18,3 +18,8 @@
 config/database.yml
 test/reports/*
 coverage/**
+
+# Ignore IDE files
+.idea
+.DS_Store
+public/uploads

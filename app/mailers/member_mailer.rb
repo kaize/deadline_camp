@@ -5,11 +5,16 @@ class MemberMailer < ActionMailer::Base
 
   def welcome(member)
     @member = member
-    mail(to: @member.email)
+    mail(to: "#{@member.full_name} <#{@member.email}>")
   end
 
   def approved(member)
     @member = member
-    mail(to: @member.email)
+    mail(to: "#{@member.full_name} <#{@member.email}>")
+  end
+
+  def remind_password(member)
+    @member = member
+    mail(to: "#{@member.full_name} <#{@member.email}>")
   end
 end

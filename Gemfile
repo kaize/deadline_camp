@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.5'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -8,10 +8,13 @@ gem 'rails', '3.2.5'
 gem 'pg'
 
 gem 'jquery-rails'
+gem "ckeditor", "3.7.0"
 gem 'haml-rails'
-gem 'twitter-bootstrap-rails', '2.0.8'
+gem 'twitter-bootstrap-rails'
 gem 'configus'
 gem 'state_machine'
+gem "carrierwave"
+gem "mini_magick"
 gem 'russian'
 gem 'kaminari'
 gem 'cocoon'

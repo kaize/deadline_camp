@@ -1,1 +1,57 @@
-= render 'form'
+= simple_form_for @member, :validate => true, :url => members_path, :html => {:class => "form-horizontal well"} do |f|
+  = f.error_notification
+
+  - with_options :scope => "members" do |i18n|
+    .row
+      .span
+        %fieldset
+          %legend= i18n.t('contact_info')
+          = f.input :first_name
+          = f.input :last_name
+          = f.input :phone,
+            :input_html => {:rel => 'popover', :title => i18n.t('phone.title'), :"data-content" => i18n.t('phone.content')}
+          = f.input :email
+          = f.input :password
+          = f.input :password_confirmation
+
+      .span
+        %fieldset
+          %legend= i18n.t('education')
+          = f.input :institute
+          = f.input :study_start do
+            = f.input_field :start_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
+              :style => 'width: 155px'
+            = f.input_field :start_year, :placeholder => t('datetime.prompts.year'), :class => 'span1'
+          = f.input :study_finish do
+            = f.input_field :finish_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
+              :style => 'width: 155px'
+            = f.input_field :finish_year, :placeholder => t('datetime.prompts.year'), :class => 'span1'
+          = f.input :department
+          = f.input :profession
+          = f.input :group
+          = f.input :degree
+          = f.input :gpa
+
+    %fieldset
+      %legend= i18n.t 'camp'
+      = f.input :camp_time, :label => false, :inline_label => i18n.t('camp_time')
+      = f.input :camp_life, :label => false, :inline_label => i18n.t('camp_life')
+      = f.input :camp_notebook, :label => false, :inline_label => i18n.t('camp_notebook')
+      = f.input :camp_training, :label => false, :inline_label => i18n.t('camp_training')
+
+    %fieldset
+      %legend= i18n.t 'how_hear_about_as'
+      = f.input :how_hear_about_as, :label => false, :collection => Member::HOW_HEAR_ABOUT_AS_LIST
+      = f.input :other_how_hear_about_as
+
+    %fieldset
+      %legend
+      = f.input :terms_of_service,
+        :as => :boolean,
+        :label => false,
+        :inline_label => t('.terms_of_service'),
+        :input_html => {:checked => true}
+
+    .form-actions
+      = f.button :submit, :class => 'btn btn-primary'
+      = link_to t('.already_have_account'), new_session_path

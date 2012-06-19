@@ -2,13 +2,37 @@ ru:
   flash:
     controllers:
       web:
+        sessions:
+          create:
+            authenticate_error: 'Неправильный email или пароль.'
         members:
           create:
-            success: 'Анкета отправлена на модерацию'
+            success: '<b>Регистрация прошла успешно.</b> На Ваш email отправлено письмо с дальнейшей инструкцией'
+        accounts:
+          update:
+            success: 'Анкета отредактирована.'
+        account:
+          remind_passwords:
+            create:
+              success: 'На указанный email отправлено письмо с инструкцией.'
+              error: 'Аккаунт с указанным email не найден.'
+          passwords:
+            update:
+              success: 'Пароль успешно сменен.'
         admin:
           sessions:
             create:
               authenticate_error: 'Неправильный email или пароль.'
+          news:
+            create:
+              success: 'Страница создана.'
+            update:
+              success: 'Страница отредактирована.'
+          pages:
+            create:
+              success: 'Страница создана.'
+            update:
+              success: 'Страница отредактирована.'
           members:
             update:
-              success: 'Анкета отредактированна.'
+              success: 'Анкета отредактирована.'

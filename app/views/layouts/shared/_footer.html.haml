@@ -1,0 +1,35 @@
+%footer
+  .container
+    .row#footer_top
+      .span3
+        %h2 Ссылки
+        %ul.nav
+          %li= link_to_page contacts_page
+          %li= link_to t('news'), news_index_path
+
+      .span4
+        %h2 Принимают участие
+        %ul.nav
+          %li= link_to_page provider_page
+          %li= link_to_page partners_page
+
+      .span3
+        %h2 Поделиться
+        %span.st_facebook_large
+        %span.st_vkontakte_large
+        %span.st_twitter_large
+        %span.st_plusone_large
+        %span.st_email_large
+
+    .row#footer_bottom
+      .span10
+        %p
+          &copy; НП
+          %br 
+          = mail_to configus.mail.main
+/
+  Javascripts
+  \==================================================
+/ Placed at the end of the document so the pages load faster
+= javascript_include_tag "application", 'http://w.sharethis.com/button/buttons.js',
+  'http://s.sharethis.com/loader.js'

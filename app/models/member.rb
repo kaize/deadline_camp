@@ -1,10 +1,13 @@
 class Member < ActiveRecord::Base
-  STUDY_MONTH = %w(1 2 3 4 5 6 7 8 9 10 11 12)
+  STUDY_MONTH = I18n.t('date.month_names').compact
+  HOW_HEAR_ABOUT_AS_LIST = I18n.t('members.how_hear_about_as_list')
   attr_accessible :state, :email, :first_name, :icq, :jabber, :last_name, :patronymic, :phone, :skype,
     :state, :email, :first_name, :last_name, :patronymic, :phone, :skype, :jabber, :icq, :institute,
-    :start_year, :start_month, :finish_year, :finish_month, :department, :profession, :degree, :gpa, :web, :camp_time, :camp_life,
-    :camp_fee, :camp_notebook, :camp_training, :hobby, :sport
+    :start_year, :start_month, :finish_year, :finish_month, :department, :profession, :degree, :gpa, :web,
+    :camp_time, :camp_life, :camp_fee, :camp_notebook, :camp_training, :hobby, :sport, :state_event, :password,
+    :auth_token, :group, :how_hear_about_as
 
+  has_secure_password
   has_many :jobs
   has_many :additional_educations
   has_many :achievements
@@ -29,6 +32,7 @@ class Member < ActiveRecord::Base
   accepts_nested_attributes_for :others, :reject_if => :all_blank, :allow_destroy => true
   accepts_nested_attributes_for :preferences, :reject_if => :all_blank, :allow_destroy => true
 
+  validates :password, :presence => { :on => :create }
   validates :phone, :presence => true, :phone => true
   validates :email, :presence => true, :uniqueness => true, :email => true
   validates :first_name, :presence => true
@@ -46,5 +50,13 @@ class Member < ActiveRecord::Base
 
   def send_approved_mail
     MemberMailer.approved(self).deliver
+  end
+
+  def generate_auth_token
+    self.auth_token = SecureApp.generate_token
+  end
+
+  def full_name
+    [ first_name, last_name ].join(' ')
   end
 end

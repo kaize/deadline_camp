@@ -1,0 +1,13 @@
+!!! 5
+%html(lang="en")
+  %head
+    = render 'layouts/shared/head'
+  %body
+    = render 'layouts/shared/navbar'
+
+    .container
+      .content
+        = flash_block
+
+        = yield
+    = render 'layouts/shared/footer'

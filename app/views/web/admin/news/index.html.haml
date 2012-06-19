@@ -1,0 +1,24 @@
+%table.table.table-striped
+  %thead
+    %tr
+      %th= sort_link @search, :id
+      %th= sort_link @search, :name
+      %th= sort_link @search, :uri
+      %th= sort_link @search, :created_at
+      %th= sort_link @search, :published_at
+      %th
+  %tbody
+    - @news.each do |n|
+      %tr
+        %td= n.id
+        %td= n.name
+        %td= n.uri
+        %td= l n.created_at, :format => :short
+        %td
+          %span
+            %a{:href => edit_admin_news_path(n.id), :title => t(:edit)}
+              %i.icon-edit
+          %span
+            %a{:href => admin_news_path(n.id), :data => {:method => :delete, :confirm => t(:sure)}, :title => t(:delete)}
+              %i.icon-remove
+  = link_to t('.new'), new_admin_news_path, :class => 'btn'

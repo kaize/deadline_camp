@@ -4,16 +4,19 @@ class Web::MembersController < Web::ApplicationController
   end
 
   def new
-    @member = Member.new
+    @member = MemberRegistrationType.new
+
+    title t('registration')
   end
 
   def create
-    @member = MemberType.new(params[:member])
+    @member = MemberRegistrationType.new(params[:member])
 
     if @member.save
       MemberMailer.welcome(@member).deliver
 
-      flash[:success] = flash_translate(:success)
+      member_sign_in(@member)
+      flash[:success] = flash_translate(:success).html_safe
       redirect_to :root
     else
       render :action => :new

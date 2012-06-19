@@ -1,0 +1,5 @@
+- @news.each do |n|
+  %hr
+  = link_to n, news_path(n)
+
+= paginate @news

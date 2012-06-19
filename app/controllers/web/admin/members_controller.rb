@@ -11,7 +11,7 @@ class Web::Admin::MembersController < Web::Admin::ApplicationController
   def update
     @member = MemberType.find(params[:id])
 
-    if @member.update_attributes(params[:employee])
+    if @member.update_attributes(params[:member])
       flash[:success] = flash_translate(:success)
       redirect_to :action => :edit
     else

@@ -16,6 +16,6 @@ class Web::Admin::SessionsControllerTest < ActionController::TestCase
     get :create, :user => attrs
     assert_response :redirect
 
-    assert signed_in?
+    assert user_signed_in?
   end
 end

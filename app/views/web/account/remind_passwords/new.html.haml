@@ -1,0 +1,9 @@
+.row
+  .span4.offset3.well
+    %h2= t('.password_remind')
+    = simple_form_for :member, :url => account_remind_password_path do |f|
+      - f.with_options :input_html => {:class => :span4} do |f|
+        = f.input :email
+
+      .form-actions
+        = f.button :submit, :value => t('.remind'), :class => 'btn-primary pull-right'
