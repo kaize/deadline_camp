@@ -36,3 +36,5 @@
           %span
             %a{:href => admin_member_path(m), :data => {:method => :delete, :confirm => t(:sure)}, :title => t(:delete)}
               %i.icon-remove
+
+= paginate @members

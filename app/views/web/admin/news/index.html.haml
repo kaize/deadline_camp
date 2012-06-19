@@ -22,3 +22,5 @@
             %a{:href => admin_news_path(n.id), :data => {:method => :delete, :confirm => t(:sure)}, :title => t(:delete)}
               %i.icon-remove
   = link_to t('.new'), new_admin_news_path, :class => 'btn'
+
+= paginate @news

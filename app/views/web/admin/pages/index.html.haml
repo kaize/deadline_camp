@@ -21,3 +21,5 @@
             %a{:href => admin_page_path(p.id), :data => {:method => :delete, :confirm => t(:sure)}, :title => t(:delete)}
               %i.icon-remove
   = link_to t('.new'), new_admin_page_path, :class => 'btn'
+
+= paginate @pages
