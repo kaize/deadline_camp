@@ -13,25 +13,6 @@
 #
 # $ backup perform -t my_backup [-c <path_to_configuration_file>]
 
-Backup::Model.new(:deadline_camp_staging, "Deadline-Camp Backup") do
-  database PostgreSQL do |db|
-    db.name     = "deadline_camp_staging"
-    #db.username = "deadline_camp_production"
-    #db.password = "mIKBzvbllRvwJObaSTkeg"
-    #db.host               = "127.0.0.1"
-  end
-
-  #compress_with Gzip do |compression|
-    #compression.best = true
-    #compression.fast = false
-  #end
-
-  #store_with Local do |local|
-    #local.path = "/var/tmp/"
-    #local.keep = 5
-  #end
-end
-
 Backup::Model.new(:deadline_camp_production, "Deadline-Camp Backup") do
   database PostgreSQL do |db|
     db.name     = "deadline_camp_production"

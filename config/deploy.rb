@@ -27,6 +27,3 @@ after "deploy:update", "deploy:cleanup"
 
 require 'capistrano_colors'
 require 'airbrake/capistrano'
-
-set :whenever_command, "bundle exec whenever"
-require "whenever/capistrano"
