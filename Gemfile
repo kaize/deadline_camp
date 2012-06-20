@@ -21,7 +21,7 @@ gem 'cocoon'
 gem 'capi'
 gem 'airbrake'
 gem 'simple_form'
-gem "backup"
+gem "backup", "~> 3.0.24"
 gem 'whenever'
 
 # Gems used only for assets and not required
