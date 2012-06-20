@@ -23,7 +23,7 @@ class Web::SessionsControllerTest < ActionController::TestCase
     attrs = {:email => @member.email}
 
     get :create, :member => attrs
-    #assert_response :redirect
+    assert_response :success
 
     assert !member_signed_in?
   end
@@ -34,7 +34,7 @@ class Web::SessionsControllerTest < ActionController::TestCase
     attrs = {:email => @member.email}
 
     get :create, :member => attrs
-    #assert_response :redirect
+    assert_response :success
 
     assert !member_signed_in?
   end

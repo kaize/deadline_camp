@@ -21,6 +21,8 @@ gem 'cocoon'
 gem 'capi'
 gem 'airbrake'
 gem 'simple_form'
+gem "backup"
+gem 'whenever'
 
 # Gems used only for assets and not required
 # in production environments by default.
