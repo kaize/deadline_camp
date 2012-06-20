@@ -24,6 +24,6 @@ job_type :bundle_command, "cd :path && RAILS_ENV=#{environment} bundle exec :tas
 set :path, "/u/apps/deadline_camp/current"
 
 every 4.hours do
-  bundle_command "backup perform -t dealine_camp_#{environment} -c config/backup.rb"
+  bundle_command "backup perform -t deadline_camp_#{environment} -c config/backup.rb --root_path ."
 end
 
