@@ -44,11 +44,18 @@ class Member < ActiveRecord::Base
   state_machine :state, :initial => :new do
     state :new
     state :accepted
+    state :busted
 
     event :accept do
       transition :new => :accepted
     end
+
+    event :bust do
+      transition [:new, :accepted] => :busted
+    end
   end
+
+  scope :active, without_state(:busted)
 
   def generate_auth_token
     self.auth_token = SecureApp.generate_token

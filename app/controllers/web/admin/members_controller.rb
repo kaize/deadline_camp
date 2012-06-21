@@ -1,6 +1,6 @@
 class Web::Admin::MembersController < Web::Admin::ApplicationController
   def index
-    @search = Member.metasearch(params[:search])
+    @search = Member.active.metasearch(params[:search])
     @members = @search.page(params[:page])
   end
 
@@ -21,7 +21,7 @@ class Web::Admin::MembersController < Web::Admin::ApplicationController
 
   def destroy
     @member = Member.find(params[:id])
-    @member.destroy
+    @member.bust
     redirect_to :action => :index
   end
 end

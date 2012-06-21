@@ -5,9 +5,11 @@ ru:
         state:
           events:
             accept: 'Одобрить'
+            bust: "Удалить"
           states:
             new: 'Новый'
             accepted: 'Одобрен'
+            busted: "Удаленный"
     errors:
       models:
         news:
