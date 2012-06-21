@@ -24,14 +24,13 @@
                 = f.input :first_name
                 = f.input :last_name
                 = f.input :patronymic
-                = f.input :phone,
-                  :input_html => {:rel => 'popover', :title => i18n.t('phone.title'), :"data-content" => i18n.t('phone.content')}
+                = f.input :phone, :hint => i18n.t('phone_hint')
                 = f.input :skype
                 = f.input :jabber
                 = f.input :icq
-                = f.input :facebook
-                = f.input :twitter
-                = f.input :vkontakte
+                = f.input :facebook, :hint => i18n.t('facebook_hint')
+                = f.input :twitter, :hint => i18n.t('twitter_hint')
+                = f.input :vkontakte, :hint => i18n.t('vkontakte_hint')
                 = f.input :web
             .span
               %fieldset

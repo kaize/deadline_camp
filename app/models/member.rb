@@ -37,9 +37,9 @@ class Member < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true, :email => true
   validates :first_name, :presence => true
   validates :last_name, :presence => true
-  validates :facebook, :url => true, :allow_blank => true
-  validates :twitter, :url => true, :allow_blank => true
-  validates :vkontakte, :url => true, :allow_blank => true
+  validates :facebook, :slug => true, :allow_blank => true
+  validates :twitter, :slug => true, :allow_blank => true
+  validates :vkontakte, :slug => true, :allow_blank => true
 
   state_machine :state, :initial => :new do
     state :new
