@@ -6,6 +6,7 @@ class Web::AccountsController < Web::ApplicationController
   end
 
   def edit
+    @member = current_member
   end
 
   def update
