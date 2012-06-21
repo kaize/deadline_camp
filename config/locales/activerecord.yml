@@ -24,6 +24,12 @@ ru:
               email: 'Введите корректный email'
             phone:
               phone: 'Введите корректный номер телефона'
+            facebook:
+              url: 'имеет неверное значение'
+            twitter:
+              url: 'имеет неверное значение'
+            vkontakte:
+              url: 'имеет неверное значение'
     models:
       member: 'Участник'
     attributes:
@@ -62,6 +68,8 @@ ru:
         gpa: 'Средний балл диплома'
         hobby: 'Хобби'
         sport: 'Спорт'
+        web: 'Сайт'
+        vkontakte: 'Вконтакте'
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
         how_hear_about_as: "Откуда вы узнали о нас?"

@@ -5,7 +5,7 @@ class Member < ActiveRecord::Base
     :state, :email, :first_name, :last_name, :patronymic, :phone, :skype, :jabber, :icq, :institute,
     :start_year, :start_month, :finish_year, :finish_month, :department, :profession, :degree, :gpa, :web,
     :camp_time, :camp_life, :camp_fee, :camp_notebook, :camp_training, :hobby, :sport, :state_event, :password,
-    :auth_token, :group, :how_hear_about_as
+    :auth_token, :group, :how_hear_about_as, :twitter, :facebook, :vkontakte
 
   has_secure_password
   has_many :jobs
@@ -37,6 +37,9 @@ class Member < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true, :email => true
   validates :first_name, :presence => true
   validates :last_name, :presence => true
+  validates :facebook, :url => true, :allow_blank => true
+  validates :twitter, :url => true, :allow_blank => true
+  validates :vkontakte, :url => true, :allow_blank => true
 
   state_machine :state, :initial => :new do
     state :new
