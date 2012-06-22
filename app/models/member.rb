@@ -7,6 +7,8 @@ class Member < ActiveRecord::Base
     :camp_time, :camp_life, :camp_fee, :camp_notebook, :camp_training, :hobby, :sport, :state_event, :password,
     :auth_token, :group, :how_hear_about_as, :twitter, :facebook, :vkontakte
 
+  include UsefullScopes
+
   has_secure_password
   has_many :jobs
   has_many :additional_educations
@@ -55,7 +57,7 @@ class Member < ActiveRecord::Base
     end
   end
 
-  scope :active, without_state(:busted)
+  scope :active, without_state(:busted).by_id
 
   def generate_auth_token
     self.auth_token = SecureApp.generate_token
