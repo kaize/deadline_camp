@@ -20,11 +20,8 @@
         %td= m.last_name
         %td= m.patronymic
         %td
-          .dropdown.company-relations
-            %a{:class => 'dropdown-toggle', :'data-toggle' => 'dropdown', :href => '#'}
-              %i.icon-list
-              %span.caret
-            %ul.dropdown-menu
+          - if m.preferences.any?
+            %ul
               - m.preferences.each do |mp|
                 %li= mp
 
