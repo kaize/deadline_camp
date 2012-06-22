@@ -1,22 +1,22 @@
 = simple_form_for @member, :validate => true, :url => members_path, :html => {:class => "form-horizontal well"} do |f|
   = f.error_notification
 
-  - with_options :scope => "members" do |i18n|
+  - with_options :scope => "members" do |member_t|
     .row
       .span
         %fieldset
-          %legend= i18n.t('contact_info')
+          %legend= member_t.t('contact_info')
           = f.input :first_name
           = f.input :last_name
           = f.input :phone,
-            :input_html => {:rel => 'popover', :title => i18n.t('phone.title'), :"data-content" => i18n.t('phone.content')}
+            :input_html => {:rel => 'popover', :title => member_t.t('phone.title'), :"data-content" => member_t.t('phone.content')}
           = f.input :email
           = f.input :password
           = f.input :password_confirmation
 
       .span
         %fieldset
-          %legend= i18n.t('education')
+          %legend= member_t.t('education')
           = f.input :institute
           = f.input :study_start do
             = f.input_field :start_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
@@ -33,14 +33,14 @@
           = f.input :gpa
 
     %fieldset
-      %legend= i18n.t 'camp'
-      = f.input :camp_time, :label => false, :inline_label => i18n.t('camp_time')
-      = f.input :camp_life, :label => false, :inline_label => i18n.t('camp_life')
-      = f.input :camp_notebook, :label => false, :inline_label => i18n.t('camp_notebook')
-      = f.input :camp_training, :label => false, :inline_label => i18n.t('camp_training')
+      %legend= member_t.t 'camp'
+      = f.input :camp_time, :label => false, :inline_label => member_t.t('camp_time')
+      = f.input :camp_life, :label => false, :inline_label => member_t.t('camp_life')
+      = f.input :camp_notebook, :label => false, :inline_label => member_t.t('camp_notebook')
+      = f.input :camp_training, :label => false, :inline_label => member_t.t('camp_training')
 
     %fieldset
-      %legend= i18n.t 'how_hear_about_as'
+      %legend= member_t.t 'how_hear_about_as'
       = f.input :how_hear_about_as, :label => false, :collection => Member::HOW_HEAR_ABOUT_AS_LIST
       = f.input :other_how_hear_about_as
 

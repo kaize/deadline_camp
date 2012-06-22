@@ -24,12 +24,19 @@ ru:
   sure: 'Вы уверены?'
   new: 'Новый'
   registration: Регистрация
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "..."
   news: Новости
   contacts:
     phone: 'Телефон для справок: 97-18-47'
   member_mailer:
     welcome:
-      subject: "Добро пожаловать на Смену Dealine"
+      subject: "Добро пожаловать на Смену Deadline"
     approved:
       subject: "Смена Deadline: ваша заявка подтверждена"
     remind_password:
@@ -74,6 +81,10 @@ ru:
     hobby: 'Хобби, увлечения'
     other: 'Сертификаты, дипломы, достижения, не относящиеся к ИТ'
     preference: 'На какой из технологий вы бы предпочли разрабатывать программное обеспечение?'
+    phone_hint: 'Пример: +7 (902) 123 45 67'
+    facebook_hint: 'Ваш ник'
+    twitter_hint: 'Только ник'
+    vkontakte_hint: 'Ваш никнейм'
     phone:
      title: 'Введите действующий телефон'
      content: 'Формат телефона +7-902-123-45-67'

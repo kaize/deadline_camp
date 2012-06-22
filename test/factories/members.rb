@@ -26,5 +26,8 @@ FactoryGirl.define do
     camp_training true
     auth_token { generate :name }
     how_hear_about_as { generate :string }
+    vkontakte { generate :uri }
+    facebook { generate :uri }
+    twitter { generate :uri }
   end
 end

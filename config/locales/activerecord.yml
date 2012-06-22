@@ -5,9 +5,11 @@ ru:
         state:
           events:
             accept: 'Одобрить'
+            bust: "Удалить"
           states:
             new: 'Новый'
             accepted: 'Одобрен'
+            busted: "Удаленный"
     errors:
       models:
         news:
@@ -24,6 +26,12 @@ ru:
               email: 'Введите корректный email'
             phone:
               phone: 'Введите корректный номер телефона'
+            facebook:
+              slug: 'имеет неверное значение'
+            twitter:
+              slug: 'имеет неверное значение'
+            vkontakte:
+              slug: 'имеет неверное значение'
     models:
       member: 'Участник'
     attributes:
@@ -62,6 +70,8 @@ ru:
         gpa: 'Средний балл диплома'
         hobby: 'Хобби'
         sport: 'Спорт'
+        web: 'Сайт'
+        vkontakte: 'Вконтакте'
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
         how_hear_about_as: "Откуда вы узнали о нас?"

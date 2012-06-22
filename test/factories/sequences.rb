@@ -27,6 +27,10 @@ FactoryGirl.define do
     "http://site_#{n}.com"
   end
 
+  sequence :url do |n|
+    "http://url_#{n}.com/#{n}"
+  end
+
   sequence :uri do |n|
     "uri-#{n}"
   end

@@ -13,4 +13,8 @@ module ApplicationHelper
     item(tag, page, path, link_options)
   end
 
+  def member_state_t(state)
+    t("activerecord.state_machines.member.state.states.#{state}")
+  end
+
 end

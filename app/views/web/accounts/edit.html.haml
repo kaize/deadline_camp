@@ -1,38 +1,40 @@
-= simple_form_for current_member, :validate => true, :url => account_path, :html => {:class => "form-horizontal well"} do |f|
+= simple_form_for @member, :validate => true, :url => account_path, :html => {:class => "form-horizontal well"} do |f|
   = f.error_notification
 
-  - with_options :scope => "members" do |i18n|
+  - with_options :scope => "members" do |member_t|
 
     .tabbable
       %ul.nav.nav-tabs
         %li.active
-          %a{:href => '#general', "data-toggle" => "tab"}= i18n.t('general_info')
+          %a{:href => '#general', "data-toggle" => "tab"}= member_t.t('general_info')
         %li
-          %a{:href => '#additional_educations', "data-toggle" => "tab"}= i18n.t 'additional_educations_tab'
+          %a{:href => '#additional_educations', "data-toggle" => "tab"}= member_t.t 'additional_educations_tab'
         %li
-          %a{:href => '#skill', "data-toggle" => "tab"}= i18n.t 'skill'
+          %a{:href => '#skill', "data-toggle" => "tab"}= member_t.t 'skill'
         %li
-          %a{:href => '#hobby', "data-toggle" => "tab"}= i18n.t('hobby')
+          %a{:href => '#hobby', "data-toggle" => "tab"}= member_t.t('hobby')
         %li.pull-right
-          %a{:href => edit_account_password_path}= i18n.t('reset_password')
+          %a{:href => edit_account_password_path}= member_t.t('reset_password')
       .tab-content
         .tab-pane.active#general
           .row
             .span
               %fieldset
-                %legend= i18n.t('contact_info')
+                %legend= member_t.t('contact_info')
                 = f.input :first_name
                 = f.input :last_name
                 = f.input :patronymic
-                = f.input :phone,
-                  :input_html => {:rel => 'popover', :title => i18n.t('phone.title'), :"data-content" => i18n.t('phone.content')}
+                = f.input :phone, :hint => member_t.t('phone_hint')
                 = f.input :skype
                 = f.input :jabber
                 = f.input :icq
+                -#= f.input :facebook, :hint => member_t.t('facebook_hint')
+                -#= f.input :twitter, :hint => member_t.t('twitter_hint')
+                -#= f.input :vkontakte, :hint => member_t.t('vkontakte_hint')
                 = f.input :web
             .span
               %fieldset
-                %legend= i18n.t('education')
+                %legend= member_t.t('education')
                 = f.input :institute
                 = f.input :study_start do
                   = f.input_field :start_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
@@ -50,84 +52,84 @@
 
         .tab-pane#additional_educations
           %fieldset
-            %legend= i18n.t 'additional_educations'
+            %legend= member_t.t 'additional_educations'
             = f.simple_fields_for :additional_educations do |p|
               = render 'additional_education_fields', :f => p
             .links.control-group
-              = link_to_add_association i18n.t('add'), f, :additional_educations
+              = link_to_add_association member_t.t('add'), f, :additional_educations
 
           %fieldset
-            %legend= i18n.t 'achievements'
+            %legend= member_t.t 'achievements'
             = f.simple_fields_for :achievements do |p|
               = render 'achievement_fields', :f => p
             .links.control-group
-              = link_to_add_association i18n.t('add'), f, :achievements
+              = link_to_add_association member_t.t('add'), f, :achievements
 
           %fieldset
-            %legend= i18n.t 'langs'
+            %legend= member_t.t 'langs'
             = f.simple_fields_for :langs do |p|
               = render 'lang_fields', :f => p
             .links.control-group
-              = link_to_add_association i18n.t('add'), f, :langs
+              = link_to_add_association member_t.t('add'), f, :langs
 
         .tab-pane#skill
-          %h2= i18n.t 'skill'
+          %h2= member_t.t 'skill'
 
           %fieldset
-            %legend= i18n.t 'skills.program_lang'
+            %legend= member_t.t 'skills.program_lang'
             = f.simple_fields_for :skill_program_langs do |p|
               = render 'skill_program_lang_fields', :f => p
             .links.control-group
-              = link_to_add_association i18n.t('add'), f, :skill_program_langs
+              = link_to_add_association member_t.t('add'), f, :skill_program_langs
 
           %fieldset
-            %legend= i18n.t 'skills.database'
+            %legend= member_t.t 'skills.database'
             = f.simple_fields_for :skill_databases do |p|
               = render 'skill_database_fields', :f => p
             .links.control-group
-              = link_to_add_association i18n.t('add'), f, :skill_databases
+              = link_to_add_association member_t.t('add'), f, :skill_databases
 
           %fieldset
-            %legend= i18n.t 'skills.os'
+            %legend= member_t.t 'skills.os'
             = f.simple_fields_for :skill_operation_systems do |p|
               = render 'skill_operation_system_fields', :f => p
             .links.control-group
-              = link_to_add_association i18n.t('add'), f, :skill_operation_systems
+              = link_to_add_association member_t.t('add'), f, :skill_operation_systems
 
           %fieldset
-            %legend= i18n.t 'skills.ide'
+            %legend= member_t.t 'skills.ide'
             = f.simple_fields_for :skill_ides do |p|
               = render 'skill_ide_fields', :f => p
             .links.control-group
-              = link_to_add_association i18n.t('add'), f, :skill_ides
+              = link_to_add_association member_t.t('add'), f, :skill_ides
 
           %fieldset
-            %legend= i18n.t 'skills.other'
+            %legend= member_t.t 'skills.other'
             = f.simple_fields_for :skill_others do |p|
               = render 'skill_other_fields', :f => p
             .links.control-group
-              = link_to_add_association i18n.t('add'), f, :skill_others
+              = link_to_add_association member_t.t('add'), f, :skill_others
 
           %fieldset
-            %legend= i18n.t 'preference'
+            %legend= member_t.t 'preference'
             = f.simple_fields_for :preferences do |p|
               = render 'preference_fields', :f => p
             .links.control-group
-              = link_to_add_association i18n.t('add'), f, :preferences
+              = link_to_add_association member_t.t('add'), f, :preferences
 
           %fieldset
-            %legend= i18n.t 'job'
+            %legend= member_t.t 'job'
             = f.simple_fields_for :jobs do |p|
               = render 'job_fields', :f => p
             .links.control-group
-              = link_to_add_association i18n.t('add'), f, :jobs
+              = link_to_add_association member_t.t('add'), f, :jobs
 
           %fieldset
-            %legend= i18n.t 'other'
+            %legend= member_t.t 'other'
             = f.simple_fields_for :others do |p|
               = render 'other_fields', :f => p
             .links.control-group
-              = link_to_add_association i18n.t('add'), f, :others
+              = link_to_add_association member_t.t('add'), f, :others
 
 
         .tab-pane#hobby
