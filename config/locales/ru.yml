@@ -24,6 +24,13 @@ ru:
   sure: 'Вы уверены?'
   new: 'Новый'
   registration: Регистрация
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "..."
   news: Новости
   contacts:
     phone: 'Телефон для справок: 97-18-47'
