@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120625135150) do
+ActiveRecord::Schema.define(:version => 20120625161057) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -156,6 +156,7 @@ ActiveRecord::Schema.define(:version => 20120625135150) do
     t.string   "vkontakte"
     t.string   "city"
     t.date     "birthday"
+    t.integer  "schoolyear_count"
   end
 
   create_table "news", :force => true do |t|

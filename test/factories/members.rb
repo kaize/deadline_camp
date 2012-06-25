@@ -36,6 +36,7 @@ FactoryGirl.define do
       vkontakte { generate :uri }
       facebook { generate :uri }
       twitter { generate :uri }
+      schoolyear_count { generate :integer }
 
       after(:create) do |instance|
         with_options :member => instance do |m|

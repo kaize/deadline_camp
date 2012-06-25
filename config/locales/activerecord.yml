@@ -78,6 +78,7 @@ ru:
         other_how_hear_about_as: "Другое"
         city: 'Город'
         birthday: 'Дата рождения'
+        schoolyear_count: "Сколько курсов закончили?"
       'member/skill':
         level: 'Уровень'
         duration: 'Сколько лет/месяцев используете'
