@@ -29,24 +29,4 @@ class Web::SessionsControllerTest < ActionController::TestCase
     assert !member_signed_in?
   end
 
-  # fix bag auth with bad password digest
-  test "should not auth without password post create" do
-    attrs = {:email => @member.email}
-
-    post :create, :member => attrs
-    assert_response :success
-
-    assert !member_signed_in?
-  end
-  test "should catch exeption bcrypt" do
-    @member.password_digest = nil
-    @member.save(:validate => false)
-    attrs = {:email => @member.email}
-
-    post :create, :member => attrs
-    assert_response :success
-
-    assert !member_signed_in?
-  end
-
 end
