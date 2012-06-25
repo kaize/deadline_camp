@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Web::Account::RemindPasswordsControllerTest < ActionController::TestCase
+class Web::RemindPasswordsControllerTest < ActionController::TestCase
   def setup
     @member = create :member
   end

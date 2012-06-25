@@ -1,4 +1,4 @@
-class Web::Account::RemindPasswordsController < Web::Account::ApplicationController
+class Web::RemindPasswordsController < Web::ApplicationController
   def new
     @member = Member.new
   end
