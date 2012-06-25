@@ -17,7 +17,7 @@
       .tab-content
         .tab-pane.active#general
           .row
-            .span
+            .span5
               %fieldset
                 %legend= member_t.t('contact_info')
                 = f.input :first_name
@@ -34,7 +34,7 @@
                 -#= f.input :twitter
                 -#= f.input :vkontakte
                 = f.input :web
-            .span
+            .span6
               %fieldset
                 %legend= member_t.t('education')
                 = f.input :institute

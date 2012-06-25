@@ -3,7 +3,7 @@
 
   - with_options :scope => "members" do |member_t|
     .row
-      .span
+      .span5
         %fieldset
           %legend= member_t.t('contact_info')
           = f.input :first_name
@@ -15,7 +15,7 @@
           = f.input :password
           = f.input :password_confirmation
 
-      .span
+      .span6
         %fieldset
           %legend= member_t.t('education')
           = f.input :institute
