@@ -10,30 +10,40 @@ class Web::SessionsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get create" do
+  test "should post create" do
     attrs = {:email => @member.email, :password => @member.password}
 
-    get :create, :member => attrs
+    post :create, :member => attrs
     assert_response :redirect
 
     assert member_signed_in?
   end
 
-  test "should not auth without password get create" do
-    attrs = {:email => @member.email}
+  test "should delete destroy" do
+    member_sign_in @member
+    assert member_signed_in?
 
-    get :create, :member => attrs
-    assert_response :success
+    delete :destroy
+    assert_response :redirect
 
     assert !member_signed_in?
   end
 
+  # fix bag auth with bad password digest
+  test "should not auth without password post create" do
+    attrs = {:email => @member.email}
+
+    post :create, :member => attrs
+    assert_response :success
+
+    assert !member_signed_in?
+  end
   test "should catch exeption bcrypt" do
     @member.password_digest = nil
     @member.save(:validate => false)
     attrs = {:email => @member.email}
 
-    get :create, :member => attrs
+    post :create, :member => attrs
     assert_response :success
 
     assert !member_signed_in?

@@ -10,15 +10,11 @@ class Web::Account::RemindPasswordsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get create" do
+  test "should post create" do
     attrs = {:email => @member.email}
 
-    get :create, :member => attrs
+    post :create, :member => attrs
     assert_response :redirect
-
-    assert !ActionMailer::Base.deliveries.empty?
-    email = ActionMailer::Base.deliveries.last
-    assert_equal I18n.t('member_mailer.remind_password.subject'), email.subject
   end
 
 end
