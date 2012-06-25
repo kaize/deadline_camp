@@ -1,6 +1,6 @@
 class Web::Admin::MembersController < Web::Admin::ApplicationController
   def index
-    @search = Member.active.by_id.metasearch(params[:search])
+    @search = Member.active.metasearch( search_params(params[:search]) )
     @members = @search.page(params[:page])
   end
 
@@ -24,4 +24,10 @@ class Web::Admin::MembersController < Web::Admin::ApplicationController
     @member.bust
     redirect_to :action => :index
   end
+
+  private
+    def search_params(prms)
+      prms ||= {}
+      {"meta_sort"=>"id.desc"}.merge(prms)
+    end
 end
