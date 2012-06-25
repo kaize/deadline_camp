@@ -27,20 +27,21 @@
               %li= link_to t('.news_list'), admin_news_index_path
 
     .container
-
       .content
-        .row
+        = flash_block
+        = yield
+        -#.row
           .span9
             = flash_block
             = yield
           .span3
             -#.well.sidebar-nav
-              -#%h3 Sidebar
-              -#%ul.nav.nav-list
-                -#%li.nav-header Sidebar
-                -#%li= link_to "Link 1", "/path1"
-                -#%li= link_to "Link 2", "/path2"
-                -#%li= link_to "Link 3", "/path3"
+              %h3 Sidebar
+              %ul.nav.nav-list
+                %li.nav-header Sidebar
+                %li= link_to "Link 1", "/path1"
+                %li= link_to "Link 2", "/path2"
+                %li= link_to "Link 3", "/path3"
 
       %footer
         %p &copy; Company 2012
