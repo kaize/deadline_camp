@@ -57,7 +57,7 @@ class Member < ActiveRecord::Base
     end
   end
 
-  scope :active, without_state(:busted).by_id
+  scope :active, without_state(:busted)
 
   def generate_auth_token
     self.auth_token = SecureApp.generate_token
