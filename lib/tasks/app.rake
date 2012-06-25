@@ -1,5 +1,6 @@
-class UpdateMemberPasswordValues < ActiveRecord::Migration
-  def up
+namespace :app do
+
+  task :fix_member_password => :environment do
     Member.find_each do |m|
       begin
         BCrypt::Password.new(m.password_digest)
@@ -9,8 +10,5 @@ class UpdateMemberPasswordValues < ActiveRecord::Migration
         puts "Member ##{m.id} changes password"
       end
     end
-  end
-
-  def down
   end
 end
