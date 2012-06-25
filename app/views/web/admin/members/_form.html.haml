@@ -23,8 +23,9 @@
                 = f.input :first_name
                 = f.input :last_name
                 = f.input :patronymic
-                = f.input :phone,
-                  :input_html => {:rel => 'popover', :title => member_t.t('phone.title'), :"data-content" => member_t.t('phone.content')}
+                = f.input :phone
+                = f.input :city
+                = f.input :birthday, :as => :date_picker
                 = f.input :email
                 = f.input :skype
                 = f.input :jabber

@@ -76,6 +76,8 @@ ru:
         password_confirmation: "Подтверждение пароля"
         how_hear_about_as: "Откуда вы узнали о нас?"
         other_how_hear_about_as: "Другое"
+        city: 'Город'
+        birthday: 'Дата рождения'
       'member/skill':
         level: 'Уровень'
         duration: 'Сколько лет/месяцев используете'

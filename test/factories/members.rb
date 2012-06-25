@@ -7,6 +7,8 @@ FactoryGirl.define do
     first_name { generate :name }
     last_name { generate :name }
     phone
+    city { generate :string }
+    birthday { -19.year.from_now }
 
     trait :with_auth_token do
       auth_token { generate :name }

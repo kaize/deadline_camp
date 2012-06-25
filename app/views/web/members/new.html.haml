@@ -8,8 +8,9 @@
           %legend= member_t.t('contact_info')
           = f.input :first_name
           = f.input :last_name
-          = f.input :phone,
-            :input_html => {:rel => 'popover', :title => member_t.t('phone.title'), :"data-content" => member_t.t('phone.content')}
+          = f.input :phone, :hint => member_t.t('phone_hint')
+          = f.input :city
+          = f.input :birthday, :as => :date_picker
           = f.input :email
           = f.input :password
           = f.input :password_confirmation

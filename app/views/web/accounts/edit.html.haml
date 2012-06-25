@@ -25,6 +25,8 @@
                 = f.input :last_name
                 = f.input :patronymic
                 = f.input :phone, :hint => member_t.t('phone_hint')
+                = f.input :city
+                = f.input :birthday, :as => :date_picker
                 = f.input :skype
                 = f.input :jabber
                 = f.input :icq
