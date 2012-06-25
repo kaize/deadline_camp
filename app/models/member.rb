@@ -1,11 +1,12 @@
 class Member < ActiveRecord::Base
   STUDY_MONTH = I18n.t('date.month_names').compact
   HOW_HEAR_ABOUT_AS_LIST = I18n.t('members.how_hear_about_as_list')
+  SCHOOLYEARS = %w(1 2 3 4 5 6)
   attr_accessible :state, :email, :first_name, :icq, :jabber, :last_name, :patronymic, :phone, :skype,
     :state, :email, :first_name, :last_name, :patronymic, :phone, :skype, :jabber, :icq, :institute,
     :start_year, :start_month, :finish_year, :finish_month, :department, :profession, :degree, :gpa, :web,
     :camp_time, :camp_life, :camp_fee, :camp_notebook, :camp_training, :hobby, :sport, :state_event, :password,
-    :auth_token, :group, :how_hear_about_as, :twitter, :facebook, :vkontakte
+    :auth_token, :group, :how_hear_about_as, :twitter, :facebook, :vkontakte, :city, :birthday, :schoolyear_count
 
   include UsefullScopes
 
@@ -42,6 +43,8 @@ class Member < ActiveRecord::Base
   validates :facebook, :slug => true, :allow_blank => true
   validates :twitter, :slug => true, :allow_blank => true
   validates :vkontakte, :slug => true, :allow_blank => true
+  validates :city, :presence => true
+  validates :birthday, :presence => true
 
   state_machine :state, :initial => :new do
     state :new
@@ -57,7 +60,7 @@ class Member < ActiveRecord::Base
     end
   end
 
-  scope :active, without_state(:busted).by_id
+  scope :active, without_state(:busted)
 
   def generate_auth_token
     self.auth_token = SecureApp.generate_token

@@ -17,14 +17,15 @@
       .tab-content
         .tab-pane.active#general
           .row
-            .span
+            .span5
               %fieldset
                 %legend= member_t.t('contact_info')
                 = f.input :first_name
                 = f.input :last_name
                 = f.input :patronymic
-                = f.input :phone,
-                  :input_html => {:rel => 'popover', :title => member_t.t('phone.title'), :"data-content" => member_t.t('phone.content')}
+                = f.input :phone
+                = f.input :city
+                = f.input :birthday, :as => :date_picker
                 = f.input :email
                 = f.input :skype
                 = f.input :jabber
@@ -33,7 +34,7 @@
                 -#= f.input :twitter
                 -#= f.input :vkontakte
                 = f.input :web
-            .span
+            .span6
               %fieldset
                 %legend= member_t.t('education')
                 = f.input :institute
@@ -48,8 +49,16 @@
                 = f.input :department
                 = f.input :profession
                 = f.input :group
+                = f.input :schoolyear_count, :collection => Member::SCHOOLYEARS
                 = f.input :degree
                 = f.input :gpa
+
+          %fieldset
+            %legend= member_t.t 'camp'
+            = f.input :camp_time, :label => false, :inline_label => member_t.t('camp_time')
+            = f.input :camp_life, :label => false, :inline_label => member_t.t('camp_life')
+            = f.input :camp_notebook, :label => false, :inline_label => member_t.t('camp_notebook')
+            = f.input :camp_training, :label => false, :inline_label => member_t.t('camp_training')
 
           %fieldset
             %legend= member_t.t 'how_hear_about_as'

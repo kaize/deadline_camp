@@ -23,6 +23,7 @@ gem 'airbrake'
 gem 'simple_form'
 gem "backup", "~> 3.0.24"
 gem 'whenever'
+gem 'usefull_scopes', :git => "https://github.com/kaize/usefull_scopes.git"
 
 # Gems used only for assets and not required
 # in production environments by default.

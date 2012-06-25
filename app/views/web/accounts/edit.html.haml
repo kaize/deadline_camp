@@ -18,13 +18,15 @@
       .tab-content
         .tab-pane.active#general
           .row
-            .span
+            .span5
               %fieldset
                 %legend= member_t.t('contact_info')
                 = f.input :first_name
                 = f.input :last_name
                 = f.input :patronymic
                 = f.input :phone, :hint => member_t.t('phone_hint')
+                = f.input :city
+                = f.input :birthday, :as => :date_picker
                 = f.input :skype
                 = f.input :jabber
                 = f.input :icq
@@ -32,7 +34,7 @@
                 -#= f.input :twitter, :hint => member_t.t('twitter_hint')
                 -#= f.input :vkontakte, :hint => member_t.t('vkontakte_hint')
                 = f.input :web
-            .span
+            .span6
               %fieldset
                 %legend= member_t.t('education')
                 = f.input :institute
@@ -47,6 +49,7 @@
                 = f.input :department
                 = f.input :profession
                 = f.input :group
+                = f.input :schoolyear_count, :collection => Member::SCHOOLYEARS
                 = f.input :degree
                 = f.input :gpa
 

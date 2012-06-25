@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Web::AccountsControllerTest < ActionController::TestCase
   setup do
-    @member = create :member
+    @member = create :member, :with_full_profile
     member_sign_in @member
   end
 
@@ -16,7 +16,7 @@ class Web::AccountsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should post update" do
+  test "should put update" do
     attrs = attributes_for(:member)
 
     attrs[:additional_educations_attributes] = form_attributes_for('member/additional_education')
@@ -31,7 +31,7 @@ class Web::AccountsControllerTest < ActionController::TestCase
     attrs[:others_attributes] = form_attributes_for('member/other')
     attrs[:preferences_attributes] = form_attributes_for('member/preference')
 
-    post :update, :member => attrs
+    put :update, :member => attrs
     assert_response :redirect
   end
 

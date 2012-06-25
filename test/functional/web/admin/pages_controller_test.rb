@@ -25,15 +25,20 @@ class Web::Admin::PagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get create" do
+  test "should post create" do
     @params[:page] = attributes_for(:page)
     post :create, @params
     assert_response :redirect
   end
 
-  test "should get update" do
+  test "should put update" do
     @params[:page] = attributes_for(:page)
     put :update, @params
+    assert_response :redirect
+  end
+
+  test "should delete destroy" do
+    delete :destroy, @params
     assert_response :redirect
   end
 

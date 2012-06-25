@@ -3,12 +3,12 @@ require 'test_helper'
 class Web::ErrorsControllerTest < ActionController::TestCase
   test "should get not_found" do
     get :not_found
-    assert_response 404
+    assert_response :missing
   end
 
   test "should get internal_server_error" do
     get :internal_server_error
-    assert_response 500
+    assert_response :error
   end
 
 end

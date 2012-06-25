@@ -10,12 +10,22 @@ class Web::Admin::SessionsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get create" do
+  test "should post create" do
     attrs = {:email => @user.email, :password => @user.password}
 
-    get :create, :user => attrs
+    post :create, :user => attrs
     assert_response :redirect
 
     assert user_signed_in?
+  end
+
+  test "should delete destroy" do
+    user_sign_in @user
+    assert user_signed_in?
+
+    delete :destroy
+    assert_response :redirect
+
+    assert !user_signed_in?
   end
 end
