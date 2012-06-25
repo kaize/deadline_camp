@@ -52,6 +52,13 @@
                 = f.input :gpa
 
           %fieldset
+            %legend= member_t.t 'camp'
+            = f.input :camp_time, :label => false, :inline_label => member_t.t('camp_time')
+            = f.input :camp_life, :label => false, :inline_label => member_t.t('camp_life')
+            = f.input :camp_notebook, :label => false, :inline_label => member_t.t('camp_notebook')
+            = f.input :camp_training, :label => false, :inline_label => member_t.t('camp_training')
+
+          %fieldset
             %legend= member_t.t 'how_hear_about_as'
             = f.input :how_hear_about_as, :label => false
 
