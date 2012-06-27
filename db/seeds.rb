@@ -7,53 +7,47 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-u = User.new
-u.email = "admin@deadline-camp.ru"
+u = User.find_or_initialize_by_email "admin@deadline-camp.ru"
 u.password = "123456"
 u.save
 
-Language.create([
-  {:name => "Английский"},
-  {:name => "Французский"},
-  {:name => "Немецкий"}
-])
-ProgramLang.create([
-  {:name => "Ruby"},
-  {:name => "C"},
-  {:name => "C++"},
-  {:name => "C#"},
-  {:name => "Java"},
-  {:name => "PHP"},
-  {:name => "HTML"},
-  {:name => "JavaScript"},
-  {:name => "SQL"},
-  {:name => "Objectiv-C"}
-])
-Database.create([
-  {:name => "PostgreSQL"},
-  {:name => "MySQL"},
-  {:name => "MS SQL"},
-  {:name => "Interbase"}
-])
-Os.create([
-  {:name => "Windows"},
-  {:name => "Unix/Linux/FreeBSD/etc"},
-  {:name => "iOS/MacOS"}
-])
-Ide.create([
-  {:name => "PhpStorm"},
-  {:name => "RubyMine"},
-  {:name => "Visual Studio"},
-  {:name => "Eclipse"},
-  {:name => "C++ Builder"},
-  {:name => "NetBeans"},
-  {:name => "Qt Creator"},
-  {:name => "X Code"}
-])
-Other.create([
-  {:name => "Системы отслеживания ошибок"},
-  {:name => "Системы управления версиями"}
-])
+configus.dicts.language.each do |dict|
+  d = Language.find_or_initialize_by_id dict[:id]
+  d.id = dict[:id]
+  d.name = dict[:name]
+  d.save
+end
+configus.dicts.program_lang.each do |dict|
+  d = ProgramLang.find_or_initialize_by_id dict[:id]
+  d.id = dict[:id]
+  d.name = dict[:name]
+  d.save
+end
+configus.dicts.database.each do |dict|
+  d = Database.find_or_initialize_by_id dict[:id]
+  d.id = dict[:id]
+  d.name = dict[:name]
+  d.save
+end
+configus.dicts.os.each do |dict|
+  d = Os.find_or_initialize_by_id dict[:id]
+  d.id = dict[:id]
+  d.name = dict[:name]
+  d.save
+end
+configus.dicts.ide.each do |dict|
+  d = Ide.find_or_initialize_by_id dict[:id]
+  d.id = dict[:id]
+  d.name = dict[:name]
+  d.save
+end
+configus.dicts.other.each do |dict|
+  d = Other.find_or_initialize_by_id dict[:id]
+  d.id = dict[:id]
+  d.name = dict[:name]
+  d.save
+end
+
 configus.pages.each_pair do |k,v|
   p = Page.find_or_initialize_by_id v.id
   p.id = v.id
@@ -61,4 +55,11 @@ configus.pages.each_pair do |k,v|
   p.name = v.name
   p.save
 end
+
 ActiveRecord::Base.connection.execute("SELECT setval('pages_id_seq', max(id)) FROM pages;")
+ActiveRecord::Base.connection.execute("SELECT setval('dict_languages_id_seq', max(id)) FROM languages;")
+ActiveRecord::Base.connection.execute("SELECT setval('dict_program_langs_id_seq', max(id)) FROM program_langs;")
+ActiveRecord::Base.connection.execute("SELECT setval('dict_databases_id_seq', max(id)) FROM databases;")
+ActiveRecord::Base.connection.execute("SELECT setval('dict_os_id_seq', max(id)) FROM os;")
+ActiveRecord::Base.connection.execute("SELECT setval('dict_ides_id_seq', max(id)) FROM ides;")
+ActiveRecord::Base.connection.execute("SELECT setval('dict_others_id_seq', max(id)) FROM others;")
