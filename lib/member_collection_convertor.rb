@@ -51,10 +51,12 @@ class MemberCollectionConvertor
         :s_skill_others,
         :s_skill_program_langs,
         :s_others,
-        :s_preferences
+        :s_preferences,
+        :how_hear_about_as
       ]
-      #:headers => ['iname', 'lname']
     }
+    model = @collection.first.class
+    default_options[:headers] = default_options[:columns].map {|column| model.human_attribute_name(column)}
 
     @collection.to_xls options.merge(default_options)
   end
