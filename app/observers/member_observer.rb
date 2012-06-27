@@ -1,7 +1,8 @@
 class MemberObserver < ActiveRecord::Observer
 
   def after_accept(vehicle, transition)
-    MemberMailer.approved(vehicle).deliver
+    member = MemberDecorator.new(vehicle)
+    MemberMailer.approved(member).deliver
   end
 
 end

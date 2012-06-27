@@ -13,7 +13,8 @@ class Web::MembersController < Web::ApplicationController
     @member = MemberRegistrationType.new(params[:member])
 
     if @member.save
-      MemberMailer.welcome(@member).deliver
+      member_d = MemberDecorator.new(@member)
+      MemberMailer.welcome(member_d).deliver
 
       member_sign_in(@member)
       flash[:success] = flash_translate(:success).html_safe
