@@ -24,6 +24,8 @@ gem 'simple_form'
 gem "backup", "~> 3.0.24"
 gem 'whenever'
 gem 'usefull_scopes', :git => "https://github.com/kaize/usefull_scopes.git"
+gem 'to_xls'
+gem "draper", "~> 0.15.0rc1" # use rc version with fix localization bag
 
 # Gems used only for assets and not required
 # in production environments by default.

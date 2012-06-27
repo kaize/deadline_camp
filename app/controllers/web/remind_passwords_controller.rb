@@ -4,7 +4,7 @@ class Web::RemindPasswordsController < Web::ApplicationController
   end
 
   def create
-    member = Member.find_by_email!(params[:member][:email])
+    member = MemberDecorator.find_by_email!(params[:member][:email])
     member.generate_auth_token
     member.save!
     MemberMailer.remind_password(member).deliver
