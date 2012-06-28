@@ -3,7 +3,7 @@ class Api::MembersController < Api::ApplicationController
 
   def index
     members = MemberDecorator.all
-    members_collection = MemberCollectionConvertor.new(members)
+    members_collection = MemberCollectionConvertor.new(members, params[:options])
     respond_with members_collection
   end
 

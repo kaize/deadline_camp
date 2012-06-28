@@ -1,11 +1,27 @@
 class MemberCollectionConvertor
-  def initialize(collection)
-    @collection = collection
+  def initialize(*args)
+    custom_options = args.extract_options!
+    @new_options = default_options.merge custom_options.symbolize_keys
+
+    @collection = args[0]
   end
 
   def to_xls(options = {})
-    default_options = {
-      :columns => [
+    merged_options = options.merge @new_options
+    model = @collection.first.class
+    merged_options[:headers] = merged_options[:columns].map {|column| model.human_attribute_name(column)}
+
+    @collection.to_xls merged_options
+  end
+
+  def to_json(options = {})
+    @collection.to_json(options)
+  end
+
+  private
+
+    def default_options
+      {:columns => [
         :id,
         :state,
         :email,
@@ -53,15 +69,6 @@ class MemberCollectionConvertor
         :s_others,
         :s_preferences,
         :how_hear_about_as
-      ]
-    }
-    model = @collection.first.class
-    default_options[:headers] = default_options[:columns].map {|column| model.human_attribute_name(column)}
-
-    @collection.to_xls options.merge(default_options)
-  end
-
-  def to_json(options = {})
-    @collection.to_json(options)
-  end
+      ]}
+    end
 end

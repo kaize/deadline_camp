@@ -1,4 +1,6 @@
-= link_to "Download in XLS", api_members_path(:format => 'xls'), :target => '_blank'
+= link_to t(".download_xls"), api_members_path(:format => 'xls'), :target => '_blank'
+\|
+= link_to t(".download_short_xls"), api_members_path(:format => 'xls', :options => {:columns => [:id, :email, :first_name, :last_name, :phone]}), :target => '_blank'
 %table.table.table-striped
   %thead
     %tr
