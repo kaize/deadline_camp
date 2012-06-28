@@ -21,7 +21,7 @@
 
 $(function() {
   $('input.date_picker').live('focus', function(){
-    $(this).datepicker();
+    $(this).datepicker({ dateFormat: "yy-mm-dd" });
   });
 });
 

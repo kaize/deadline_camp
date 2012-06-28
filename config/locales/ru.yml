@@ -115,6 +115,8 @@ ru:
       members:
         index:
           preference: "Предпочтения"
+          download_xls: "Скачать базу участников (полная)"
+          download_short_xls: "Скачать базу участников (только контактные данные)"
     account:
       remind_passwords:
         new:
