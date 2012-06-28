@@ -10,6 +10,8 @@
       %th= sort_link @search, :first_name
       %th= sort_link @search, :last_name
       %th= sort_link @search, :patronymic
+      %th= sort_link @search, :birthday
+      %th= sort_link @search, :city
       %th= t '.preference'
       %th= sort_link @search, :created_at
       %th
@@ -22,6 +24,8 @@
         %td= m.first_name
         %td= m.last_name
         %td= m.patronymic
+        %td= m.birthday
+        %td= m.city
         %td
           - if m.preferences.any?
             %ul
