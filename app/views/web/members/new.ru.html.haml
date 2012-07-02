@@ -1,0 +1,5 @@
+- if can_registred?
+  = render 'form'
+- else
+  Извините! Регистрация на смену Deadline закрыта.
+  По всем вопросам обращаться #{link_to 'по указанным телефонам', page_path(contacts_page)}.

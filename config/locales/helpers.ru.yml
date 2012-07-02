@@ -13,3 +13,6 @@ ru:
       news:
         create: 'Создать'
         update: 'Сохранить'
+  time:
+    formats:
+      news: "%d %B %Y"

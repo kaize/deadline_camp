@@ -1,2 +1,4 @@
 %h2= @news.name
+- if @news.published_at?
+  .help-block= l @news.published_at, :format => :news
 != @news.body

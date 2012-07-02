@@ -1,6 +1,6 @@
 class Web::NewsController < Web::ApplicationController
   def index
-    @news = News.page(params[:page])
+    @news = News.page(params[:page]).by_published_at
   end
 
   def show

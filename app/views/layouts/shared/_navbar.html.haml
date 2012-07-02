@@ -17,6 +17,7 @@
             = item :li, t('.my_account'), edit_account_path
             = item :li, t('.logout'), session_path, :method => :delete
           - else
-            = item :li, t('.new_member'), new_member_path
-            %li.divider-vertical
+            - if can_registred?
+              = item :li, t('.new_member'), new_member_path
+              %li.divider-vertical
             = item :li, t('.login'), new_session_path
