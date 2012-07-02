@@ -18,7 +18,7 @@
         %i.icon-chevron-right
         Вход
       - if can_registred?
-        %p * Тестовые задания перестанут принимать 3 июля в 13:00.
+        %p * #{link_to 'Тестовые задания', '/news/testTask'} перестанут принимать 3 июля в 13:00.
   .span6
     = image_tag 'splash.png', :width => '430px'
 
