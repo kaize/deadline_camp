@@ -14,7 +14,9 @@
         %td= n.name
         %td= n.uri
         %td= l n.created_at, :format => :short
-        %td= l n.published_at, :format => :short
+        %td
+          - if n.published_at?
+            = l n.published_at, :format => :short
         %td
           %span
             %a{:href => edit_admin_news_path(n.id), :title => t(:edit)}
