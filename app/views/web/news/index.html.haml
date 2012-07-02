@@ -3,7 +3,8 @@
     %hr
   %a.b-news{:href => news_path(n)}
     %h4= n.name
-  .help-block= l n.published_at, :format => :short
+  - if n.published_at?
+    .help-block= l n.published_at, :format => :short
   != truncate_sanitize_rem_br n.body, 300
 
 = paginate @news

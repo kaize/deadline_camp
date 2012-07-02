@@ -61,10 +61,13 @@
   - if @news.any?
     .span3.well
       %h3 Новости
-      - @news.each do |n|
+      - @news.each_with_index do |n, i|
+        - unless i == 0
+          %hr
         %a.b-news{:href => news_path(n)}
           %h4= n.name
-        .help-block= l n.published_at, :format => :short
+        - if n.published_at?
+          .help-block= l n.published_at, :format => :short
         != truncate_sanitize_rem_br n.body, 200
       .news_link= link_to "Все новости", news_index_path
 
