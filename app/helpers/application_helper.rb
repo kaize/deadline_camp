@@ -22,4 +22,9 @@ module ApplicationHelper
     Time.current <= end_time
   end
 
+  def truncate_sanitize_rem_br(text, length)
+    return '' unless text.present?
+    truncate( sanitize(text, :tags => []), :length => length ).gsub(/\r/, "").gsub(/\n/, "").gsub(/&[a-z]{0-5}\.\.\.$/, "...")
+  end
+
 end
