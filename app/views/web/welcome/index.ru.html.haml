@@ -66,7 +66,7 @@
           %a.b-news{:href => news_path(n)}
             %h4= n.name
           - if n.published_at?
-            .help-block= l n.published_at, :format => :short
+            .help-block= l n.published_at, :format => :news
           != truncate_sanitize_rem_br n.body, 200
       .news_link= link_to "Все новости", news_index_path
 
