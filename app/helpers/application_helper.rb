@@ -17,4 +17,9 @@ module ApplicationHelper
     t("activerecord.state_machines.member.state.states.#{state}")
   end
 
+  def can_registred?
+    end_time = Time.zone.parse( configus.end_reg_time )
+    Time.current <= end_time
+  end
+
 end

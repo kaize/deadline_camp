@@ -36,6 +36,8 @@ Configus.build Rails.env do
       end
     end
 
+    end_reg_time '2012-07-03 13:00:00'
+
     dicts do
       language [
         {:name => "Английский", :id => 1},

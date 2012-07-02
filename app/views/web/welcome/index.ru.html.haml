@@ -10,13 +10,15 @@
         %i.icon-chevron-right
         Профиль
     - else
-      %a.btn.btn-success.btn-large{:href => new_member_path}
-        %i.icon-chevron-right
-        Регистрация *
+      - if can_registred?
+        %a.btn.btn-success.btn-large{:href => new_member_path}
+          %i.icon-chevron-right
+          Регистрация *
       %a.btn.btn-primary.btn-large{:href => new_session_path}
         %i.icon-chevron-right
         Вход
-      %p * Регистрация открыта до 30 июня.
+      - if can_registred?
+        %p * Тестовые задания перестанут принимать 3 июля в 13:00.
   .span6
     = image_tag 'splash.png', :width => '430px'
 
