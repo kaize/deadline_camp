@@ -1,10 +1,9 @@
-- @news.each_with_index do |n, i|
-  - unless i == 0
-    %hr
-  %a.b-news{:href => news_path(n)}
-    %h4= n.name
-  - if n.published_at?
-    .help-block= l n.published_at, :format => :short
-  != truncate_sanitize_rem_br n.body, 300
+- @news.each do |n|
+  .well
+    %a.b-news{:href => news_path(n)}
+      %h4= n.name
+    - if n.published_at?
+      .help-block= l n.published_at, :format => :short
+    != truncate_sanitize_rem_br n.body, 300
 
 = paginate @news
