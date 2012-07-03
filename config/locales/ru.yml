@@ -102,7 +102,7 @@ ru:
         authenticate: 'Вход'
         password_forgot: 'Забыли пароль?'
     members:
-      new:
+      form:
         already_have_account: "Я уже зарегистрирован"
         terms_of_service: 'Я согласен на обработку персональных данных'
     admin:
