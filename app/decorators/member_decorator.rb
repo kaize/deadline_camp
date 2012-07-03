@@ -47,7 +47,7 @@ class MemberDecorator < Draper::Base
 
   def s_skill_others
     out = skill_others.map do |s|
-      [s.name, s.duration, s.level, s.member_id, s.type, s.description].join(', ')
+      [s.name, s.duration, s.level, s.description].join(', ')
     end
     out.join('; ')
   end
@@ -56,7 +56,7 @@ class MemberDecorator < Draper::Base
 
     def s_skills(skills)
       out = skills.map do |s|
-        [s.dict, s.duration, s.level, s.member_id, s.type, s.description].join(', ')
+        [s.dict, s.duration, s.level, s.description].compact.join(', ')
       end
       out.join('; ')
     end
