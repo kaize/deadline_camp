@@ -22,18 +22,6 @@ class Member < ActiveRecord::Base
   has_many :others
   has_many :preferences
 
-  accepts_nested_attributes_for :jobs, :reject_if => :all_blank, :allow_destroy => true
-  accepts_nested_attributes_for :additional_educations, :reject_if => :all_blank, :allow_destroy => true
-  accepts_nested_attributes_for :achievements, :reject_if => :all_blank, :allow_destroy => true
-  accepts_nested_attributes_for :langs, :reject_if => :all_blank, :allow_destroy => true
-  accepts_nested_attributes_for :skill_databases, :reject_if => :all_blank, :allow_destroy => true
-  accepts_nested_attributes_for :skill_ides, :reject_if => :all_blank, :allow_destroy => true
-  accepts_nested_attributes_for :skill_operation_systems, :reject_if => :all_blank, :allow_destroy => true
-  accepts_nested_attributes_for :skill_others, :reject_if => :all_blank, :allow_destroy => true
-  accepts_nested_attributes_for :skill_program_langs, :reject_if => :all_blank, :allow_destroy => true
-  accepts_nested_attributes_for :others, :reject_if => :all_blank, :allow_destroy => true
-  accepts_nested_attributes_for :preferences, :reject_if => :all_blank, :allow_destroy => true
-
   validates :password, :presence => { :on => :create }
   validates :phone, :presence => true, :phone => true
   validates :email, :presence => true, :uniqueness => true, :email => true

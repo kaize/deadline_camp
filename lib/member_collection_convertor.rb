@@ -8,8 +8,10 @@ class MemberCollectionConvertor
 
   def to_xls(options = {})
     merged_options = options.merge @new_options
-    model = @collection.first.class
-    merged_options[:headers] = merged_options[:columns].map {|column| model.human_attribute_name(column)}
+    if @collection.first.present?
+      model = @collection.first.class
+      merged_options[:headers] = merged_options[:columns].map {|column| model.human_attribute_name(column)}
+    end
 
     @collection.to_xls merged_options
   end

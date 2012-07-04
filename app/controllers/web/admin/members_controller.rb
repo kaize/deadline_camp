@@ -5,7 +5,7 @@ class Web::Admin::MembersController < Web::Admin::ApplicationController
   end
 
   def edit
-    @member = Member.find(params[:id])
+    @member = MemberType.find(params[:id])
   end
 
   def update
