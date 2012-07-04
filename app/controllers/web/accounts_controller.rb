@@ -6,11 +6,11 @@ class Web::AccountsController < Web::ApplicationController
   end
 
   def edit
-    @member = MemberType.find(current_member.id)
+    @member = current_member.becomes(MemberType)
   end
 
   def update
-    @member = MemberType.find(current_member.id)
+    @member = current_member.becomes(MemberType)
 
     if @member.update_attributes(params[:member])
       flash[:success] = flash_translate(:success)

@@ -117,11 +117,11 @@ ru:
           preference: "Предпочтения"
           download_xls: "Скачать базу участников (полная)"
           download_short_xls: "Скачать базу участников (только контактные данные)"
+    remind_passwords:
+      new:
+        password_remind: 'Напомнить пароль'
+        remind: 'Отправить'
     account:
-      remind_passwords:
-        new:
-          password_remind: 'Напомнить пароль'
-          remind: 'Отправить'
       passwords:
         edit:
           reset_password: 'Смена пароля'
