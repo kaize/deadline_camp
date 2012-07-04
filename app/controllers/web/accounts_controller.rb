@@ -6,7 +6,7 @@ class Web::AccountsController < Web::ApplicationController
   end
 
   def edit
-    @member = current_member
+    @member = MemberType.find(current_member.id)
   end
 
   def update
