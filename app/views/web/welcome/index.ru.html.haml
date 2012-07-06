@@ -58,8 +58,8 @@
         %h4 Что с собой взять?
         %p Каждый участник должен иметь при себе личный ноутбук, желание плодотворно поработать, копию паспорта (свидетельства о рождении), оригинал медицинского полиса.
         %p Все участники обучающей смены должны также сделать прививку от клещевого энцефалита. Если сделать её не успели или не смогли, то необходимо предоставить МИЦ заявление от родителей (для несовершеннолетних) или от себя (для людей старше 18 лет) о том, что ответственность за жизнь и здоровье в связи с клещевым энцефалитом с организаторов снимается.
-  - if @news.any?
-    .span3
+  .span3
+    - if @news.any?
       %h3 Новости
       - @news.each do |n|
         .well
@@ -67,8 +67,37 @@
             %h4= n.name
           - if n.published_at?
             .help-block= l n.published_at, :format => :news
-          != truncate_sanitize_rem_br n.body, 200
+          != truncate_sanitize_rem_br n.body, 65
       .news_link= link_to "Все новости", news_index_path
+
+    :javascript
+      new TWTR.Widget({
+        version: 2,
+        type: 'search',
+        search: 'deadlinecamp',
+        interval: 30000,
+        title: '#Deadlinecamp',
+        subject: 'Новости из Twitter',
+        width: 270,
+        height: 150,
+        theme: {
+          shell: {
+            background: '#ffffff',
+            color: '#333333'
+          },
+          tweets: {
+            background: '#f5f5f5',
+            color: '#555555',
+            links: '#0088cc'
+          }
+        },
+        features: {
+          scrollbar: true,
+          loop: true,
+          live: true,
+          behavior: 'default'
+        }
+      }).render().start();
 
 .center.splitter
   = image_tag 'grey_out.png'
