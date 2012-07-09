@@ -65,7 +65,7 @@ end
 
 group :test do
   gem 'minitest'
-  gem 'mocha'
+  gem 'mocha', :require => false
   gem 'simplecov', :require => false
   gem 'ci_reporter'
   gem 'factory_girl_rails'
