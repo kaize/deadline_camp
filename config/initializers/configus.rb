@@ -39,7 +39,11 @@ Configus.build Rails.env do
     end_reg_time '2012-07-03 13:00:00'
 
     news do
-      welcome_count 3
+      welcome_count 2
+    end
+
+    main_page do
+      photo_album 1
     end
 
     dicts do

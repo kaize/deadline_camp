@@ -1,6 +1,13 @@
 ru:
   activerecord:
     state_machines:
+      photo_album:
+        state:
+          events:
+            publish: "Опубликовать"
+          states:
+            new: "Новый"
+            published: "Опубликованный"
       member:
         state:
           events:
@@ -124,3 +131,11 @@ ru:
         description: 'Название, год получения'
       'member/other':
         description: 'Название, год получения'
+      photo_album:
+        name: "Название альбома"
+        state: 'Текущее состояние'
+        state_event: "Действие"
+        mass_photo_loader: "Массовая загрузка фото"
+      'photo_album/photo':
+        name: "Название фото"
+        image: 'Фото'

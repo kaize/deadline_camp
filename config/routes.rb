@@ -18,6 +18,7 @@ DeadlineCamp::Application.routes.draw do
       resources :members, :only => [:index, :edit, :update, :destroy]
       resources :pages
       resources :news
+      resources :photo_albums
       resource :session, :only => [:new, :create, :destroy]
     end
 

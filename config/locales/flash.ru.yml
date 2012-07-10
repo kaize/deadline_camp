@@ -34,6 +34,11 @@ ru:
               success: 'Страница создана.'
             update:
               success: 'Страница отредактирована.'
+          photo_albums:
+            create:
+              success: 'Фотоальбом создан.'
+            update:
+              success: 'Фотоальбом отредактирован.'
           members:
             update:
               success: 'Анкета отредактирована.'

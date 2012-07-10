@@ -10,6 +10,9 @@ ru:
       user:
         create: 'Создать'
         update: 'Сохранить'
+      photo_album:
+        create: 'Создать'
+        update: 'Сохранить'
       news:
         create: 'Создать'
         update: 'Сохранить'
