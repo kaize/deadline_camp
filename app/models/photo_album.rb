@@ -1,5 +1,7 @@
 class PhotoAlbum < ActiveRecord::Base
-  attr_accessible :name, :state
+  include UsefullScopes
+
+  attr_accessible :name, :state, :description
 
   has_many :photos, :dependent => :destroy
 
@@ -13,4 +15,12 @@ class PhotoAlbum < ActiveRecord::Base
   end
 
   scope :published, with_state(:published)
+
+  validates :name, :presence => true
+
+  class << self
+    def welcome_album
+      published.random.first
+    end
+  end
 end

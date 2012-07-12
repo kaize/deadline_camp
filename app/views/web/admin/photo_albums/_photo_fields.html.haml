@@ -2,4 +2,6 @@
   .close.mr280
     = link_to_remove_association 'x', f, :class => 'btn btn-danger disabled'
   = f.input :name
+  = f.input :description
+  = f.input :main
   = f.input :image, :as => :image_preview, :preview_style => :thumb

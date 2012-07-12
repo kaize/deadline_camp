@@ -28,6 +28,10 @@ class PhotoAlbum::PhotoUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [770, 580]
   end
 
+  version :main_carousel do
+    process :resize_to_fill => [1170, 390]
+  end
+
   version :thumb do
     process :resize_to_fit => [50, 50]
   end

@@ -133,3 +133,6 @@ ru:
         not_found: "Страница не найдена"
       internal_server_error:
         internal_server_error: "Похоже что-то сломалось."
+  errors:
+    messages:
+      extension_white_list_error: "Не верный формат"

@@ -136,6 +136,9 @@ ru:
         state: 'Текущее состояние'
         state_event: "Действие"
         mass_photo_loader: "Массовая загрузка фото"
+        description: "Описание"
       'photo_album/photo':
         name: "Название фото"
         image: 'Фото'
+        description: "Описание"
+        main: 'Главная'

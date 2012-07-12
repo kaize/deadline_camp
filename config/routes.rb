@@ -33,6 +33,7 @@ DeadlineCamp::Application.routes.draw do
     resource :remind_password, :only => [:new, :create]
     resources :pages, :only => [:show]
     resources :news, :only => [:index, :show]
+    resources :photo_albums, :only => [:index]
   end
 
 end

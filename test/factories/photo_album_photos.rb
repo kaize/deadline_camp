@@ -4,6 +4,8 @@ FactoryGirl.define do
   factory 'photo_album/photo' do
     photo_album
     #image "MyString"
-    name "MyString"
+    name
+    description { generate :string }
+    main false
   end
 end

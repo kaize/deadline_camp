@@ -2,7 +2,8 @@
 
 FactoryGirl.define do
   factory :photo_album do
-    name "MyString"
+    name
+    description { generate :string }
 
     trait :with_photo do
       after(:create) do |album|

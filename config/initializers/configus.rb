@@ -42,10 +42,6 @@ Configus.build Rails.env do
       welcome_count 2
     end
 
-    main_page do
-      photo_album 1
-    end
-
     dicts do
       language [
         {:name => "Английский", :id => 1},
