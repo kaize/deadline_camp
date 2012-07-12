@@ -42,6 +42,10 @@ Configus.build Rails.env do
       welcome_count 2
     end
 
+    photos do
+      main_galary_limit 6
+    end
+
     dicts do
       language [
         {:name => "Английский", :id => 1},

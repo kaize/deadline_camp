@@ -33,6 +33,10 @@ class PhotoAlbumDecorator < Draper::Base
     photos.by_main
   end
 
+  def sorted_photos_with_limit(limit = nil)
+    sorted_photos.limit(limit)
+  end
+
   def main_photo
     sorted_photos.first
   end

@@ -25,15 +25,20 @@ class PhotoAlbum::PhotoUploader < CarrierWave::Uploader::Base
   #process :scale => [200, 300]
 
   version :carousel do
-    process :resize_to_fit => [770, 580]
+    process :resize_to_fit => [760, 570]
   end
 
   version :main_carousel do
-    process :resize_to_fill => [1170, 390]
+    #process :resize_to_fill => [1170, 390]
+    process :resize_to_fit => [560, 420]
+  end
+
+  version :galary do
+    process :resize_to_fit => [360, 270]
   end
 
   version :thumb do
-    process :resize_to_fit => [50, 50]
+    process :resize_to_fit => [120, 90]
   end
 
   def extension_white_list

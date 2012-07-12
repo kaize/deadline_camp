@@ -74,6 +74,14 @@
     .span12
       %h4= @photo_album.name
       %p= @photo_album.description
+      %ul.thumbnails
+        - @photo_album.sorted_photos_with_limit( configus.photos.main_galary_limit ).each do |photo|
+          %li.span4= image_tag photo.image_url(:galary)
+      %p= link_to "Все фотоальбомы", photo_albums_path
+  -#.row
+    .span6.offset3
+      %h4= @photo_album.name
+      %p= @photo_album.description
       #carousel.carousel.slide
         .carousel-inner
           - @photo_album.sorted_photos.each_with_index do |photo, i|
@@ -85,7 +93,6 @@
                   %p= photo.description
         %a.carousel-control.left{"data-slide" => "prev", :href => "#carousel"} ‹
         %a.carousel-control.right{"data-slide" => "next", :href => "#carousel"} ›
-      %p= link_to "Все фотоальбомы", photo_albums_path
 
 .center.splitter
   = image_tag 'grey_out.png'

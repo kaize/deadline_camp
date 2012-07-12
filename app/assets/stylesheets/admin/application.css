@@ -12,3 +12,6 @@
  *= require jquery.ui.all
  *= require_self
 */
+.close.mr {
+  margin-right: 700px;
+}
