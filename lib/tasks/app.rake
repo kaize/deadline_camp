@@ -32,4 +32,9 @@ namespace :app do
       skill.save!
     end
   end
+
+  desc "Fill news state"
+  task :fix_news_state => :environment do
+    News.update_all :state => :published
+  end
 end

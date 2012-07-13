@@ -87,6 +87,9 @@ GEM
     factory_girl_rails (3.5.0)
       factory_girl (~> 3.5.0)
       railties (>= 3.0.0)
+    gon (3.0.5)
+      actionpack (>= 2.3.0)
+      json
     haml (3.1.6)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -250,6 +253,7 @@ DEPENDENCIES
   configus
   draper (~> 0.15.0rc1)
   factory_girl_rails
+  gon
   haml-rails
   jquery-rails
   jquery-ui-rails

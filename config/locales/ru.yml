@@ -23,6 +23,7 @@ ru:
         - разрабатывал приложения под ОС
   sure: 'Вы уверены?'
   new: 'Новый'
+  add: "Добавить"
   registration: Регистрация
   views:
     pagination:
@@ -56,6 +57,7 @@ ru:
           members_list: 'Список участников'
           pages_list: 'Список страниц'
           news_list: 'Список новостей'
+          photo_albums_list: "Список фотоальбомов"
   members:
     how_hear_about_as_list:
       - Знакомые
@@ -131,3 +133,6 @@ ru:
         not_found: "Страница не найдена"
       internal_server_error:
         internal_server_error: "Похоже что-то сломалось."
+  errors:
+    messages:
+      extension_white_list_error: "Не верный формат"

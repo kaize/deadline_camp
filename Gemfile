@@ -26,6 +26,7 @@ gem 'whenever'
 gem 'usefull_scopes', :git => "https://github.com/kaize/usefull_scopes.git"
 gem 'to_xls'
 gem "draper", "~> 0.15.0rc1" # use rc version with fix localization bag
+gem "gon"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -39,8 +40,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

@@ -24,11 +24,21 @@
 
 .center.splitter
   = image_tag 'grey_out.png'
-
 .row
   .span12
     .row.landing_lower
-      .span4
+      .span9
+        - if @news.any?
+          %h3 Новости
+          - @news.each do |n|
+            .well
+              %a.b-news{:href => news_path(n)}
+                %h4= n.name
+              - if n.published_at?
+                .help-block= l n.published_at, :format => :news
+              != truncate_sanitize_rem_br n.body, 250
+          .news_link= link_to "Все новости", news_index_path
+      .span3
         :javascript
           new TWTR.Widget({
             version: 2,
@@ -36,7 +46,7 @@
             search: 'deadlinecamp',
             interval: 30000,
             subject: 'Новости из Twitter',
-            width: 370,
+            //width: 370,
             height: 450,
             theme: {
               shell: {
@@ -56,21 +66,77 @@
               behavior: 'default'
             }
           }).render().start();
-      .span8
-        - if @news.any?
-          %h3 Новости
-          - @news.each do |n|
-            .well
-              %a.b-news{:href => news_path(n)}
-                %h4= n.name
-              - if n.published_at?
-                .help-block= l n.published_at, :format => :news
-              != truncate_sanitize_rem_br n.body, 250
-          .news_link= link_to "Все новости", news_index_path
+
+- if @photo_album.model && @photo_album.photos.any?
+  .center.splitter
+    = image_tag 'grey_out.png'
+  .row
+    .span6.offset3
+      %h4 Фотоальбом с места события
+      #carousel.carousel.slide
+        .carousel-inner
+          - @photo_album.sorted_photos.each_with_index do |photo, i|
+            .item{:class => i == 0 ? "active" : ''}
+              = image_tag photo.image_url(:carousel)
+              - if photo.name? || photo.description?
+                .carousel-caption
+                  %h4= photo.name
+                  %p= photo.description
+        %a.carousel-control.left{"data-slide" => "prev", :href => "#carousel"} ‹
+        %a.carousel-control.right{"data-slide" => "next", :href => "#carousel"} ›
+      %p= link_to "Все фотоальбомы", photo_albums_path
+
+  -#.row
+    .span12
+      \#1
+      %h4= @photo_album.name
+      %p= @photo_album.description
+      - @photo_album.sorted_photos_with_limit( configus.photos.main_galary_limit ).in_groups_of(3, false) do |group|
+        %ul.thumbnails
+          - group.each do |photo|
+            %li.span4= image_tag photo.image_url(:galary)
+      %p= link_to "Все фотоальбомы", photo_albums_path
+
+  -#.row
+    .span12
+      \#3
+      %h4 Фотоальбом с места события
+      #carousel3.carousel.slide
+        .carousel-inner
+          - i = 0
+          - @photo_album.sorted_photos.in_groups_of(3, false) do |group|
+            .item.offset1{:class => i == 0 ? "active" : ''}
+              - group.each do |photo|
+                .span3= image_tag photo.image_url(:galary)
+                -#- if photo.name? || photo.description?
+                  .carousel-caption
+                    %h4= photo.name
+                    %p= photo.description
+            - i += 1
+        %a.carousel-control.left{"data-slide" => "prev", :href => "#carousel3"} ‹
+        %a.carousel-control.right{"data-slide" => "next", :href => "#carousel3"} ›
+      %p= link_to "Все фотоальбомы", photo_albums_path
+
+  -#.row
+    .span12
+      \#4
+      %h4= @photo_album.name
+      %p= @photo_album.description
+      #carousel4.carousel.slide
+        .carousel-inner
+          - @photo_album.sorted_photos.each_with_index do |photo, i|
+            .item{:class => i == 0 ? "active" : ''}
+              = image_tag photo.image_url(:main_carousel2)
+              - if photo.name? || photo.description?
+                .carousel-caption
+                  %h4= photo.name
+                  %p= photo.description
+        %a.carousel-control.left{"data-slide" => "prev", :href => "#carousel4"} ‹
+        %a.carousel-control.right{"data-slide" => "next", :href => "#carousel4"} ›
+      %p= link_to "Все фотоальбомы", photo_albums_path
 
 .center.splitter
   = image_tag 'grey_out.png'
-
 .row
   .span12
     .row.landing_lower
@@ -106,7 +172,6 @@
 
 .center.splitter
   = image_tag 'grey_out.png'
-
 .row.landing_bottom
   .span12
     %h4 Организаторы

@@ -18,6 +18,7 @@
 config/database.yml
 test/reports/*
 coverage/**
+public/system/**
 
 # Ignore IDE files
 .idea

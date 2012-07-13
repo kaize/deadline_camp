@@ -6,6 +6,8 @@ class Web::ApplicationController < ApplicationController
 
   before_filter do
     title t('base_name')
+    #gon.locale = I18n.locale
+    gon.locale = "en"
   end
 
   private

@@ -1,6 +1,20 @@
 ru:
   activerecord:
     state_machines:
+      news:
+        state:
+          events:
+            publish: "Опубликовать"
+          states:
+            new: "Новый"
+            published: "Опубликованный"
+      photo_album:
+        state:
+          events:
+            publish: "Опубликовать"
+          states:
+            new: "Новый"
+            published: "Опубликованный"
       member:
         state:
           events:
@@ -43,6 +57,8 @@ ru:
         published_at: 'Дата публикации'
         created_at: 'Дата создания'
         updated_at: 'Дата обновления'
+        state: 'Текущее состояние'
+        state_event: 'Действие'
       page:
         id: id
         name: 'Название'
@@ -124,3 +140,14 @@ ru:
         description: 'Название, год получения'
       'member/other':
         description: 'Название, год получения'
+      photo_album:
+        name: "Название альбома"
+        state: 'Текущее состояние'
+        state_event: "Действие"
+        mass_photo_loader: "Массовая загрузка фото"
+        description: "Описание"
+      'photo_album/photo':
+        name: "Название фото"
+        image: 'Фото'
+        description: "Описание"
+        main: 'Главная'
