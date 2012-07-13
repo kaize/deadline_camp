@@ -71,23 +71,8 @@
   .center.splitter
     = image_tag 'grey_out.png'
   .row
-    .span12
-      \#1
-      %h4= @photo_album.name
-      %p= @photo_album.description
-      - @photo_album.sorted_photos_with_limit( configus.photos.main_galary_limit ).in_groups_of(3, false) do |group|
-        %ul.thumbnails
-          - group.each do |photo|
-            %li.span4= image_tag photo.image_url(:galary)
-      %p= link_to "Все фотоальбомы", photo_albums_path
-
-  .center.splitter
-    = image_tag 'grey_out.png'
-  .row
     .span6.offset3
-      \#2
-      %h4= @photo_album.name
-      %p= @photo_album.description
+      %h4 Фотоальбом с места события
       #carousel.carousel.slide
         .carousel-inner
           - @photo_album.sorted_photos.each_with_index do |photo, i|
@@ -101,9 +86,18 @@
         %a.carousel-control.right{"data-slide" => "next", :href => "#carousel"} ›
       %p= link_to "Все фотоальбомы", photo_albums_path
 
-  .center.splitter
-    = image_tag 'grey_out.png'
-  .row
+  -#.row
+    .span12
+      \#1
+      %h4= @photo_album.name
+      %p= @photo_album.description
+      - @photo_album.sorted_photos_with_limit( configus.photos.main_galary_limit ).in_groups_of(3, false) do |group|
+        %ul.thumbnails
+          - group.each do |photo|
+            %li.span4= image_tag photo.image_url(:galary)
+      %p= link_to "Все фотоальбомы", photo_albums_path
+
+  -#.row
     .span12
       \#3
       %h4 Фотоальбом с места события
@@ -123,9 +117,7 @@
         %a.carousel-control.right{"data-slide" => "next", :href => "#carousel3"} ›
       %p= link_to "Все фотоальбомы", photo_albums_path
 
-  .center.splitter
-    = image_tag 'grey_out.png'
-  .row
+  -#.row
     .span12
       \#4
       %h4= @photo_album.name
