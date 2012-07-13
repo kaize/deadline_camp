@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Web::NewsControllerTest < ActionController::TestCase
   setup do
-    @news = create :news
+    @news = create :news, :published
 
     @params = {:id => @news}
   end

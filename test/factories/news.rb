@@ -6,5 +6,12 @@ FactoryGirl.define do
     uri
     body "MyText"
     published_at { Time.current }
+
+    trait :published do
+      after(:create) do |news|
+        news.publish
+      end
+    end
+
   end
 end
