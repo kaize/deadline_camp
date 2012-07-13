@@ -72,14 +72,20 @@
     = image_tag 'grey_out.png'
   .row
     .span12
+      \#1
       %h4= @photo_album.name
       %p= @photo_album.description
-      %ul.thumbnails
-        - @photo_album.sorted_photos_with_limit( configus.photos.main_galary_limit ).each do |photo|
-          %li.span4= image_tag photo.image_url(:galary)
+      - @photo_album.sorted_photos_with_limit( configus.photos.main_galary_limit ).in_groups_of(3, false) do |group|
+        %ul.thumbnails
+          - group.each do |photo|
+            %li.span4= image_tag photo.image_url(:galary)
       %p= link_to "Все фотоальбомы", photo_albums_path
-  -#.row
+
+  .center.splitter
+    = image_tag 'grey_out.png'
+  .row
     .span6.offset3
+      \#2
       %h4= @photo_album.name
       %p= @photo_album.description
       #carousel.carousel.slide
@@ -93,6 +99,50 @@
                   %p= photo.description
         %a.carousel-control.left{"data-slide" => "prev", :href => "#carousel"} ‹
         %a.carousel-control.right{"data-slide" => "next", :href => "#carousel"} ›
+      %p= link_to "Все фотоальбомы", photo_albums_path
+
+  .center.splitter
+    = image_tag 'grey_out.png'
+  .row
+    .span12
+      \#3
+      %h4= @photo_album.name
+      %p= @photo_album.description
+      #carousel3.carousel.slide
+        .carousel-inner
+          - i = 0
+          - @photo_album.sorted_photos.in_groups_of(3, false) do |group|
+            .item.offset1{:class => i == 0 ? "active" : ''}
+              - group.each do |photo|
+                .span3= image_tag photo.image_url(:galary)
+                -#- if photo.name? || photo.description?
+                  .carousel-caption
+                    %h4= photo.name
+                    %p= photo.description
+            - i += 1
+        %a.carousel-control.left{"data-slide" => "prev", :href => "#carousel3"} ‹
+        %a.carousel-control.right{"data-slide" => "next", :href => "#carousel3"} ›
+      %p= link_to "Все фотоальбомы", photo_albums_path
+
+  .center.splitter
+    = image_tag 'grey_out.png'
+  .row
+    .span12
+      \#4
+      %h4= @photo_album.name
+      %p= @photo_album.description
+      #carousel4.carousel.slide
+        .carousel-inner
+          - @photo_album.sorted_photos.each_with_index do |photo, i|
+            .item{:class => i == 0 ? "active" : ''}
+              = image_tag photo.image_url(:main_carousel2)
+              - if photo.name? || photo.description?
+                .carousel-caption
+                  %h4= photo.name
+                  %p= photo.description
+        %a.carousel-control.left{"data-slide" => "prev", :href => "#carousel4"} ‹
+        %a.carousel-control.right{"data-slide" => "next", :href => "#carousel4"} ›
+      %p= link_to "Все фотоальбомы", photo_albums_path
 
 .center.splitter
   = image_tag 'grey_out.png'
