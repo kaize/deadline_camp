@@ -6,6 +6,6 @@ FactoryGirl.define do
     association :dict, factory: :program_lang
     level { generate :string }
     duration { generate :string }
-    description { generate :string }
+    description
   end
 end

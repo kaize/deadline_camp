@@ -4,6 +4,6 @@ FactoryGirl.define do
   factory :page do
     name
     uri
-    body "MyText"
+    body { generate :description }
   end
 end

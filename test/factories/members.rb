@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :member do
     email
-    password "MyString"
+    password { generate :string }
     first_name { generate :name }
     last_name { generate :name }
     phone

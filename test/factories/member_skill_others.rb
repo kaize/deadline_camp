@@ -6,6 +6,6 @@ FactoryGirl.define do
     name
     level { generate :string }
     duration { generate :string }
-    description { generate :string }
+    description
   end
 end
