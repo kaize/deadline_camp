@@ -1,6 +1,6 @@
 .row.landing_top
   .span6
-    %h2 9 - 16 июля в Русском береге
+    %h2 Летом 2013 года.
     %h3 Выездной обучающий семинар для молодёжи, которая хочет работать в сфере ИТ, в частности, заниматься разработкой программных продуктов. Участники в течение нескольких дней будут работать над продуктом.
     - if member_signed_in?
       %a.btn.btn-success.btn-large{:href => page_path(program_page) }
@@ -17,7 +17,7 @@
       %a.btn.btn-primary.btn-large{:href => new_session_path}
         %i.icon-chevron-right
         Вход
-      - if can_registred?
+      -#- if can_registred?
         %p * #{link_to 'Тестовые задания', '/news/testTask'} перестанут принимать 3 июля в 13:00.
   .span6
     = image_tag 'splash.png', :width => '430px'

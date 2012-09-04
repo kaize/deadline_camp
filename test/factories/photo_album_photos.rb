@@ -1,11 +1,12 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
+include ActionDispatch::TestProcess
 
 FactoryGirl.define do
   factory 'photo_album/photo' do
     photo_album
-    #image "MyString"
+    image { fixture_file_upload(Rails.root.join('test/fixtures/photos/test.png'), 'image/png') }
     name
-    description { generate :string }
+    description
     main false
   end
 end

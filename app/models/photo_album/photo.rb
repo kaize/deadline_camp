@@ -8,5 +8,4 @@ class PhotoAlbum::Photo < ActiveRecord::Base
   mount_uploader :image, PhotoAlbum::PhotoUploader
 
   validates :image, :presence => true
-
 end
