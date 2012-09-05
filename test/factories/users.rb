@@ -3,8 +3,8 @@
 FactoryGirl.define do
   factory :user do
     email
-    password "MyString"
-    first_name "MyString"
-    last_name "MyString"
+    password { generate :string }
+    first_name { generate :name }
+    last_name { generate :name }
   end
 end

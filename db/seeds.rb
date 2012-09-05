@@ -57,9 +57,9 @@ configus.pages.each_pair do |k,v|
 end
 
 ActiveRecord::Base.connection.execute("SELECT setval('pages_id_seq', max(id)) FROM pages;")
-ActiveRecord::Base.connection.execute("SELECT setval('dict_languages_id_seq', max(id)) FROM languages;")
-ActiveRecord::Base.connection.execute("SELECT setval('dict_program_langs_id_seq', max(id)) FROM program_langs;")
-ActiveRecord::Base.connection.execute("SELECT setval('dict_databases_id_seq', max(id)) FROM databases;")
-ActiveRecord::Base.connection.execute("SELECT setval('dict_os_id_seq', max(id)) FROM os;")
-ActiveRecord::Base.connection.execute("SELECT setval('dict_ides_id_seq', max(id)) FROM ides;")
-ActiveRecord::Base.connection.execute("SELECT setval('dict_others_id_seq', max(id)) FROM others;")
+ActiveRecord::Base.connection.execute("SELECT setval('languages_id_seq', max(id)) FROM languages;")
+ActiveRecord::Base.connection.execute("SELECT setval('program_langs_id_seq', max(id)) FROM program_langs;")
+ActiveRecord::Base.connection.execute("SELECT setval('databases_id_seq', max(id)) FROM databases;")
+ActiveRecord::Base.connection.execute("SELECT setval('os_id_seq', max(id)) FROM os;")
+ActiveRecord::Base.connection.execute("SELECT setval('ides_id_seq', max(id)) FROM ides;")
+ActiveRecord::Base.connection.execute("SELECT setval('others_id_seq', max(id)) FROM others;")

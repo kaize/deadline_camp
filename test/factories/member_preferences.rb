@@ -3,6 +3,6 @@
 FactoryGirl.define do
   factory 'member/preference' do
     member
-    description "MyString"
+    description
   end
 end

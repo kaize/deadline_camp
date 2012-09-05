@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :news do
     name
     uri
-    body "MyText"
+    body { generate :description }
     published_at { Time.current }
 
     trait :published do
