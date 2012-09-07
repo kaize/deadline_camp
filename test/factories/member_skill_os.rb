@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory 'member/skill_os' do
     member
-    association :dict, factory: :os
+    os
     level { generate :string }
     duration { generate :string }
     description

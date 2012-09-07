@@ -1,1 +1,7 @@
-= render 'skill_fields', :f => f, :level_collection => Member::SkillOs::LEVELS
+.control-group.nested-fields
+  .close.mr
+    = link_to_remove_association 'x', f, :class => 'btn btn-danger disabled'
+  = f.association :os, :label => false
+  = f.input :level, :collection => Member::SkillOs::LEVELS
+  = f.input :duration
+  = f.input :description, :as => :text_desc

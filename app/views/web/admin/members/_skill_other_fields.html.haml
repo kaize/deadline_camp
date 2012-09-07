@@ -2,6 +2,6 @@
   -#.close.mr280
     = link_to_remove_association 'x', f, :class => 'btn btn-danger disabled'
   = f.input :name, :label => false
-  = f.input :level, :collection => Member::Skill::LEVELS
+  = f.input :level, :collection => Member::SKILL_LEVELS
   = f.input :duration
   = f.input :description, :as => :text_desc

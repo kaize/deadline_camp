@@ -8,7 +8,7 @@ gem 'rails'
 gem 'pg'
 
 gem 'jquery-rails'
-gem "ckeditor", "3.7.0"
+gem "ckeditor"
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'configus'
@@ -21,28 +21,28 @@ gem 'cocoon'
 gem 'capi'
 gem 'airbrake'
 gem 'simple_form'
-gem "backup", "~> 3.0.24"
+gem "backup", "> 3.0.24"
 gem 'whenever'
 gem 'usefull_scopes', :git => "https://github.com/kaize/usefull_scopes.git"
 gem 'to_xls'
-gem "draper", "~> 0.15.0rc1" # use rc version with fix localization bag
+gem "draper"
 gem "gon"
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'jquery-ui-rails'
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails'
+  gem 'coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platform => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
 end
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

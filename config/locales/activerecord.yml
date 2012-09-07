@@ -116,7 +116,19 @@ ru:
         camp_training: 'Есть ли у меня время для подготовки к мероприятию самостоятельно (настройка среды разработки, установка необходимого ПО)?'
         how_hear_about_as: 'Откуда вы узнали о нас?'
 
-      'member/skill':
+      'member/skill_os':
+        level: 'Уровень'
+        duration: 'Сколько лет/месяцев используете'
+        description: 'Комментарии'
+      'member/skill_database':
+        level: 'Уровень'
+        duration: 'Сколько лет/месяцев используете'
+        description: 'Комментарии'
+      'member/skill_ide':
+        level: 'Уровень'
+        duration: 'Сколько лет/месяцев используете'
+        description: 'Комментарии'
+      'member/skill_program_lang':
         level: 'Уровень'
         duration: 'Сколько лет/месяцев используете'
         description: 'Комментарии'
