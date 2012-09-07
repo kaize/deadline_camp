@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120713113813) do
+ActiveRecord::Schema.define(:version => 20120907105330) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -95,6 +95,36 @@ ActiveRecord::Schema.define(:version => 20120713113813) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "member_skill_databases", :force => true do |t|
+    t.integer  "member_id"
+    t.integer  "database_id"
+    t.string   "level"
+    t.string   "duration"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "member_skill_ides", :force => true do |t|
+    t.integer  "member_id"
+    t.integer  "ide_id"
+    t.string   "level"
+    t.string   "duration"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "member_skill_os", :force => true do |t|
+    t.integer  "member_id"
+    t.integer  "os_id"
+    t.string   "level"
+    t.string   "duration"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "member_skill_others", :force => true do |t|
     t.integer  "member_id"
     t.string   "name"
@@ -104,6 +134,16 @@ ActiveRecord::Schema.define(:version => 20120713113813) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "member_skill_program_langs", :force => true do |t|
+    t.integer  "member_id"
+    t.integer  "program_lang_id"
+    t.string   "level"
+    t.string   "duration"
+    t.text     "description"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "member_skills", :force => true do |t|
