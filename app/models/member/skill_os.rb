@@ -1,5 +1,11 @@
-class Member::SkillOs < Member::Skill
+class Member::SkillOs < ActiveRecord::Base
   LEVELS = I18n.t('skills.os.levels')
-  # attr_accessible :title, :body
-  belongs_to :dict, :polymorphic => true, :class_name => "Os"
+  attr_accessible :os_id, :duration, :level, :member_id, :type, :description
+
+  belongs_to :os
+  belongs_to :member
+
+  def name
+    os.name
+  end
 end

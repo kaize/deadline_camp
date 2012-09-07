@@ -33,6 +33,46 @@ namespace :app do
     end
   end
 
+  desc "Fix Member Skills"
+  task :fix_member_skills => :environment do
+    Member::Skill.where(dict_type: 'ProgramLang').find_each do |skill|
+      new_skill                 = Member::SkillProgramLang.new
+      new_skill.program_lang_id = skill.dict_id
+      new_skill.duration        = skill.duration
+      new_skill.level           = skill.level
+      new_skill.member_id       = skill.member_id
+      new_skill.description     = skill.description
+      new_skill.save!
+    end
+    Member::Skill.where(dict_type: 'Database').find_each do |skill|
+      new_skill             = Member::SkillDatabase.new
+      new_skill.database_id = skill.dict_id
+      new_skill.duration    = skill.duration
+      new_skill.level       = skill.level
+      new_skill.member_id   = skill.member_id
+      new_skill.description = skill.description
+      new_skill.save!
+    end
+    Member::Skill.where(dict_type: 'Ide').find_each do |skill|
+      new_skill             = Member::SkillIde.new
+      new_skill.ide_id      = skill.dict_id
+      new_skill.duration    = skill.duration
+      new_skill.level       = skill.level
+      new_skill.member_id   = skill.member_id
+      new_skill.description = skill.description
+      new_skill.save!
+    end
+    Member::Skill.where(dict_type: 'Os').find_each do |skill|
+      new_skill             = Member::SkillOs.new
+      new_skill.os_id       = skill.dict_id
+      new_skill.duration    = skill.duration
+      new_skill.level       = skill.level
+      new_skill.member_id   = skill.member_id
+      new_skill.description = skill.description
+      new_skill.save!
+    end
+  end
+
   desc "Fill news state"
   task :fix_news_state => :environment do
     News.update_all :state => :published

@@ -2,6 +2,7 @@ class Member < ActiveRecord::Base
   STUDY_MONTH = I18n.t('date.month_names').compact
   HOW_HEAR_ABOUT_AS_LIST = I18n.t('members.how_hear_about_as_list')
   SCHOOLYEARS = %w(1 2 3 4 5 6)
+  SKILL_LEVELS = I18n.t('skill.levels')
   attr_accessible :state, :email, :first_name, :last_name, :patronymic, :phone, :skype, :jabber, :icq, :institute,
     :start_year, :start_month, :finish_year, :finish_month, :department, :profession, :degree, :gpa, :web,
     :camp_time, :camp_life, :camp_fee, :camp_notebook, :camp_training, :hobby, :sport, :state_event, :password,

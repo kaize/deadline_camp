@@ -1,5 +1,7 @@
 class MemberDecorator < Draper::Base
   decorates :member
+  decorates_associations :skill_databases, :skill_databases, :skill_ides, :skill_operation_systems,
+    :skill_others, :skill_program_langs
 
   def full_name
     [ first_name, last_name ].join(' ')
@@ -46,17 +48,18 @@ class MemberDecorator < Draper::Base
   end
 
   def s_skill_others
-    out = skill_others.map do |s|
-      [s.name, s.duration, s.level, s.description].join(', ')
-    end
-    out.join('; ')
+    s_skills(skill_others)
+    #out = skill_others.map do |s|
+      #[s.name, s.duration, s.level, s.description].join(', ')
+    #end
+    #out.join('; ')
   end
 
   private
 
     def s_skills(skills)
       out = skills.map do |s|
-        [s.dict, s.duration, s.level, s.description].compact.join(', ')
+        [s.name, s.duration, s.level, s.description].compact.join(', ')
       end
       out.join('; ')
     end
