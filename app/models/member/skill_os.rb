@@ -6,6 +6,6 @@ class Member::SkillOs < ActiveRecord::Base
   belongs_to :member
 
   def name
-    os.name
+    os.try(:name)
   end
 end
