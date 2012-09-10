@@ -1,4 +1,4 @@
-require 'test_helper'
+	require 'test_helper'
 
 class Web::SessionsControllerTest < ActionController::TestCase
   def setup
@@ -21,7 +21,6 @@ class Web::SessionsControllerTest < ActionController::TestCase
 
   test "should delete destroy" do
     member_sign_in @member
-    assert member_signed_in?
 
     delete :destroy
     assert_response :redirect
