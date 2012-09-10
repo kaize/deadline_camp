@@ -5,6 +5,6 @@ class Member::SkillIde < ActiveRecord::Base
   belongs_to :member
 
   def name
-    ide.name
+    ide.try(:name)
   end
 end

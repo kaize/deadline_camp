@@ -5,6 +5,6 @@ class Member::SkillDatabase < ActiveRecord::Base
   belongs_to :database
 
   def name
-    database.name
+    database.try(:name)
   end
 end
