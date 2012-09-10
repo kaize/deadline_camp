@@ -5,6 +5,6 @@ class Member::SkillProgramLang < ActiveRecord::Base
   belongs_to :member
 
   def name
-    program_lang.name
+    program_lang.try(:name)
   end
 end
