@@ -2,6 +2,7 @@ language: ruby
 before_script:
   - psql -c 'create database deadline_camp_test;' -U postgres
   - cp config/database.yml.sample config/database.yml
+  - bundle exec rake db:migrate db:seed
 rvm:
   - 1.9.3
   - 1.9.2
