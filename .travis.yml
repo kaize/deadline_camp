@@ -1,6 +1,6 @@
 language: ruby
 before_script:
-  -ln -nfs ./config/database.yml.sample ./config/database.yml
+  - ln -nfs ./config/database.yml.sample ./config/database.yml
 rvm:
   - 1.9.3
   - 1.9.2
