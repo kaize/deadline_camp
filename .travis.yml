@@ -1,10 +1,9 @@
 language: ruby
 before_script:
   - psql -c 'create database deadline_camp_test;' -U postgres
-  - ln -nfs config/database.yml.sample config/database.yml
-  #- cp config/database.yml.sample config/database.yml
+  - cp config/database.yml.sample config/database.yml
 rvm:
   - 1.9.3
   - 1.9.2
-  - rbx-18mode
-  - rbx-19mode
+  - jruby
+  - rbx
