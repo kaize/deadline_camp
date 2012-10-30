@@ -39,34 +39,8 @@
               != truncate_sanitize_rem_br n.body, 250
           .news_link= link_to "Все новости", news_index_path
       .span3
-        :javascript
-          new TWTR.Widget({
-            version: 2,
-            type: 'search',
-            search: 'deadlinecamp',
-            interval: 30000,
-            subject: 'Новости из Twitter',
-            //width: 370,
-            height: 450,
-            theme: {
-              shell: {
-                background: '#ffffff',
-                color: '#333333'
-              },
-              tweets: {
-                background: '#f5f5f5',
-                color: '#555555',
-                links: '#0088cc'
-              }
-            },
-            features: {
-              scrollbar: true,
-              loop: true,
-              live: true,
-              behavior: 'default'
-            }
-          }).render().start();
-
+        = render 'layouts/shared/twitter_widget'
+        = render 'layouts/shared/subscribe_widget'
 - if @photo_album.model && @photo_album.photos.any?
   .center.splitter
     = image_tag 'grey_out.png'
