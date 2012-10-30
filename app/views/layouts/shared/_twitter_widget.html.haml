@@ -1,0 +1,29 @@
+%h4 Новости из Twitter
+%div
+  :javascript
+    new TWTR.Widget({
+      version: 2,
+      type: 'search',
+      search: 'deadlinecamp',
+      interval: 30000,
+      subject: '',//
+      //width: 370,
+      height: 450,
+      theme: {
+        shell: {
+          background: '#ffffff',
+          color: '#333333'
+        },
+        tweets: {
+          background: '#f5f5f5',
+          color: '#555555',
+          links: '#0088cc'
+        }
+      },
+      features: {
+        scrollbar: true,
+        loop: true,
+        live: true,
+        behavior: 'default'
+      }
+    }).render().start();

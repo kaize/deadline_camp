@@ -39,51 +39,8 @@
               != truncate_sanitize_rem_br n.body, 250
           .news_link= link_to "Все новости", news_index_path
       .span3
-        :javascript
-          new TWTR.Widget({
-            version: 2,
-            type: 'search',
-            search: 'deadlinecamp',
-            interval: 30000,
-            subject: 'Новости из Twitter',
-            //width: 370,
-            height: 450,
-            theme: {
-              shell: {
-                background: '#ffffff',
-                color: '#333333'
-              },
-              tweets: {
-                background: '#f5f5f5',
-                color: '#555555',
-                links: '#0088cc'
-              }
-            },
-            features: {
-              scrollbar: true,
-              loop: true,
-              live: true,
-              behavior: 'default'
-            }
-          }).render().start();
-
-        #widget{:style => "font-size:14px;font-family:Arial,Helvetica,Geneva,sans-serif;color:#000000;text-align:left;margin:0 auto;"}
-          %form{:action => "http://srit.timepad.ru/org/subscribe", :method => "POST", :style => "display:block;margin:0;padding:0;padding:10px;background:#ffffff;", :target => "_blank"}
-            %fieldset{:style => "border:none;display:inline;margin:0;padding:0;background:#ffffff;"}
-              %div{:style => "margin-bottom:.5em;"}
-                Подписаться на рассылку НП
-              %div
-                #widget_welcome
-                  \ 
-                %input#user_email{:name => "email", :onblur => "if(this.value==''){this.style.color='#666666';this.value='e-mail';}", :onfocus => "if(this.value=='e-mail'){this.style.color='#000000';this.value='';}", :style => "font-family:Arial,Helvetica,Geneva,sans-serif;color:#666666;margin:0 0 10px;font-size:14px;padding:1px", :type => "text", :value => "e-mail"}/
-              %div
-                %input#user_name{:name => "name", :onblur => "if(this.value==''){this.style.color='#666666';this.value='Имя';}", :onfocus => "if(this.value=='Имя'){this.style.color='#000000';this.value='';}", :style => "font-family:Arial,Helvetica,Geneva,sans-serif;color:#666666;margin:0 8px 10px 0;font-size:14px;padding:1px", :type => "text", :value => "Имя"}/
-                %input#user_surname{:name => "surname", :onblur => "if(this.value==''){this.style.color='#666666';this.value='Фамилия';}", :onfocus => "if(this.value=='Фамилия'){this.style.color='#000000';this.value='';}", :style => "font-family:Arial,Helvetica,Geneva,sans-serif;color:#666666;margin:0 0 10px;font-size:14px;padding:1px", :type => "text", :value => "Фамилия"}/
-              #widget_buttons{:style => "clear:left;"}
-                %input#widget_submit.btn{:name => "submit_subscribe", :style => "font-size:14px;margin:0;", :type => "submit", :value => "Подписаться"}/
-            %a{:href => "http://srit.timepad.ru", :style => "dislay:block;border-top:1px solid #c6c6c6;display:block;margin-top:8px;", :target => "_blank"}
-              %img{:alt => "Создано с помощью TimePad.ru", :src => "http://srit.timepad.ru/templates_subdomain/img/tp-widget-logo-small.png", :style => "border:none;margin-bottom:-6px;"}/
-
+        = render 'layouts/shared/twitter_widget'
+        = render 'layouts/shared/subscribe_widget'
 - if @photo_album.model && @photo_album.photos.any?
   .center.splitter
     = image_tag 'grey_out.png'

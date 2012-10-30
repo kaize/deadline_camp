@@ -1,0 +1,17 @@
+#widget{:style => "color:#000000;text-align:left;margin:0 auto;"}
+  %form{:action => "http://srit.timepad.ru/org/subscribe", :method => "POST", :style => "display:block;margin:0;padding:0;padding:10px;background:#ffffff;", :target => "_blank"}
+    %fieldset{:style => "border:none;display:inline;margin:0;padding:0;background:#ffffff;"}
+      -#%div{:style => "margin-bottom:.5em;"}
+      %h4
+        Подписаться на рассылку НП
+      %div
+        #widget_welcome
+          \ 
+        %input#user_email{:name => "email", :onblur => "if(this.value==''){this.style.color='#666666';this.value='e-mail';}", :onfocus => "if(this.value=='e-mail'){this.style.color='#000000';this.value='';}", :style => "color:#666666;margin:0 0 10px;padding:1px", :type => "text", :value => "e-mail"}/
+      %div
+        %input#user_name{:name => "name", :onblur => "if(this.value==''){this.style.color='#666666';this.value='Имя';}", :onfocus => "if(this.value=='Имя'){this.style.color='#000000';this.value='';}", :style => "color:#666666;margin:0 8px 10px 0;padding:1px", :type => "text", :value => "Имя"}/
+        %input#user_surname{:name => "surname", :onblur => "if(this.value==''){this.style.color='#666666';this.value='Фамилия';}", :onfocus => "if(this.value=='Фамилия'){this.style.color='#000000';this.value='';}", :style => "color:#666666;margin:0 0 10px;padding:1px", :type => "text", :value => "Фамилия"}/
+      #widget_buttons{:style => "clear:left;"}
+        %input#widget_submit.btn{:name => "submit_subscribe", :style => "margin:0;", :type => "submit", :value => "Подписаться"}/
+    %a{:href => "http://srit.timepad.ru", :style => "dislay:block;border-top:1px solid #c6c6c6;display:block;margin-top:8px;", :target => "_blank"}
+      %img{:alt => "Создано с помощью TimePad.ru", :src => "http://srit.timepad.ru/templates_subdomain/img/tp-widget-logo-small.png", :style => "border:none;margin-bottom:-6px;"}/
