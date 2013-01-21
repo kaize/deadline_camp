@@ -1,4 +1,4 @@
-set :rails_env, :production
+set :rails_env, 'production'
 set :branch do
   raise "Use tags: TAG=v2" unless ENV['TAG']
   ENV['TAG']

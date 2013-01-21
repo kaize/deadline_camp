@@ -33,6 +33,7 @@ gem "gon"
 group :assets do
   gem 'jquery-ui-rails'
   gem 'sass-rails'
+  gem 'less-rails'
   gem 'coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

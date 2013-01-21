@@ -1,4 +1,4 @@
-set :rails_env, :staging
+set :rails_env, 'staging'
 set :branch, 'develop'
 set :user, 'deadline_camp_staging'
 set :keep_releases, 5
